@@ -1,0 +1,29 @@
+---
+title: Documentation
+description: Toute la documentation nécessaire pour utiliser Mr. Robøt.
+template: splash
+editUrl: false
+hero:
+  tagline: Vous retrouverez ici toute la documentation nécessaire pour utiliser Mr. Robøt.
+  actions:
+    - text: INTRODUCTION
+      link: /introduction
+      icon: right-arrow
+      variant: primary
+    - text: En savoir plus sur Mr. Robøt
+      link: https://mrrobot.app
+      icon: external
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid>
+	<Card title="Sur Twitter" icon="twitter">
+		[Suivez le compte sur Twitter](https://twitter.com/MrRobotApp) pour être tenu au courant des dernières nouveautés.
+    Vous pouvez notamment retrouver des astuces et des conseils pour utiliser Mr. Robøt, et des giveaways sont organisés régulièrement.
+	</Card>
+  <Card title="Serveur Discord" icon="discord">
+    [Rejoignez le serveur Discord](https://mrrobot.app/discord) pour discuter avec la communauté
+    et être tenu au courant des dernières nouveautés en étant notifié avec les rôles adéquats.
+  </Card>
+</CardGrid>
