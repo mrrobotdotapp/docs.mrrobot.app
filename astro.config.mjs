@@ -36,18 +36,16 @@ export default defineConfig({
 				{ label: 'Introduction', link: '/introduction/' },
 
 				{
-					label: 'Guides',
+					label: 'Commandes',
 					items: [
-						{ label: 'Composants', link: '/fr/guides/components/' },
-						{ label: 'Internationalisation (i18n)', link: '/fr/guides/i18n/' },
-						// Un groupe de liens imbriqué.
+						{ label: '/aide', link: '/commands/help' },
 
 					],
 				},
 				{
 					label: 'Configuration',
 					items: [
-						{ label: 'CSS', link: '/fr/configuration/css-and-tailwind/' },
+						{ label: 'Filtre contre les insultes', link: '/configuration/swear' },
 					],
 				},
 
