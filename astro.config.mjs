@@ -14,7 +14,7 @@ export default defineConfig({
 			},
 			customCss: ['./src/assets/css/hello.css'],
 			editLink: {
-				baseUrl: 'https://github.com/Mist3r-Robot/docs.mrrobot.app/edit/main/docs/',
+				baseUrl: 'https://github.com/Mist3r-Robot/docs.mrrobot.app/edit/main/',
 			},
 			lastUpdated: true,
 			defaultLocale: 'root',
