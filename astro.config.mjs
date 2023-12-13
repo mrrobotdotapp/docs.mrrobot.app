@@ -16,6 +16,7 @@ export default defineConfig({
 			editLink: {
 				baseUrl: 'https://github.com/Mist3r-Robot/docs.mrrobot.app/edit/main/docs/',
 			},
+			lastUpdated: true,
 			defaultLocale: 'root',
 			locales: {
 				root: {
@@ -39,6 +40,9 @@ export default defineConfig({
 					label: 'Commandes',
 					items: [
 						{ label: '/aide', link: '/commands/help' },
+						{ label: '/serveur', link: '/commands/server' },
+						{ label: '/whois', link: '/commands/whois' },
+						{ label: '/banid', link: '/commands/banid' },
 
 					],
 				},
