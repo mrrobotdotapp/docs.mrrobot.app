@@ -1,9 +1,10 @@
-# Documentation pour Mr. Robøt
+# Documentation of Mr. Robøt
 
 [![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
 
+For running locally, you'll need [Node.js](https://nodejs.org/en/) installed.
 ```
-npm create astro@latest -- --template starlight
+yarn run dev
 ```
 
 ## 🚀 Project Structure
