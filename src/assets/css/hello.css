@@ -12,6 +12,7 @@
 	--sl-color-gray-6: #28223a;
 	--sl-color-black: #191621;
 }
+
 /* Light mode colors. */
 :root[data-theme='light'] {
 	--sl-color-accent-low: #fec5d5;
@@ -26,4 +27,11 @@
 	--sl-color-gray-6: #eeecf8;
 	--sl-color-gray-7: #f6f5fc;
 	--sl-color-black: #ffffff;
+}
+
+.main-pane img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 3px;
 }
