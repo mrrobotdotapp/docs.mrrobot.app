@@ -9,20 +9,39 @@ yarn run dev
 
 ## 🚀 Project Structure
 
-Inside of your Astro + Starlight project, you'll see the following folders and files:
+Inside of your Starlight project, you'll see the following folders and files:
 
 ```
 .
-├── public/
-├── src/
-│   ├── assets/
-│   ├── content/
-│   │   ├── docs/
-│   │   └── config.ts
-│   └── env.d.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
+├── public
+│  └── favicon.svg
+├── src
+│  ├── assets
+│  │  ├── banner_seo.png
+│  │  ├── css
+│  │  │  └── hello.css
+│  │  ├── favicon.png
+│  │  ├── title_logo_dark.svg
+│  │  └── title_logo_light.svg
+│  ├── content
+│  │  ├── config.ts
+│  │  └── docs
+│  │      ├── 404.mdx
+│  │      ├── configuration
+│  │      │  └── swear.mdx
+│  │      ├── en
+│  │      │  ├── index.mdx
+│  │      │  └── introduction.mdx
+│  │      ├── index.mdx
+│  │      ├── introduction.mdx
+│  │      ├── mod
+│  │      │  ├── banid.mdx
+│  │      │  └── clear.mdx
+│  │      └── utility
+│  │          ├── help.mdx
+│  │          ├── server.mdx
+│  │          ├── survey.mdx
+│  │          └── whois.mdx
 ```
 
 Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
@@ -30,6 +49,44 @@ Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. 
 Images can be added to `src/assets/` and embedded in Markdown with a relative link.
 
 Static assets, like favicons, can be placed in the `public/` directory.
+
+## 📝 Editing Content
+
+To edit the content of your site, simply edit the `.md` or `.mdx` files in `src/content/docs/`. You can add new files or directories to create new pages. You can also edit the `src/content/config.ts` file to change the site title, description, and navigation links.
+
+## Internationalization
+
+Starlight supports internationalization out of the box. To add a new language, create a new directory in `src/content/` with the [ISO 639-1 language code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). For example, `en` for English or `fr` for French.
+Then, add a new entry to the `locales` object in `src/content/config.ts`:
+
+```diff
+locales: {
+    root: {
+        label: 'Français',
+            lang: 'fr',
+    },
++    en: {
++        label: 'English',
++            lang: 'en',
++    },
+},
+```
+
+You must also edit the `astro.config.mjs` file to add sidebar links for the new language:
+
+```diff
+
+sidebar: [
+        {
+          label: 'Introduction',
+          link: '/introduction/',
+          translations: {
++            en: 'Introduction',
+          }
+        },
+    ]
+```
+
 
 ## 🧞 Commands
 
