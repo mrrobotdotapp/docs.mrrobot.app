@@ -111,8 +111,35 @@ export default defineConfig({
             },
           ],
         },
-
-
+        {
+          label: 'Liens utiles',
+          translations: {
+            en: 'Useful links',
+          },
+          items: [
+            {
+              label: 'Site web',
+              link: 'https://mrrobot.app',
+              translations: {
+                en: 'Website',
+              }
+            },
+            {
+              label: 'A propos',
+              link: 'https://mrrobot.app/about',
+              translations: {
+                en: 'About',
+              }
+            },
+            {
+              label: 'Serveur Discord',
+              link: 'https://mrrobot.app/discord',
+              translations: {
+                en: 'Discord server',
+              }
+            },
+          ]
+        }
       ],
     }),
   ],
