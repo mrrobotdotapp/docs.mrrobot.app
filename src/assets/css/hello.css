@@ -36,6 +36,6 @@
 	border-radius: 3px;
 }
 
-aside li {
-	margin: 4px auto;
+aside li a {
+	padding: 10px 0 10px 8px;
 }
