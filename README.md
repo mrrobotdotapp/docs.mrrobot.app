@@ -1,6 +1,6 @@
 # Documentation of Mr. Robøt
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build) [![Netlify Status](https://api.netlify.com/api/v1/badges/00487308-4ca7-4d14-89eb-df9691bd5030/deploy-status)](https://app.netlify.com/sites/docsmrrobotapp/deploys)
 
 For running locally, you'll need [Node.js](https://nodejs.org/en/) installed.
 ```
