@@ -12,6 +12,64 @@ export default defineConfig({
         replacesTitle: true,
         alt: "Mr. Robøt Logo"
       },
+      head: [
+        {
+          tag: 'meta',
+          attrs: {
+            name: 'theme-color',
+            content: '#311839',
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            name: 'twitter:card',
+            content: 'summary_large_image',
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            property: 'og:title',
+            content: 'Documentation Mr. Robøt',
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            property: 'og:description',
+            content: 'Documentation du robot Discord Mr. Robøt',
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            property: 'og:image',
+            content: 'https://docs.mrrobot.app/banner_seo.png',
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            property: 'twitter:image',
+            content: 'https://docs.mrrobot.app/banner_seo.png',
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            property: 'og:url',
+            content: 'https://docs.mrrobot.app',
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            property: 'og:type',
+            content: 'website',
+          },
+        }
+      ],
       customCss: ['./src/assets/css/hello.css'],
       editLink: {
         baseUrl: 'https://github.com/Mist3r-Robot/docs.mrrobot.app/edit/main/',
