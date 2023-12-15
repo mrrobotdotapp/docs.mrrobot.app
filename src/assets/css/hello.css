@@ -35,3 +35,7 @@
 	margin-right: auto;
 	border-radius: 3px;
 }
+
+aside li {
+	margin: 4px auto;
+}
