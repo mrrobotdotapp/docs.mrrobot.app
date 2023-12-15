@@ -46,70 +46,18 @@ export default defineConfig({
           translations: {
             en: 'Utility commands',
           },
-          items: [
-            {
-              label: '/aide',
-              link: '/utility/help',
-              translations: {
-                en: '/help',
-              }
-            },
-            {
-              label: '/whois',
-              link: '/utility/whois',
-              translations: {
-                en: '/whois',
-              }
-            },
-            {
-              label: '/serveur',
-              link: '/utility/server',
-              translations: {
-                en: '/server',
-              }
-            },
-            {
-              label: '_sondage',
-              link: '/utility/survey',
-              translations: {
-                en: '_survey',
-              }
-            },
-          ],
+          autogenerate: { directory: 'utility' },
         },
         {
           label: 'Commandes de modération',
           translations: {
             en: 'Moderation commands',
           },
-          items: [
-            {
-              label: '/clear',
-              link: '/mod/clear',
-              translations: {
-                en: '/clear',
-              }
-            },
-            {
-              label: '/banid',
-              link: '/mod/banid',
-              translations: {
-                en: '/banid',
-              }
-            },
-          ],
+          autogenerate: { directory: 'mod' },
         },
         {
           label: 'Configuration',
-          items: [
-            {
-              label: 'Filtre contre les insultes',
-              link: '/configuration/swear',
-              translations: {
-                en: 'Swear filter',
-              }
-            },
-          ],
+          autogenerate: { directory: 'configuration' },
         },
         {
           label: 'Liens utiles',
