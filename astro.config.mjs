@@ -6,6 +6,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "Documentation Mr. Robøt",
+      titleDelimiter: ' — ',
       logo: {
         light: './src/assets/title_logo_light.svg',
         dark: './src/assets/title_logo_dark.svg',
