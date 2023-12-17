@@ -36,6 +36,6 @@
 	border-radius: 3px;
 }
 
-aside li a {
-	padding: 10px 0 10px 8px;
+.sidebar-pane a {
+	padding: 7px 0 7px 4px;
 }
