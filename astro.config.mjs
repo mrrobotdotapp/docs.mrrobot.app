@@ -105,19 +105,28 @@ export default defineConfig({
           translations: {
             en: 'Utility commands',
           },
-          autogenerate: { directory: 'utility' },
+          autogenerate: {directory: 'utility'},
         },
         {
           label: 'Commandes de modération',
           translations: {
             en: 'Moderation commands',
           },
-          autogenerate: { directory: 'mod' },
+          autogenerate: {directory: 'mod'},
         },
         {
           label: 'Configuration',
-          autogenerate: { directory: 'configuration' },
+          autogenerate: {directory: 'configuration'},
+          items: [
+            /*{ label: 'Internationalization (i18n)', link: '/guides/i18n/' },*/
+            {
+              label: 'Filtre contre les insultes',
+
+              autogenerate: {directory: 'configuration/swear'},
+            },
+          ],
         },
+
         {
           label: 'Liens utiles',
           translations: {
@@ -132,7 +141,7 @@ export default defineConfig({
               }
             },
             {
-              label: 'A propos',
+              label: 'À propos',
               link: 'https://mrrobot.app/about',
               translations: {
                 en: 'About',
