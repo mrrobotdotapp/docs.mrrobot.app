@@ -27,6 +27,9 @@
 	--sl-color-gray-6: #eeecf8;
 	--sl-color-gray-7: #f6f5fc;
 	--sl-color-black: #ffffff;
+	--sl-color-orange-low: #ffe9c2;
+	--sl-color-orange: #f89f03;
+	--sl-color-asides-text-accent: #081159;
 }
 
 .main-pane img {
@@ -38,4 +41,7 @@
 
 .sidebar-pane a {
 	padding: 7px 0 7px 4px;
+}
+.sl-badge {
+	border: none;
 }
