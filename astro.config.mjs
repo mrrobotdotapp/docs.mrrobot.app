@@ -101,6 +101,13 @@ export default defineConfig({
           }
         },
         {
+          label: 'Accès à la bêta',
+          link: '/beta/',
+          translations: {
+            en: 'Access to the beta',
+          }
+        },
+        {
           label: 'Commandes utilitaires',
           translations: {
             en: 'Utility commands',
