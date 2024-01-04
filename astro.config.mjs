@@ -141,24 +141,27 @@ export default defineConfig({
           },
           items: [
             {
-              label: 'Site web',
+              label: 'Site web ↗',
               link: 'https://mrrobot.app',
+              attrs: { target: '_blank' },
               translations: {
-                en: 'Website',
+                en: 'Website ↗',
               }
             },
             {
-              label: 'À propos',
+              label: 'À propos ↗',
               link: 'https://mrrobot.app/about',
+              attrs: { target: '_blank' },
               translations: {
-                en: 'About',
+                en: 'About ↗',
               }
             },
             {
-              label: 'Serveur Discord',
+              label: 'Serveur Discord ↗',
               link: 'https://mrrobot.app/discord',
+              attrs: { target: '_blank' },
               translations: {
-                en: 'Discord server',
+                en: 'Discord server ↗',
               }
             },
           ]
