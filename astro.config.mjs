@@ -95,14 +95,14 @@ export default defineConfig({
       sidebar: [
         {
           label: 'Introduction',
-          link: '/introduction/',
+          link: '/getting-started/introduction/',
           translations: {
             en: 'Introduction',
           }
         },
         {
           label: 'Accès à la bêta',
-          link: '/beta/',
+          link: '/getting-started/beta/',
           translations: {
             en: 'Access to the beta',
           }
