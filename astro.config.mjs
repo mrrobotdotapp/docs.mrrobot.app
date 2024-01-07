@@ -94,18 +94,11 @@ export default defineConfig({
       },
       sidebar: [
         {
-          label: 'Introduction',
-          link: '/getting-started/introduction/',
+          label: 'Démarrage',
           translations: {
-            en: 'Introduction',
-          }
-        },
-        {
-          label: 'Accès à la bêta',
-          link: '/getting-started/beta/',
-          translations: {
-            en: 'Access to the beta',
-          }
+            en: 'Getting started',
+          },
+          autogenerate: {directory: 'getting-started'},
         },
         {
           label: 'Commandes utilitaires',

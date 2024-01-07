@@ -1,0 +1,40 @@
+---
+title: Les permissions
+description: Vérifier les permissions du robot sur votre serveur Discord
+---
+import { CardGrid, LinkCard } from "@astrojs/starlight/components";
+
+Le robot a besoin de certaines permissions pour fonctionner correctement. Il est donc important de vérifier que le robot a bien toutes les permissions nécessaires.
+Quand vous ajoutez le robot sur votre serveur Discord, vous pouvez voir la liste qui s'affiche.
+
+![Permissions du robot](/img/permissions-add.png)
+
+Si vous avez déjà ajouté le robot, elle est visible dans **Paramètres du serveur** > **Intégrations** > **Mr. Robøt**.
+
+## Vérifier les permissions du robot
+
+Pour vérifier les permissions du robot, vous pouvez utiliser la commande :
+
+```
+/aide menu:Vérifier les permissions du robot
+```
+
+![Menu pour vérifier les permissions du robot](/img/help-permissions-menu.png)
+
+:::note
+Seul un administrateur peut utiliser cette commande.
+:::
+
+
+## Il manque une permission ?
+
+Si le robot n'a pas une permission, il ne pourra pas effectuer certaines actions.
+Par exemple, si le robot n'a pas la permission *Gérer les messages*, il ne pourra pas supprimer les messages, et il vous affichera probablement un message d'erreur.
+Vous pouvez modifier les permissions du robot en allant dans **Paramètres du serveur** > **Rôles** > **Mr. Robøt** > **Permissions**.
+Ou tout simplement ajouter de nouveau le robot sans l'expulser de votre serveur.
+<CardGrid>
+  <LinkCard
+    title="AJOUTER MR. ROBØT"
+    href="https://mrrobot.app/add"
+  />
+</CardGrid>
