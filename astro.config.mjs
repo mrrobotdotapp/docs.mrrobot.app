@@ -1,6 +1,16 @@
 import {defineConfig} from 'astro/config';
 import starlight from '@astrojs/starlight';
 
+const locales = {
+  root: {
+    label: 'Français',
+    lang: 'fr',
+  },
+  en: {
+    label: 'English',
+    lang: 'en',
+  }
+}
 // https://astro.build/config
 export default defineConfig({
   integrations: [
@@ -77,16 +87,7 @@ export default defineConfig({
       },
       lastUpdated: true,
       defaultLocale: 'root',
-      locales: {
-        root: {
-          label: 'Français',
-          lang: 'fr',
-        },
-        en: {
-          label: 'English',
-          lang: 'en',
-        },
-      },
+      locales,
       social: {
         github: 'https://github.com/Mist3r-Robot/docs.mrrobot.app',
         twitter: 'https://twitter.com/MrRobotApp',
