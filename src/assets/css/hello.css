@@ -1,4 +1,3 @@
-/* Dark mode colors. */
 :root {
 	--sl-color-accent-low: #430922;
 	--sl-color-accent: #311839;
@@ -11,9 +10,10 @@
 	--sl-color-gray-5: #3a344c;
 	--sl-color-gray-6: #28223a;
 	--sl-color-black: #191621;
+	--background-body-color: #191621;
+	--border-radius: 3px;
 }
 
-/* Light mode colors. */
 :root[data-theme='light'] {
 	--sl-color-accent-low: #fec5d5;
 	--sl-color-accent: #311839;
@@ -30,18 +30,51 @@
 	--sl-color-orange-low: #ffe9c2;
 	--sl-color-orange: #f89f03;
 	--sl-color-asides-text-accent: #081159;
+	--background-body-color: #fbfbfb;
+	--box-shadow-card: 2px 2px 2px 0 rgba(32, 32, 32, 0.16);
+}
+
+body {
+	font-size: 16px;
+	font-family: Comfortaa, Ubuntu, sans-serif;
+	font-weight: 400;
+	line-height: 1.5;
+	color: var(--sl-color-white);
+	background-color: var(--background-body-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Comfortaa, Ubuntu, sans-serif;
+	font-weight: 900;
+}
+
+a {
+	font-weight: 600;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+	border-radius: var(--border-radius);
 }
 
 .main-pane img {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	border-radius: 3px;
+	border-radius: var(--border-radius);
 }
 
 .sidebar-pane a {
 	padding: 7px 0 7px 4px;
 }
+
 .sl-badge {
 	border: none;
 }
+
+article.card {
+	border-radius: var(--border-radius);
+	border: unset;
+	box-shadow: var(--box-shadow-card);
+}
+
