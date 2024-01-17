@@ -83,13 +83,13 @@ export default defineConfig({
       ],
       customCss: ['./src/assets/css/hello.css'],
       editLink: {
-        baseUrl: 'https://github.com/Mist3r-Robot/docs.mrrobot.app/edit/main/',
+        baseUrl: 'https://github.com/mrrobotdotapp/docs.mrrobot.app/edit/main/',
       },
       lastUpdated: true,
       defaultLocale: 'root',
       locales,
       social: {
-        github: 'https://github.com/Mist3r-Robot/docs.mrrobot.app',
+        github: 'https://github.com/mrrobotdotapp/docs.mrrobot.app',
         twitter: 'https://twitter.com/MrRobotApp',
         discord: 'https://mrrobot.app/discord',
       },
