@@ -129,6 +129,7 @@ export default defineConfig({
         },
         {
           label: 'Liens utiles',
+          collapsed: true,
           translations: {
             en: 'Useful links',
           },
