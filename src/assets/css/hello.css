@@ -34,6 +34,24 @@
 	--box-shadow-card: 2px 2px 2px 0 rgba(32, 32, 32, 0.16);
 }
 
+::-webkit-scrollbar {
+	cursor: pointer;
+	width: 11px;
+	height: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--sl-color-gray-6);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--sl-color-gray-4);
+}
+
 body {
 	font-size: 16px;
 	font-family: Comfortaa, Ubuntu, sans-serif;
