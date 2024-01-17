@@ -127,7 +127,6 @@ export default defineConfig({
             },
           ],
         },
-
         {
           label: 'Liens utiles',
           translations: {
@@ -137,7 +136,7 @@ export default defineConfig({
             {
               label: 'Site web ↗',
               link: 'https://mrrobot.app',
-              attrs: { target: '_blank' },
+              attrs: {target: '_blank'},
               translations: {
                 en: 'Website ↗',
               }
@@ -145,7 +144,7 @@ export default defineConfig({
             {
               label: 'À propos ↗',
               link: 'https://mrrobot.app/about',
-              attrs: { target: '_blank' },
+              attrs: {target: '_blank'},
               translations: {
                 en: 'About ↗',
               }
@@ -153,11 +152,60 @@ export default defineConfig({
             {
               label: 'Serveur Discord ↗',
               link: 'https://mrrobot.app/discord',
-              attrs: { target: '_blank' },
+              attrs: {target: '_blank'},
               translations: {
                 en: 'Discord server ↗',
               }
             },
+            {
+              label: 'Contacter par e-mail ↗',
+              link: 'https://tally.so/r/3NyOlm',
+              attrs: {target: '_blank'},
+              translations: {
+                en: 'Contact us by e-mail ↗',
+              }
+            },
+          ]
+        },
+        {
+          label: 'Légal',
+          collapsed: true,
+          translations: {
+            en: 'Legal',
+          },
+          items: [
+            {
+              label: 'Mentions légales ↗',
+              link: 'https://mrrobot.app/mentions',
+              attrs: {target: '_blank'},
+              translations: {
+                en: 'Legals Mentions ↗',
+              }
+            },
+            {
+              label: 'Politique de confidentialité ↗',
+              link: 'https://mrrobot.app/privacy',
+              attrs: {target: '_blank'},
+              translations: {
+                en: 'Privacy ↗',
+              }
+            },
+            {
+              label: 'Conditions d\'utilisation ↗',
+              link: 'https://mrrobot.app/terms',
+              attrs: {target: '_blank'},
+              translations: {
+                en: 'Terms of use ↗',
+              }
+            },
+            {
+              label: 'Conditions générales de vente ↗',
+              link: 'https://mrrobot.app/cgv',
+              attrs: {target: '_blank'},
+              translations: {
+                en: 'Terms of sale ↗',
+              }
+            }
           ]
         }
       ],
