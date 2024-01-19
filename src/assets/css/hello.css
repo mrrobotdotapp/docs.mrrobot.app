@@ -96,3 +96,11 @@ article.card {
 	box-shadow: var(--box-shadow-card);
 }
 
+summary:where(.astro-3ii7xxms) {
+	background-color: var(--sl-color-hairline-light);
+	border-radius: 2px;
+	line-height: 1.6;
+}
+a:where(.astro-g2bywc46) {
+	line-height: 2;
+}
