@@ -101,6 +101,11 @@ summary:where(.astro-3ii7xxms) {
 	border-radius: 2px;
 	line-height: 1.6;
 }
+
 a:where(.astro-g2bywc46) {
 	line-height: 2;
+}
+
+select:where(.astro-4yphtoen) {
+	min-width: min-content;
 }
