@@ -1,0 +1,24 @@
+{
+  "$schema": "./node_modules/@lunariajs/core/config.schema.json",
+  "repository": {
+    "name": "mrrobotdotapp/docs.mrrobot.app",
+    "hosting": "github"
+  },
+  "files": [
+    {
+      "location": "src/content/docs/**/*.{md,mdx}",
+      "pattern": "src/content/docs/@lang/@path",
+      "type": "universal"
+    }
+  ],
+  "defaultLocale": {
+    "label": "Français",
+    "lang": "fr"
+  },
+  "locales": [
+    {
+      "label": "English",
+      "lang": "en"
+    }
+  ]
+}

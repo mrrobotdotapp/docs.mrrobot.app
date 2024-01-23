@@ -1,5 +1,7 @@
 import {defineConfig} from 'astro/config';
 import starlight from '@astrojs/starlight';
+import lunaria from '@lunariajs/starlight';
+
 
 const locales = {
   root: {
@@ -23,6 +25,9 @@ export default defineConfig({
         replacesTitle: true,
         alt: "Mr. Robøt Logo"
       },
+      plugins: [
+        lunaria(),
+      ],
       head: [
         {
           tag: 'meta',
