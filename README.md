@@ -59,6 +59,10 @@ To edit the content of your site, simply edit the `.md` or `.mdx` files in `src/
 
 ## Internationalization
 
+> [!NOTE]
+> If you want to see the progress of the international coalition on a single page
+> [Click here](https://docs.mrrobot.app/lunaria/)
+
 Starlight supports internationalization out of the box. To add a new language, create a new directory in `src/content/` with the [ISO 639-1 language code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). For example, `en` for English or `fr` for French.
 Then, add a new entry to the `locales` object in `src/content/config.ts`:
 
