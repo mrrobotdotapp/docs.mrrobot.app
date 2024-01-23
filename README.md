@@ -12,7 +12,7 @@ yarn run dev
 
 ## 🚀 Project Structure
 
-Inside of your Starlight project, you'll see the following folders and files:
+Inside your Starlight project, you'll see the following folders and files:
 
 ```
 .
