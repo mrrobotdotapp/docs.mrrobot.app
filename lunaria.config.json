@@ -20,5 +20,18 @@
       "label": "English",
       "lang": "en"
     }
-  ]
+  ],
+  "ignoreKeywords": ["i18nIgnore", "fr-only"],
+  "dashboard": {
+    "title": "Mr. Robøt localization",
+    "description": "Page preview for the localization of Mr. Robøt documentation",
+    "favicon": {
+      "external": [
+        {
+          "link": "https://mrrobot.app/favicon.png",
+          "type": "image/png"
+        }
+      ]
+    }
+  }
 }
