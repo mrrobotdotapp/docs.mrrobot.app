@@ -1,0 +1,37 @@
+{
+  "$schema": "./node_modules/@lunariajs/core/config.schema.json",
+  "repository": {
+    "name": "mrrobotdotapp/docs.mrrobot.app",
+    "hosting": "github"
+  },
+  "files": [
+    {
+      "location": "src/content/docs/**/*.{md,mdx}",
+      "pattern": "src/content/docs/@lang/@path",
+      "type": "universal"
+    }
+  ],
+  "defaultLocale": {
+    "label": "Français",
+    "lang": "fr"
+  },
+  "locales": [
+    {
+      "label": "English",
+      "lang": "en"
+    }
+  ],
+  "ignoreKeywords": ["i18nIgnore", "fr-only"],
+  "dashboard": {
+    "title": "Mr. Robøt localization",
+    "description": "Page preview for the localization of Mr. Robøt documentation",
+    "favicon": {
+      "external": [
+        {
+          "link": "https://mrrobot.app/favicon.png",
+          "type": "image/png"
+        }
+      ]
+    }
+  }
+}
