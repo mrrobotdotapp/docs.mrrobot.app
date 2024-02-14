@@ -74,6 +74,20 @@ export default defineConfig({
         {
           tag: 'meta',
           attrs: {
+            property: 'twitter:site',
+            content: '@MrRobotApp',
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            property: 'twitter:creator',
+            content: '@MrRobotApp',
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: {
             property: 'og:url',
             content: 'https://docs.mrrobot.app',
           },
@@ -83,6 +97,13 @@ export default defineConfig({
           attrs: {
             property: 'og:type',
             content: 'website',
+          },
+        },
+        {
+          tag: 'link',
+          attrs: {
+            rel: 'monetization',
+            href: 'https://ilp.uphold.com/ZrmQjNMeaZFJ',
           },
         }
       ],
