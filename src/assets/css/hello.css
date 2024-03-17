@@ -66,15 +66,14 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 900;
 }
 
-a {
-	font-weight: 600;
-}
-
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 	border-radius: var(--border-radius);
 }
 
+.main-pane a {
+	font-weight: 600;
+}
 .main-pane img {
 	display: block;
 	margin-left: auto;
@@ -108,4 +107,12 @@ a:where(.astro-g2bywc46) {
 
 select:where(.astro-4yphtoen) {
 	min-width: min-content;
+}
+
+nav[aria-labelledby="starlight__on-this-page"] ul li {
+	padding: 0.2rem 0;
+}
+
+nav[aria-labelledby="starlight__on-this-page"] ul li a {
+	font-size: 14px;
 }
