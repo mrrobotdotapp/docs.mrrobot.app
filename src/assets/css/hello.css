@@ -116,3 +116,7 @@ nav[aria-labelledby="starlight__on-this-page"] ul li {
 nav[aria-labelledby="starlight__on-this-page"] ul li a {
 	font-size: 14px;
 }
+
+nav[aria-labelledby="starlight__on-this-page"] a[aria-current="true"] {
+	font-weight: 600;
+}
