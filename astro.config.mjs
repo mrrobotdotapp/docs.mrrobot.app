@@ -128,6 +128,18 @@ export default defineConfig({
           autogenerate: {directory: 'getting-started'},
         },
         {
+          label: 'Configuration',
+          autogenerate: {directory: 'configuration'},
+          items: [
+            /*{ label: 'Internationalization (i18n)', link: '/guides/i18n/' },*/
+            {
+              label: 'Filtre contre les insultes',
+
+              autogenerate: {directory: 'configuration/swear'},
+            },
+          ],
+        },
+        {
           label: 'Commandes utilitaires',
           translations: {
             en: 'Utility commands',
@@ -140,18 +152,6 @@ export default defineConfig({
             en: 'Moderation commands',
           },
           autogenerate: {directory: 'mod'},
-        },
-        {
-          label: 'Configuration',
-          autogenerate: {directory: 'configuration'},
-          items: [
-            /*{ label: 'Internationalization (i18n)', link: '/guides/i18n/' },*/
-            {
-              label: 'Filtre contre les insultes',
-
-              autogenerate: {directory: 'configuration/swear'},
-            },
-          ],
         },
         {
           label: 'Liens utiles',
