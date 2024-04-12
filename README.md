@@ -1,7 +1,7 @@
 [![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build) [![Netlify Status](https://api.netlify.com/api/v1/badges/00487308-4ca7-4d14-89eb-df9691bd5030/deploy-status)](https://app.netlify.com/sites/docsmrrobotapp/deploys)
 
-[![Documentation of Mr. Robøt](docs/title.svg#gh-light-mode-only)](https://docs.mrrobot.app)
-[![Documentation of Mr. Robøt](docs/title-dark.svg#gh-dark-mode-only)](https://docs.mrrobot.app)
+[![Documentation of Mr. Robøt](docs/title.svg#gh-light-mode-only)](https://docs.mrrobot.app#gh-light-mode-only)
+[![Documentation of Mr. Robøt](docs/title-dark.svg#gh-dark-mode-only)](https://docs.mrrobot.app#gh-dark-mode-only)
 
 > [!NOTE]
 > [→ SEE THE DOCUMENTATION](https://docs.mrrobot.app/)
