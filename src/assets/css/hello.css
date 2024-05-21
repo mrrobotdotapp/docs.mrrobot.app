@@ -99,6 +99,7 @@ summary:where(.astro-3ii7xxms) {
 	background-color: var(--sl-color-hairline-light);
 	border-radius: 2px;
 	line-height: 1.6;
+	padding: clamp(.5rem, .5rem + 0vi, .5rem);
 }
 
 a:where(.astro-g2bywc46) {
