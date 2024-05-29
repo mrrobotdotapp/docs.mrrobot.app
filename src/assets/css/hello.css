@@ -74,6 +74,7 @@ code {
 .main-pane a {
 	font-weight: 600;
 }
+
 .main-pane img {
 	display: block;
 	margin-left: auto;
@@ -110,12 +111,15 @@ select:where(.astro-4yphtoen) {
 	min-width: min-content;
 }
 
-nav[aria-labelledby="starlight__on-this-page"] ul li {
-	padding: 0.2rem 0;
+nav[aria-labelledby="starlight__on-this-page"] > ul {
+	display: flex;
+	flex-direction: column;
+	gap: .3rem;
 }
 
 nav[aria-labelledby="starlight__on-this-page"] ul li a {
-	font-size: 14px;
+	font-size: 15px;
+	line-height: 1.6;
 	text-wrap: balance;
 }
 
