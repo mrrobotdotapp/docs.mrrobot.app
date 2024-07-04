@@ -2,9 +2,13 @@
 title: Configurer les rôles
 description: 'Mr. Robøt : Fonctionnalité primaire, système contre les insultes sur Discord'
 ---
+import { Aside } from '@astrojs/starlight/components';
 
 ![Mr. Robøt : Fonctionnalité primaire, système contre les insultes sur Discord](https://mrrobot.app/img/main_features/insulte.png)
 
+<Aside type="danger" title="Changement !">
+  Auparavant, les modérateurs étaient exclus du filtre, ce n'est plus le cas. Vous devez désormais les ajouter manuellement.
+</Aside>
 
 Vous pouvez **configurer les rôles** qui ne seront pas concernés par le filtre contre les insultes.
 
@@ -14,10 +18,6 @@ Vous pouvez **configurer les rôles** qui ne seront pas concernés par le filtre
 
 ![Mr. Robøt : Paramétrer les rôles](https://i.thomasbnt.dev/i/ng087.png)
 
-:::note
-Il n'y a aucun rôle configuré par défaut, ce qui signifie que le filtre contre les insultes s'appliquera sur tous les rôles de votre serveur **sauf les modérateurs**.
-:::
-
-## Vous avez la permission de gérer les messages
-
-Si vous avez la permission de gérer les messages, soit de supprimer un message sur le serveur Discord en question, vous n'êtes donc **pas affecté** par le filtre.
+<Aside type="note" title="Par défaut">
+  Il n'y a aucun rôle configuré par défaut, ce qui signifie que le filtre contre les insultes s'appliquera sur tous les rôles de votre serveur.
+</Aside>
