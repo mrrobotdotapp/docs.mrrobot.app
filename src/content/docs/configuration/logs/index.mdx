@@ -1,0 +1,44 @@
+---
+title: Mise en place des logs
+description: 'Mr. Robøt : Fonctionnalité primaire, système de logs sur Discord'
+sidebar:
+  badge:
+    text: 'Nouveau'
+    variant: tip
+---
+import { Aside, Steps, Badge } from '@astrojs/starlight/components';
+
+![Mr. Robøt : Fonctionnalité primaire, système de logs sur Discord](https://mrrobot.app/img/main_features/logs.png)
+
+<Aside type="tip" title="Nouvelle commande !">
+  Découvrez comment configurer les logs de Mr. Robøt sur votre serveur Discord.
+</Aside>
+
+## Configuration
+<Steps>
+1. Ajouter [le robot sur votre serveur Discord](https://mrrobot.app/add)
+
+2. Exécuter la commande
+    ```
+    /paramètres-logs gérer:Menu principal
+    ```
+
+3. Suivre les instructions du robot pour configurer les logs en choisissant les évènements à logger
+    ![Message de Mr. Robøt pour configurer les évènements à logger](/img/logs-add-remove-events.png)
+
+4. Tester si vous le souhaitez la connexion du robot avec la commande
+    ```
+    /paramètres-logs tester:Tester la connexion
+    ```
+</Steps>
+
+## Résolution des problèmes
+
+### Aucun évènement n'est loggé
+
+Veuillez vérifiez :
+- Que le robot a bien les permissions nécessaires
+- Que le robot est bien connecté à votre serveur Discord
+- Que vous avez bien suivi les instructions du robot
+- Que vous avez bien choisi les évènements à logger, vous pouvez voir la liste des évènements disponibles avec la commande `/paramètres-logs gérer:Menu principal`
+- Que le salon textuel choisi pour les logs est toujours présent, si ce n'est plus le cas, régénérez le webhook avec la commande `/paramètres-logs gérer:Menu principal`
