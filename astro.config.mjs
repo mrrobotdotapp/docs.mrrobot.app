@@ -28,6 +28,9 @@ export default defineConfig({
       plugins: [
         lunaria(),
       ],
+      components: {
+        Header: "./src/components/Header.astro",
+      },
       head: [
         {
           tag: 'meta',
