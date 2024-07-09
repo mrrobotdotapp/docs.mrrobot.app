@@ -248,4 +248,7 @@ export default defineConfig({
       ],
     }),
   ],
+  redirects: {
+    '/logs': '/configuration/logs'
+  }
 });
