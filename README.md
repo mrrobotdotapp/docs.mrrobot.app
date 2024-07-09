@@ -96,6 +96,9 @@ sidebar: [
     ]
 ```
 
+> ![NOTE]
+> Each command must be translated into the good language if present. 
+> Example : `/aide` (in French, default command name) is `/help` in english.
 
 ## 🧞 Commands
 
