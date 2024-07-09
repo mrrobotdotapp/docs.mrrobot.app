@@ -6,11 +6,11 @@ settings:
 
 dependencies:
   '@astrojs/starlight':
-    specifier: ^0.24.2
-    version: 0.24.2(astro@4.10.2)
+    specifier: ^0.24.5
+    version: 0.24.5(astro@4.10.2)
   '@lunariajs/starlight':
-    specifier: ^0.0.5
-    version: 0.0.5(@astrojs/starlight@0.24.2)(@lunariajs/core@0.0.31)(astro@4.10.2)
+    specifier: ^0.1.1
+    version: 0.1.1(@astrojs/starlight@0.24.5)(astro@4.10.2)
   astro:
     specifier: ^4.10.2
     version: 4.10.2
@@ -102,8 +102,8 @@ packages:
       zod: 3.23.8
     dev: false
 
-  /@astrojs/starlight@0.24.2(astro@4.10.2):
-    resolution: {integrity: sha512-hXFVBHcr2a4UwX5GDCNQEZsRXdgVlNzZ7txpI2jlMvtzbgfoLEGOHjaHpB5QTW/OCrRAMjcx9Zx0HxRliohaxQ==}
+  /@astrojs/starlight@0.24.5(astro@4.10.2):
+    resolution: {integrity: sha512-DDI8NpLzk+ReBudhAV09OhO5DxD+KN4Nnp3YlG6kwn/F8fmywNTNgY7VW67Z8aad+A/85OOiQOtq9wIFNRy3YA==}
     peerDependencies:
       astro: ^4.8.6
     dependencies:
@@ -874,8 +874,8 @@ packages:
     resolution: {integrity: sha512-GaHYm+c0O9MjZRu0ongGBRbinu8gVAMd2UZjji6jVmqKtZluZnptXGWhz1E8j8D2HJ3f/yMxKAUC0b+57wncIw==}
     dev: false
 
-  /@lunariajs/core@0.0.31:
-    resolution: {integrity: sha512-y0yfNOSHTw9rc7pbJJrHQCx0W0yk0T/KgO94+rlRI4OhfdP1PrsTMlTNLij2hxVR2UdstTZWuoYHQKnUk5qHcw==}
+  /@lunariajs/core@0.1.1:
+    resolution: {integrity: sha512-sAqM9+DVsLe3xHM9wu2pEnKGYMs/bWS9qpR+CGHol3RihOELnOQTzHddXbdB1MtgesbI8dnQuG64Ocd8KkWsng==}
     engines: {node: '>=18.17.0'}
     hasBin: true
     dependencies:
@@ -893,17 +893,18 @@ packages:
       - supports-color
     dev: false
 
-  /@lunariajs/starlight@0.0.5(@astrojs/starlight@0.24.2)(@lunariajs/core@0.0.31)(astro@4.10.2):
-    resolution: {integrity: sha512-T5PWr4K7RriuNa/a+/EbBMiZO49H7FPMP8Nb6hb6yqmUprnCflZDz6izyCciz8kHtNiLvt+s6Qz3pMwM/w0MLg==}
+  /@lunariajs/starlight@0.1.1(@astrojs/starlight@0.24.5)(astro@4.10.2):
+    resolution: {integrity: sha512-tpkqv8TCGUvz0z5nVk1ACb/2bT3seqDx+CHimNQugcpAFSip9BqDPOiWqaCujzZFajfR/L4mUsPAnavnnE8KVw==}
     engines: {node: '>=18.17.0'}
     peerDependencies:
       '@astrojs/starlight': '>=0.14.0'
-      '@lunariajs/core': ^0.0.31
       astro: '>=4.0.0'
     dependencies:
-      '@astrojs/starlight': 0.24.2(astro@4.10.2)
-      '@lunariajs/core': 0.0.31
+      '@astrojs/starlight': 0.24.5(astro@4.10.2)
+      '@lunariajs/core': 0.1.1
       astro: 4.10.2
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /@mdx-js/mdx@3.0.1:
