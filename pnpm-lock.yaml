@@ -899,8 +899,8 @@ packages:
     resolution: {integrity: sha512-GaHYm+c0O9MjZRu0ongGBRbinu8gVAMd2UZjji6jVmqKtZluZnptXGWhz1E8j8D2HJ3f/yMxKAUC0b+57wncIw==}
     dev: false
 
-  /@lunariajs/core@0.0.31:
-    resolution: {integrity: sha512-y0yfNOSHTw9rc7pbJJrHQCx0W0yk0T/KgO94+rlRI4OhfdP1PrsTMlTNLij2hxVR2UdstTZWuoYHQKnUk5qHcw==}
+  /@lunariajs/core@0.1.1:
+    resolution: {integrity: sha512-sAqM9+DVsLe3xHM9wu2pEnKGYMs/bWS9qpR+CGHol3RihOELnOQTzHddXbdB1MtgesbI8dnQuG64Ocd8KkWsng==}
     engines: {node: '>=18.17.0'}
     hasBin: true
     dependencies:
@@ -923,7 +923,6 @@ packages:
     engines: {node: '>=18.17.0'}
     peerDependencies:
       '@astrojs/starlight': '>=0.14.0'
-      '@lunariajs/core': ^0.0.31
       astro: '>=4.0.0'
     dependencies:
       '@astrojs/starlight': 0.24.5(astro@4.11.5)
