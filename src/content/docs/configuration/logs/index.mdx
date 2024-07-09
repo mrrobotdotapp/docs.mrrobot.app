@@ -20,7 +20,7 @@ import { Aside, Steps, Badge } from '@astrojs/starlight/components';
 
 2. Exécuter la commande
     ```
-    /paramètres-logs gérer:Menu principal
+    /paramètres-logs Menu principal
     ```
 
 3. Suivre les instructions du robot pour configurer les logs en choisissant les évènements à logger
@@ -28,8 +28,36 @@ import { Aside, Steps, Badge } from '@astrojs/starlight/components';
 
 4. Tester si vous le souhaitez la connexion du robot avec la commande
     ```
-    /paramètres-logs tester:Tester la connexion
+    /paramètres-logs Tester la connexion du Webhook
     ```
+</Steps>
+
+## Déplacer le salon des logs
+
+<Steps>
+  1. Pour pouvoir déplacer le salon des logs, vous devez simplement modifier le salon textuel choisi en allant dans **Paramètre du serveur > Intégrations > Mr. Robøt > Webhooks**.
+  2. Sélectionnez le salon où vous souhaitez que les logs soient envoyés.
+     ![Déplacer le salon des logs](/img/logs_edit_webhook.png)
+  3. Cliquez sur **Enregistrer les modifications**.
+</Steps>
+
+
+## J'ai supprimé le salon des logs
+
+Oh... ça peut arriver, pas de panique ! Pour régénérer le webhook, suivez les étapes suivantes :
+
+<Steps>
+  1. Exécutez la commande
+      ```
+      /paramètres-logs Menu principal
+      ```
+  2. Vous devriez voir un message vous indiquant le nouveau salon des logs et une aide, ainsi qu'un message qui s'envoie dans le salon des logs.
+     ![](/img/logs_generate_webhook_first_time.png)
+  3. Vous pouvez également tester la connexion du webhook avec la commande
+      ```
+      /paramètres-logs Tester la connexion du Webhook
+      ```
+  4. Tout est bon, vous avez régénéré le webhook avec succès ! 🎉
 </Steps>
 
 ## Résolution des problèmes
