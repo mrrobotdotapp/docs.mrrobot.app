@@ -28,6 +28,10 @@ export default defineConfig({
       plugins: [
         lunaria(),
       ],
+      components: {
+        Header: "./src/components/Header.astro",
+        PageSidebar: "./src/components/PageSidebar.astro",
+      },
       head: [
         {
           tag: 'meta',
@@ -128,16 +132,18 @@ export default defineConfig({
           autogenerate: {directory: 'getting-started'},
         },
         {
-          label: 'Configuration',
-          autogenerate: {directory: 'configuration'},
-          items: [
-            /*{ label: 'Internationalization (i18n)', link: '/guides/i18n/' },*/
-            {
-              label: 'Filtre contre les insultes',
-
-              autogenerate: {directory: 'configuration/swear'},
-            },
-          ],
+          label: 'Système des logs',
+          translations: {
+            en: 'Logs system',
+          },
+          autogenerate: {directory: 'configuration/logs'},
+        },
+        {
+          label: 'Filtre contre les insultes',
+          translations: {
+            en: 'Swear filter',
+          },
+          autogenerate: {directory: 'configuration/swear'},
         },
         {
           label: 'Commandes utilitaires',
@@ -246,4 +252,7 @@ export default defineConfig({
       ],
     }),
   ],
+  redirects: {
+    '/logs': '/configuration/logs'
+  }
 });

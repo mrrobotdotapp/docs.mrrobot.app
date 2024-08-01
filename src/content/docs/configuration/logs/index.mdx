@@ -1,0 +1,75 @@
+---
+title: Mise en place des logs
+description: 'Mr. Robøt : Fonctionnalité primaire, système de logs sur Discord'
+sidebar:
+  badge:
+    text: 'Nouveau'
+    variant: tip
+banner:
+  content: |
+    C'est tout nouveau ! Découvrez comment configurer les logs de Mr. Robøt sur votre serveur Discord.
+---
+import { Aside, Steps, Badge } from '@astrojs/starlight/components';
+
+![Mr. Robøt : Fonctionnalité primaire, système de logs sur Discord](https://mrrobot.app/img/main_features/logs.png)
+
+<Aside type="tip" title="Nouvelle commande !">
+  Découvrez comment configurer les logs de Mr. Robøt sur votre serveur Discord.
+</Aside>
+
+## Configuration
+<Steps>
+1. Ajouter [le robot sur votre serveur Discord](https://mrrobot.app/add)
+
+2. Exécuter la commande
+    ```
+    /paramètres-logs Menu principal
+    ```
+
+3. Suivre les instructions du robot pour configurer les logs en choisissant les évènements à logger
+    ![Message de Mr. Robøt pour configurer les évènements à logger](/img/logs-add-remove-events.png)
+
+4. Tester si vous le souhaitez la connexion du robot avec la commande
+    ```
+    /paramètres-logs Tester la connexion du Webhook
+    ```
+</Steps>
+
+## Déplacer le salon des logs
+
+<Steps>
+  1. Pour pouvoir déplacer le salon des logs, vous devez simplement modifier le salon textuel choisi en allant dans **Paramètre du serveur > Intégrations > Mr. Robøt > Webhooks**.
+  2. Sélectionnez le salon où vous souhaitez que les logs soient envoyés.
+     ![Déplacer le salon des logs](/img/logs_edit_webhook.png)
+  3. Cliquez sur **Enregistrer les modifications**.
+</Steps>
+
+
+## J'ai supprimé le salon des logs
+
+Oh... ça peut arriver, pas de panique ! Pour régénérer le webhook, suivez les étapes suivantes :
+
+<Steps>
+  1. Exécutez la commande
+      ```
+      /paramètres-logs Menu principal
+      ```
+  2. Vous devriez voir un message vous indiquant le nouveau salon des logs et une aide, ainsi qu'un message qui s'envoie dans le salon des logs.
+     ![](/img/logs_generate_webhook_first_time.png)
+  3. Vous pouvez également tester la connexion du webhook avec la commande
+      ```
+      /paramètres-logs Tester la connexion du Webhook
+      ```
+  4. Tout est bon, vous avez régénéré le webhook avec succès ! 🎉
+</Steps>
+
+## Résolution des problèmes
+
+### Aucun évènement n'est loggé
+
+Veuillez vérifiez :
+- Que le robot a bien les permissions nécessaires
+- Que le robot est bien connecté à votre serveur Discord
+- Que vous avez bien suivi les instructions du robot
+- Que vous avez bien choisi les évènements à logger, vous pouvez voir la liste des évènements disponibles avec la commande `/paramètres-logs Menu principal`
+- Que le salon textuel choisi pour les logs est toujours présent, si ce n'est plus le cas, régénérez le webhook avec la commande `/paramètres-logs Menu principal`
