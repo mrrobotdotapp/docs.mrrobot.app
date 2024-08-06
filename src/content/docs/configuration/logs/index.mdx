@@ -58,7 +58,7 @@ Oh... ça peut arriver, pas de panique ! Pour régénérer le webhook, suivez le
       /paramètres-logs Menu principal
       ```
   2. Vous devriez voir un message vous indiquant le nouveau salon des logs et une aide, ainsi qu'un message qui s'envoie dans le salon des logs.
-     ![](/img/logs_generate_webhook_first_time.png)
+     ![Message du robot Discord indiquant les étapes à suivre pour configurer salon des logs](/img/logs_generate_webhook_first_time.png)
   3. Vous pouvez également tester la connexion du webhook avec la commande
       ```
       /paramètres-logs Tester la connexion du Webhook
@@ -71,8 +71,19 @@ Oh... ça peut arriver, pas de panique ! Pour régénérer le webhook, suivez le
 ### Aucun évènement n'est loggé
 
 Veuillez vérifiez :
-- Que le robot a bien les permissions nécessaires
+- Que le robot a bien [les permissions nécessaires](#la-permission-gérer-les-webhooks)
 - Que le robot est bien connecté à votre serveur Discord
 - Que vous avez bien suivi les instructions du robot
 - Que vous avez bien choisi les évènements à logger, vous pouvez voir la liste des évènements disponibles avec la commande `/paramètres-logs Menu principal`
 - Que le salon textuel choisi pour les logs est toujours présent, si ce n'est plus le cas, régénérez le webhook avec la commande `/paramètres-logs Menu principal`
+
+## La permission Gérer les webhooks
+
+<Steps>
+  1. Pour donner la permission à Mr. Robøt, vous devez avoir un rôle adéquat pour modifier les permissions demandés.
+  2. Allez dans **Paramètres du serveur > Rôles > Mr. Robøt**.
+  3. Recherchez "webhook" et cochez les permissions nécessaires.
+     ![Donner la permission "Géer les webhooks" à Mr. Robøt](/img/logs/activateWebhookPermission.gif)
+  4. Cliquez sur **Enregistrer les modifications**.
+  5. Vous avez donné la permission à Mr. Robøt pour gérer les webhooks avec succès ! 🎉
+</Steps>
