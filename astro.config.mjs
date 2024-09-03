@@ -1,7 +1,7 @@
 import {defineConfig} from 'astro/config';
 import starlight from '@astrojs/starlight';
 import lunaria from '@lunariajs/starlight';
-
+import matomo from 'astro-matomo';
 
 const locales = {
   root: {
@@ -250,6 +250,17 @@ export default defineConfig({
           ]
         }
       ],
+    }),
+    matomo({
+      enabled: import.meta.env.PROD, // Only load in production
+      host: "https://analytics.thomasbnt.dev/",
+      setCookieDomain: "*.mrrobot.app",
+      trackerUrl: "js/", // defaults to matomo.php
+      srcUrl: "js/", // defaults to matomo.js
+      siteId: 1,
+      heartBeatTimer: 5,
+      disableCookies: true,
+      debug: false,
     }),
   ],
   redirects: {
