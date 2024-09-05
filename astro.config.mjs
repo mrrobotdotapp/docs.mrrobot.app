@@ -15,6 +15,7 @@ const locales = {
 }
 // https://astro.build/config
 export default defineConfig({
+  site: "https://docs.mrrobot.app",
   integrations: [
     starlight({
       title: "Documentation Mr. Robøt",
