@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://docs.mrrobot.app/sitemap.xml
+Sitemap: https://docs.mrrobot.app/sitemap-index.xml
