@@ -9,11 +9,15 @@ Cette commande est réservée aux modérateurs du serveur.
 ## Utilisation
 
 ```
-/banid <id> <raison>
+/banid <id> <raison> <jours>
 ```
 
+- `id` : L'identifiant de l'utilisateur à bannir.
+- `raison` : La raison du bannissement. (Optionnel)
+- `jours` : L'historique du nombre de jours de messages à supprimer concernant l'utilisateur sur le serveur Discord. (Optionnel) (Maximum 7 jours) (Par défaut = 0)
+
 :::note
-Les 7 derniers jours de messages de l'utilisateur seront automatiquement supprimés.
+Aucun message ne sera supprimé si le nombre de jours n'est pas spécifié.
 :::
 
 ## Résultat attendu
