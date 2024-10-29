@@ -1,0 +1,41 @@
+---
+title: Commande /annonce
+description: Découvrez comment utiliser la commande /annonce afin de réaliser des messages d'annonces sur votre serveur Discord de Mr. Robøt.
+sidebar:
+  badge:
+    text: 'Nouveau'
+    variant: tip
+---
+import { Steps } from '@astrojs/starlight/components';
+
+La commande `_bvn` ou `bvn` permet de souhaiter la bienvenue à travers un message.
+
+## Utilisation
+<Steps>
+1. En utilisant la commande `/annonce`, le formulaire suivant apparaîtra :
+
+    ```
+    /annonce <salon>
+    ```
+    - `salon` : Le salon où le message d'annonce sera envoyé, il est optionnel. (*Par défaut = salon courant*)
+
+    ![Formulaire ouvert depuis la commande /annonce sur le robot Discord Mr. Robot app](/img/announce/form.png)
+
+2. Entrez le message d'annonce que vous souhaitez envoyer. (*Requis*)
+
+3. Modifiez la couleur du message si vous le souhaitez format hexadécimal. Si vous renseignez `690014`, cela marche aussi. (*Optionnel*)
+
+4. Ajoutez une URL à votre annonce, celui-ci se transformera en un bouton cliquable, et le titre du bouton sera le titre de la page web. (*Optionnel*)
+   ![Formulaire rempli servant d'exemple depuis la commande /annonce sur le robot Discord Mr. Robot app](/img/announce/formFilled.png)
+
+5. Cliquez sur le bouton `Envoyer` pour envoyer votre annonce.
+
+6. Le message d'annonce sera envoyé dans le salon spécifié avec un message de confirmation visible que par vous ! 🥳
+
+    ![Message d'annonce envoyé dans le salon spécifié depuis la commande /annonce sur le robot Discord Mr. Robot app](/img/announce/preview.png)
+</Steps>
+
+## Permission
+
+Permission par défaut : **Gérer le serveur**.
+
