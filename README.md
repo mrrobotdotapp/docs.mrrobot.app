@@ -8,7 +8,7 @@
 
 For running locally, you'll need [Node.js](https://nodejs.org/en/) installed.
 ```
-yarn run dev
+pnpm run dev
 ```
 
 ## 🚀 Project Structure
