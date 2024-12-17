@@ -116,6 +116,7 @@ export default defineConfig({
       editLink: {
         baseUrl: 'https://github.com/mrrobotdotapp/docs.mrrobot.app/edit/main/',
       },
+      credits: true,
       lastUpdated: true,
       defaultLocale: 'root',
       locales,
