@@ -266,6 +266,7 @@ export default defineConfig({
     }),
   ],
   redirects: {
-    '/logs': '/configuration/logs'
+    '/logs': '/configuration/logs',
+    '/beta': '/getting-started/beta/',
   }
 });
