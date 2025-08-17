@@ -74,10 +74,10 @@
     stream-replace-string "^2.0.0"
     zod "^3.24.2"
 
-"@astrojs/starlight@^0.31.1":
-  version "0.31.1"
-  resolved "https://registry.yarnpkg.com/@astrojs/starlight/-/starlight-0.31.1.tgz#617835c93c466d3d7d4c71d8e270d08ae0d83bce"
-  integrity sha512-VIVkHugwgtEqJPiRH8+ouP0UqUfdmpBO9C64R+6QaQ2qmADNkI/BA3/YAJHTBZYlMQQGEEuLJwD9qpaUovi52Q==
+"@astrojs/starlight@0.32.0":
+  version "0.32.0"
+  resolved "https://registry.yarnpkg.com/@astrojs/starlight/-/starlight-0.32.0.tgz#28a68c177b613440cdf39fe7497112189aa4a847"
+  integrity sha512-RJ+zPeTBlfgZJA3cWl3Nml9RLQhYUupnE0obL3iVxvVKhoCwUJnxmKicPp9EBxSML0TK8X4CUpnEwiC7OtfYwg==
   dependencies:
     "@astrojs/mdx" "^4.0.5"
     "@astrojs/sitemap" "^3.2.1"
@@ -93,6 +93,7 @@
     hastscript "^9.0.0"
     i18next "^23.11.5"
     js-yaml "^4.1.0"
+    klona "^2.0.6"
     mdast-util-directive "^3.0.0"
     mdast-util-to-markdown "^2.1.0"
     mdast-util-to-string "^4.0.0"
@@ -1127,6 +1128,11 @@ chalk@^5.3.0:
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-5.4.1.tgz#1b48bf0963ec158dce2aacf69c093ae2dd2092d8"
   integrity sha512-zgVZuo2WcZgfUEmsn6eO3kINexW8RAE4maiQ8QNs8CtpPCSyMiYsULR3HQYkm3w8FIA3SberyMJMSldGsW+U3w==
 
+change-case@^5.4.4:
+  version "5.4.4"
+  resolved "https://registry.yarnpkg.com/change-case/-/change-case-5.4.4.tgz#0d52b507d8fb8f204343432381d1a6d7bff97a02"
+  integrity sha512-HRQyTk2/YPEkt9TnUPbOpr64Uw3KOicFWPVBb+xiHvd6eBx/qPr9xqfBFDT8P2vWsvvz4jbEkfDe71W3VyNu2w==
+
 character-entities-html4@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/character-entities-html4/-/character-entities-html4-2.1.0.tgz#1f1adb940c971a4b22ba39ddca6b618dc6e56b2b"
@@ -1984,6 +1990,11 @@ kleur@^4.1.5:
   version "4.1.5"
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-4.1.5.tgz#95106101795f7050c6c650f350c683febddb1780"
   integrity sha512-o+NO+8WrRiQEE4/7nwRJhN1HWpVmJm511pBHUxPLtp0BUISzlBplORYSmTclCnJvQq2tKu/sgl3xVpkc7ZWuQQ==
+
+klona@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/klona/-/klona-2.0.6.tgz#85bffbf819c03b2f53270412420a4555ef882e22"
+  integrity sha512-dhG34DXATL5hSxJbIexCft8FChFXtmskoZYnoPWjXQuebWYCNkVeV3KkGegCK9CP1oswI/vQibS2GY7Em/sJJA==
 
 longest-streak@^3.0.0:
   version "3.1.0"
@@ -3287,6 +3298,13 @@ space-separated-tokens@^2.0.0:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/space-separated-tokens/-/space-separated-tokens-2.0.2.tgz#1ecd9d2350a3844572c3f4a312bceb018348859f"
   integrity sha512-PEGlAwrG8yXGXRjW32fGbg66JAlOAwbObuqVoJpv/mRgoWDQfgH1wDPvtzWyUSNAXBGSk8h755YDbbcEy3SH2Q==
+
+starlight-cooler-credit@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/starlight-cooler-credit/-/starlight-cooler-credit-0.4.0.tgz#48d2d53b6a47c14f2da08da14d026bb4f26898ec"
+  integrity sha512-f2BYcZ9NpBcykzJWpC6/aTXDM6X0ztz25ZBexGhU1hI8R1HvlDJwpYPw4bKQUSaI1+pWyaarbehodouh9B7ekw==
+  dependencies:
+    change-case "^5.4.4"
 
 stream-replace-string@^2.0.0:
   version "2.0.0"

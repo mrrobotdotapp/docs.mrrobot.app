@@ -10,11 +10,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.31.1",
-    "@lunariajs/starlight": "^0.1.1",
+    "@astrojs/starlight": "0.32.0",
+    "@lunariajs/starlight": "0.1.1",
     "astro": "^5.1.8",
     "astro-matomo": "^1.7.0",
-    "sharp": "^0.33.5"
+    "sharp": "^0.33.5",
+    "starlight-cooler-credit": "^0.4.0"
   },
   "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
 }
