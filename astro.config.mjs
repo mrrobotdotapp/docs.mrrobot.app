@@ -39,8 +39,8 @@ export default defineConfig({
             },
             href: "https://mrrobot.app/premium",
             description: {
-              fr: "Débloquez des fonctionnalités exclusives.",
-              en: "Unlock exclusive features.",
+              fr: "Débloquez des fonctionnalités exclusives avec un filtre anti-insultes avancées !",
+              en: "Unlock exclusive features with an advanced swear filter!",
             },
           },
         }),
@@ -179,9 +179,11 @@ export default defineConfig({
         },
         {
           label: 'Premium',
+          badge: { text: 'NOUVEAU', variant: 'tip' },
           translations: {
             en: 'Premium',
           },
+
           autogenerate: {directory: 'premium'},
         },
         {
