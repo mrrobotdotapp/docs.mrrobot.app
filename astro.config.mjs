@@ -30,15 +30,17 @@ export default defineConfig({
       plugins: [
         lunaria(),
         starlightCoolerCredit({
+          customImage: './public/img/premium/premium_logo.png',
+          customImageAlt: 'Mr. Robøt Premium Logo',
           credit: {
             title: {
-              en: "Built with Astro",
-              de: "Erstellt mit Astro",
+              fr: "Obtenez Mr. Robøt Premium",
+              en: "Get Mr. Robøt Premium",
             },
-            href: "https://docs.astro.build/",
+            href: "https://mrrobot.app/premium",
             description: {
-              en: "Want to build your own static website?",
-              de: "Willst du deine eigene statische Website erstellen?",
+              fr: "Débloquez des fonctionnalités exclusives.",
+              en: "Unlock exclusive features.",
             },
           },
         }),
