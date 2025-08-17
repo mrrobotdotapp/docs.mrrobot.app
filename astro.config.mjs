@@ -162,6 +162,13 @@ export default defineConfig({
           autogenerate: {directory: 'mod'},
         },
         {
+          label: 'Premium',
+          translations: {
+            en: 'Premium',
+          },
+          autogenerate: {directory: 'premium'},
+        },
+        {
           label: 'Liens utiles',
           collapsed: true,
           translations: {
@@ -268,5 +275,6 @@ export default defineConfig({
   redirects: {
     '/logs': '/configuration/logs',
     '/beta': '/getting-started/beta/',
+    '/premium': '/premium/introduction/',
   }
 });
