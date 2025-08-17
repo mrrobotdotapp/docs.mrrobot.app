@@ -138,7 +138,7 @@ export default defineConfig({
       locales,
       social: {
         github: 'https://github.com/mrrobotdotapp/docs.mrrobot.app',
-        twitter: 'https://twitter.com/MrRobotApp',
+        blueSky: 'https://bsky.app/profile/mrrobot.app',
         discord: 'https://mrrobot.app/discord',
       },
       sidebar: [
