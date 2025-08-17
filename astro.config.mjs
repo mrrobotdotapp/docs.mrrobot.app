@@ -2,6 +2,7 @@ import {defineConfig} from 'astro/config';
 import starlight from '@astrojs/starlight';
 import lunaria from '@lunariajs/starlight';
 import matomo from 'astro-matomo';
+import starlightCoolerCredit from 'starlight-cooler-credit';
 
 const locales = {
   root: {
@@ -28,6 +29,19 @@ export default defineConfig({
       },
       plugins: [
         lunaria(),
+        starlightCoolerCredit({
+          credit: {
+            title: {
+              en: "Built with Astro",
+              de: "Erstellt mit Astro",
+            },
+            href: "https://docs.astro.build/",
+            description: {
+              en: "Want to build your own static website?",
+              de: "Willst du deine eigene statische Website erstellen?",
+            },
+          },
+        }),
       ],
       components: {
         Header: "./src/components/Header.astro",
