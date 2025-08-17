@@ -3,8 +3,7 @@
   "repository": {
     "name": "mrrobotdotapp/docs.mrrobot.app",
     "rootDir": "/src/content/docs",
-    "hosting": "github",
-    "branch": "main"
+    "hosting": "github"
   },
   "files": [
     {
