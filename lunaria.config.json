@@ -2,7 +2,7 @@
   "$schema": "./node_modules/@lunariajs/core/config.schema.json",
   "repository": {
     "name": "mrrobotdotapp/docs.mrrobot.app",
-    "rootDir": "./src/content/docs",
+    "rootDir": "/src/content/docs",
     "hosting": "github",
     "branch": "main"
   },
