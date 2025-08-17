@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@astrojs/starlight": "0.32.0",
-    "@lunariajs/starlight": "^0.1.1",
+    "@lunariajs/starlight": "0.1.1",
     "astro": "^5.1.8",
     "astro-matomo": "^1.7.0",
     "sharp": "^0.33.5",
