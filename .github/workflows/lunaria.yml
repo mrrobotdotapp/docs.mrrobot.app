@@ -25,6 +25,12 @@ jobs:
           # Makes the action clone the entire git history
           fetch-depth: 0
 
+      - name: Unshallow repository
+        run: |
+          if [ -f .git/shallow ]; then
+            git fetch --unshallow origin
+          fi
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
