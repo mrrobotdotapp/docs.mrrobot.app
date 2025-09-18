@@ -2,6 +2,7 @@ import {defineConfig} from 'astro/config';
 import starlight from '@astrojs/starlight';
 import lunaria from '@lunariajs/starlight';
 import matomo from 'astro-matomo';
+import starlightCoolerCredit from 'starlight-cooler-credit';
 
 const locales = {
   root: {
@@ -28,6 +29,21 @@ export default defineConfig({
       },
       plugins: [
         lunaria(),
+        starlightCoolerCredit({
+          customImage: './public/img/premium/premium_logo.png',
+          customImageAlt: 'Mr. Robøt Premium Logo',
+          credit: {
+            title: {
+              fr: "Obtenez Mr. Robøt Premium",
+              en: "Get Mr. Robøt Premium",
+            },
+            href: "https://mrrobot.app/premium",
+            description: {
+              fr: "Débloquez des fonctionnalités exclusives avec un filtre anti-insultes avancées !",
+              en: "Unlock exclusive features with an advanced swear filter!",
+            },
+          },
+        }),
       ],
       components: {
         Header: "./src/components/Header.astro",
@@ -122,7 +138,7 @@ export default defineConfig({
       locales,
       social: {
         github: 'https://github.com/mrrobotdotapp/docs.mrrobot.app',
-        twitter: 'https://twitter.com/MrRobotApp',
+        blueSky: 'https://bsky.app/profile/mrrobot.app',
         discord: 'https://mrrobot.app/discord',
       },
       sidebar: [
@@ -160,6 +176,15 @@ export default defineConfig({
             en: 'Moderation commands',
           },
           autogenerate: {directory: 'mod'},
+        },
+        {
+          label: 'Premium',
+          badge: { text: 'NOUVEAU', variant: 'tip' },
+          translations: {
+            en: 'Premium',
+          },
+
+          autogenerate: {directory: 'premium'},
         },
         {
           label: 'Liens utiles',
@@ -268,5 +293,6 @@ export default defineConfig({
   redirects: {
     '/logs': '/configuration/logs',
     '/beta': '/getting-started/beta/',
+    '/premium': '/premium/introduction/',
   }
 });
