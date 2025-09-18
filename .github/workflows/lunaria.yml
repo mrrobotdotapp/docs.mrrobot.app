@@ -18,12 +18,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
-          # Necessary for Lunaria to work properly
-          # Makes the action clone the entire git history
           fetch-depth: 0
+      
+      - name: Ensure complete Git history
+        run: |
+          git config --global --add safe.directory $PWD
+          if [ -f .git/shallow ]; then
+            git fetch --unshallow origin || echo "Already unshallow"
+          fi
+          git fetch --tags || true
+      
+      - name: Verify Git state
+        run: |
+          echo "Current branch: $(git branch --show-current)"
+          echo "Commit count: $(git rev-list --count HEAD)"
+          git log --oneline -3 || echo "No commits accessible"
 
       - name: Setup Node
         uses: actions/setup-node@v4
