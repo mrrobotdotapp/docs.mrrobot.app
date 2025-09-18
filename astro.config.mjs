@@ -28,7 +28,7 @@ export default defineConfig({
         alt: "Mr. Robøt Logo"
       },
       plugins: [
-        lunaria(),
+        //lunaria(),
         starlightCoolerCredit({
           customImage: './public/img/premium/premium_logo.png',
           customImageAlt: 'Mr. Robøt Premium Logo',
