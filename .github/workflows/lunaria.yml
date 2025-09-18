@@ -25,21 +25,15 @@ jobs:
           # Makes the action clone the entire git history
           fetch-depth: 0
 
-      - name: Unshallow repository
-        run: |
-          if [ -f .git/shallow ]; then
-            git fetch --unshallow origin
-          fi
-
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          cache: npm
 
       - run: npm install
 
       - name: Generate Lunaria Overview
-        uses: yanthomasdev/lunaria-action@main
+        uses: yanthomasdev/lunaria-action@v0.1.0
         with: 
           token: ${{ secrets.MRROBOTDOTAPP_BOT_TOKEN }}
