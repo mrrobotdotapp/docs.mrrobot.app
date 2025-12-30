@@ -29,7 +29,7 @@ export default defineConfig({
       },
       plugins: [
         //lunaria(),
-        starlightCoolerCredit({
+       /* starlightCoolerCredit({
           customImage: './public/img/premium/premium_logo.png',
           customImageAlt: 'Mr. Robøt Premium Logo',
           credit: {
@@ -43,7 +43,7 @@ export default defineConfig({
               en: "Unlock exclusive features with an advanced swear filter!",
             },
           },
-        }),
+        }),*/
       ],
       components: {
         Header: "./src/components/Header.astro",
