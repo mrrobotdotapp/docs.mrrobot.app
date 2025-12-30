@@ -177,15 +177,14 @@ export default defineConfig({
           },
           autogenerate: {directory: 'mod'},
         },
-        {
+       /* {
           label: 'Premium',
           badge: { text: 'NOUVEAU', variant: 'tip' },
           translations: {
             en: 'Premium',
           },
-
           autogenerate: {directory: 'premium'},
-        },
+        },*/
         {
           label: 'Liens utiles',
           collapsed: true,
