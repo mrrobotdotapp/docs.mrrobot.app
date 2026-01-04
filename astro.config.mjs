@@ -264,14 +264,6 @@ export default defineConfig({
               translations: {
                 en: 'Terms of use ↗',
               }
-            },
-            {
-              label: 'Conditions générales de vente ↗',
-              link: 'https://mrrobot.app/cgv',
-              attrs: {target: '_blank', rel: "noreferrer noopener"},
-              translations: {
-                en: 'Terms of sale ↗',
-              }
             }
           ]
         }
