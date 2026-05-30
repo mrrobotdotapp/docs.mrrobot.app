@@ -1,0 +1,29 @@
+---
+title:  Protéger votre serveur contre le spam
+description: "Mr. Robøt : Activer et configurer la protection anti-spam sur votre serveur Discord"
+tableOfContents: false
+sidebar:
+  order: 1
+---
+
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Mr. Robøt intègre une puissante fonctionnalité anti-spam pour protéger votre serveur Discord contre les abus de mentions et le flood de messages identiques. Vous pouvez activer cette protection, configurer les seuils de détection, choisir l'action à effectuer en cas de spam détecté, et même définir des exemptions pour certains rôles ou salons.
+Dans cette section de la documentation, vous apprendrez comment activer et configurer l'anti-spam de Mr. Robøt pour garder votre communauté saine et agréable pour tous les membres.
+
+Plusieurs commandes sont disponibles pour gérer l'anti-spam, chacune avec des fonctionnalités spécifiques :
+
+<CardGrid>
+  <LinkCard title="Activer ou désactiver l'anti-spam"
+            description="Activez ou désactivez la protection anti-spam du robot Discord Mr. Robøt sur votre serveur Discord."
+            href="/configuration/antispam/enable" />
+  <LinkCard title="Configurer les seuils et l'action"
+            description="Définissez les seuils de mentions et de flood, et choisissez l'action du robot Discord en cas de spam détecté."
+            href="/configuration/antispam/configure" />
+  <LinkCard title="Paramétrer les rôles exemptés"
+            description="Configurez les rôles exclus de la vérification anti-spam par le robot Discord Mr. Robøt."
+            href="/configuration/antispam/config-roles" />
+  <LinkCard title="Paramétrer les salons exemptés"
+            description="Configurez les salons Discord exclus de la vérification anti-spam par le robot Mr. Robøt."
+            href="/configuration/antispam/config-channels" />
+</CardGrid>

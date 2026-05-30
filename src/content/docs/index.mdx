@@ -16,7 +16,22 @@ hero:
       icon: external
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+<CardGrid>
+  <LinkCard title="Système de logs"
+            description="Enregistrez les événements de votre serveur Discord : messages supprimés, membres, invitations et plus encore."
+            href="/configuration/logs" />
+  <LinkCard title="Filtre contre les insultes"
+            description="Filtrez automatiquement les messages contenant des insultes sur votre serveur Discord."
+            href="/configuration/swear/config-filter" />
+  <LinkCard title="Protection anti-spam"
+            description="Protégez votre serveur Discord contre le spam de mentions et le flood de messages identiques."
+            href="/configuration/antispam" />
+  <LinkCard title="Commandes utilitaires"
+            description="Annonces, sondages, informations serveur et bien d'autres commandes pour animer votre serveur Discord."
+            href="/utility/announce" />
+</CardGrid>
 
 <CardGrid>
 	<Card title="Sur Bluesky" icon="blueSky">

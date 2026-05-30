@@ -1,0 +1,93 @@
+---
+title: Configurer les seuils et l'action
+description: "Configurer les seuils de détection et l'action anti-spam sur votre serveur Discord"
+sidebar:
+  order: 3
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+```
+/paramètres-antispam gérer:Configurer les seuils et l'action
+```
+
+![Interface de configuration des seuils et de l'action anti-spam](/img/antispam/antispam-conf.png)
+
+## Seuils de détection
+
+### Mentions max
+
+**Valeur par défaut :** `5` — **Plage :** **Désactivé**, ou **2** à **20**
+
+Nombre de mentions (utilisateurs + rôles) tolérées dans un seul message. Sélectionner `Désactivé` pour désactiver complètement la détection des mentions.
+
+### Messages identiques
+
+**Valeur par défaut :** `5` — **Plage :** **3** à **20**
+
+Nombre de messages identiques tolérés dans la fenêtre temporelle avant déclenchement.
+
+### Fenêtre temporelle
+
+**Valeur par défaut :** `10 secondes` — **Plage :**  **5** à **120** secondes
+
+Durée pendant laquelle les doublons sont comptabilisés pour détecter le flood.
+
+## Action
+
+Quand du spam est détecté, Mr. Robøt peut effectuer l'une de ces trois actions :
+
+![Les différentes actions de l'anti-spam](/img/antispam/antispam-conf-action-list.png)
+
+### Supprimer silencieusement
+
+Supprime silencieusement le message, sans notification dans le salon.
+
+### Supprimer et avertir
+
+Supprime le message et envoie un avertissement dans le salon. Le message d'avertissement est automatiquement supprimé après **8 secondes**.
+
+### Exclure temporairement
+
+Supprime le message, exclut temporairement le membre pour la durée configurée, et envoie un log via webhook.
+
+<Aside type="caution" title="Permission requise">
+  L'action **Exclure temporairement** (timeout) nécessite que le robot dispose de la permission **Modérer les membres**.
+</Aside>
+
+### Durée de l'exclusion temporaire
+
+Disponible uniquement si l'action choisie est **Exclure temporairement** (timeout) :
+
+- 1 minute
+- 5 minutes
+- 10 minutes
+- 30 minutes
+- 1 heure
+- 24 heures
+
+## Exemptions
+
+### Rôles exemptés
+
+Les membres possédant au moins un rôle exempté ne sont jamais vérifiés, quelle que soit leur activité.
+
+[→ Configurer les rôles exemptés](/configuration/antispam/config-roles)
+
+### Salons exemptés
+
+Les messages envoyés dans un salon exempté ne sont jamais vérifiés.
+
+[→ Configurer les salons exemptés](/configuration/antispam/config-channels)
+
+<Aside type="note">
+  Les exemptions de rôle sont évaluées avant celles de salon.
+</Aside>
+
+## Logs webhook
+
+Lorsque du spam est détecté, un log est automatiquement envoyé via webhook. Si l'action choisie est **Exclure temporairement** (timeout), un second log est envoyé pour signaler l'exclusion temporaire du membre.
+
+## Permission de la commande
+
+Permission par défaut : **Gérer le serveur**.
