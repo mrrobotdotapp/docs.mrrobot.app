@@ -1,0 +1,30 @@
+---
+title: Paramétrer les rôles exemptés
+description: "Configurer les rôles exemptés de la protection anti-spam sur votre serveur Discord"
+sidebar:
+  order: 4
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+Vous pouvez **configurer les rôles** dont les membres ne seront jamais vérifiés par l'anti-spam, quelle que soit leur activité.
+
+```
+/paramètres-antispam gérer:Paramétrer les rôles exemptés
+```
+
+La sélection se fait via un menu multi-choix. Vous pouvez ajouter jusqu'à **20 rôles** exemptés.
+
+![Exemple de configuration des rôles exemptés](/img/antispam/conf-roles.png)
+
+<Aside type="note" title="Par défaut">
+  Aucun rôle n'est exempté par défaut, ce qui signifie que l'anti-spam s'applique à tous les membres de votre serveur.
+</Aside>
+
+<Aside type="tip">
+  Les exemptions de rôle sont évaluées **avant** celles de salon.
+</Aside>
+
+## Permission
+
+Permission par défaut : **Gérer le serveur**.

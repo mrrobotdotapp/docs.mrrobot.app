@@ -1,0 +1,60 @@
+---
+title: Activer l'anti-spam sur Discord
+description: 'Activer ou désactiver la protection anti-spam sur votre serveur Discord'
+sidebar:
+  order: 2
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+Mr. Robøt surveille les messages en temps réel et peut agir automatiquement contre le spam de mentions et le flood de messages identiques.
+
+## Activation
+
+Utilisez la commande suivante puis cliquez sur le bouton d'activation :
+
+```
+/paramètres-antispam gérer:Activer ou désactiver l'anti-spam
+```
+
+<Aside type="note" title="Par défaut">
+  L'anti-spam est **désactivé** par défaut.
+</Aside>
+
+## Ce que détecte l'anti-spam
+
+### Spam de mentions
+
+Déclenché quand un seul message dépasse le seuil configuré de mentions. Les mentions d'utilisateurs et de rôles sont comptées ensemble.
+
+Par exemple, si le seuil est à **5**, un message contenant **6 mentions ou plus** sera considéré comme du spam.
+
+### Flood de messages identiques
+
+Déclenché quand un même utilisateur envoie plusieurs messages au contenu identique dans un court laps de temps. La comparaison est insensible à la casse et ignore les espaces superflus.
+
+Par exemple, si le seuil est à **5** dans une fenêtre de **10 secondes**, le 5ème message identique envoyé en moins de 10 secondes déclenchera l'anti-spam.
+
+## Fonctionnement
+
+Lors de la réception d'un message, Mr. Robøt vérifie dans cet ordre :
+
+1. L'utilisateur possède-t-il un rôle exempté ? → arrêt si oui
+2. Le message est-il envoyé dans un salon exempté ? → arrêt si oui
+3. Le message dépasse-t-il le seuil de mentions ? → action si oui
+4. L'utilisateur est-il en train de flooder ? → action si oui
+
+## Permissions du robot
+
+Pour que l'anti-spam fonctionne, Mr. Robøt doit disposer des permissions suivantes :
+
+- **Gérer les messages** — requis pour les actions : Supprimer les messages et envoyer des avertissements
+- **Modérer les membres** — requis uniquement pour l'action **Exclure temporairement** (timeout)
+
+<Aside type="note">
+  Si le robot manque d'une permission, l'action échoue silencieusement sans message d'erreur.
+</Aside>
+
+## Permission de la commande
+
+Permission par défaut : **Gérer le serveur**.

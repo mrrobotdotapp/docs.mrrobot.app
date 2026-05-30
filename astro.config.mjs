@@ -162,7 +162,7 @@ export default defineConfig({
           items: [{ autogenerate: { directory: "getting-started" } }],
         },
         {
-          label: "Système des logs",
+          label: "Système de logs",
           translations: {
             en: "Logs system",
           },
@@ -171,9 +171,16 @@ export default defineConfig({
         {
           label: "Filtre contre les insultes",
           translations: {
-            en: "Swear filter",
+            en: "Profanity filter",
           },
           items: [{ autogenerate: { directory: "configuration/swear" } }],
+        },
+        {
+          label: "Protection anti-spam",
+          translations: {
+            en: "Spam protection",
+          },
+          items: [{ autogenerate: { directory: "configuration/antispam" } }],
         },
         {
           label: "Commandes utilitaires",
@@ -295,6 +302,7 @@ export default defineConfig({
   ],
   redirects: {
     "/logs": "/configuration/logs",
+    "/antispam": "/configuration/antispam",
     "/beta": "/getting-started/beta/",
     "/premium": "/premium/introduction/",
   },

@@ -1,0 +1,26 @@
+---
+title: Paramétrer les salons exemptés
+description: "Configurer les salons exemptés de la protection anti-spam sur votre serveur Discord"
+sidebar:
+  order: 5
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+Vous pouvez **configurer les salons** dans lesquels les messages ne seront jamais vérifiés par l'anti-spam.
+
+```
+/paramètres-antispam gérer:Paramétrer les salons exemptés
+```
+
+La sélection se fait via un menu multi-choix. Vous pouvez ajouter jusqu'à **20 salons textuels** exemptés.
+
+![Exemple de configuration des salons exemptés](/img/antispam/conf-channels.png)
+
+<Aside type="note" title="Par défaut">
+  Aucun salon n'est exempté par défaut, ce qui signifie que l'anti-spam s'applique dans tous les salons de votre serveur.
+</Aside>
+
+## Permission
+
+Permission par défaut : **Gérer le serveur**.
