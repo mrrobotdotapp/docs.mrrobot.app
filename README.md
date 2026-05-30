@@ -27,8 +27,8 @@ Inside your Starlight project, you'll see the following folders and files:
 │  │  ├── favicon.png
 │  │  ├── title_logo_dark.svg
 │  │  └── title_logo_light.svg
+│  ├── content.config.ts
 │  ├── content
-│  │  ├── config.ts
 │  │  └── docs
 │  │      ├── 404.mdx
 │  │      ├── configuration
@@ -56,7 +56,7 @@ Static assets, like favicons, can be placed in the `public/` directory.
 
 ## 📝 Editing Content
 
-To edit the content of your site, simply edit the `.md` or `.mdx` files in `src/content/docs/`. You can add new files or directories to create new pages. You can also edit the `src/content/config.ts` file to change the site title, description, and navigation links.
+To edit the content of your site, simply edit the `.md` or `.mdx` files in `src/content/docs/`. You can add new files or directories to create new pages. You can also edit the `src/content.config.ts` file to change the site title, description, and navigation links.
 
 ## Internationalization
 
@@ -66,7 +66,7 @@ To edit the content of your site, simply edit the `.md` or `.mdx` files in `src/
 > [→ Click here to see the dashboard i18n](https://docs.mrrobot.app/lunaria/)
 
 Starlight supports internationalization out of the box. To add a new language, create a new directory in `src/content/` with the [ISO 639-1 language code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). For example, `en` for English or `fr` for French.
-Then, add a new entry to the `locales` object in `src/content/config.ts`:
+Then, add a new entry to the `locales` object in `astro.config.mjs`:
 
 ```diff
 locales: {
