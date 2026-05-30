@@ -1,35 +1,35 @@
-import {defineConfig} from 'astro/config';
-import starlight from '@astrojs/starlight';
-import lunaria from '@lunariajs/starlight';
-import matomo from 'astro-matomo';
-import starlightCoolerCredit from 'starlight-cooler-credit';
+import { defineConfig } from "astro/config";
+import starlight from "@astrojs/starlight";
+import lunaria from "@lunariajs/starlight";
+import matomo from "astro-matomo";
+import starlightCoolerCredit from "starlight-cooler-credit";
 
 const locales = {
   root: {
-    label: 'Français',
-    lang: 'fr',
+    label: "Français",
+    lang: "fr",
   },
   en: {
-    label: 'English',
-    lang: 'en',
-  }
-}
+    label: "English",
+    lang: "en",
+  },
+};
 // https://astro.build/config
 export default defineConfig({
   site: "https://docs.mrrobot.app",
   integrations: [
     starlight({
       title: "Documentation Mr. Robøt",
-      titleDelimiter: ' — ',
+      titleDelimiter: " — ",
       logo: {
-        light: './src/assets/title_logo_light.svg',
-        dark: './src/assets/title_logo_dark.svg',
+        light: "./src/assets/title_logo_light.svg",
+        dark: "./src/assets/title_logo_dark.svg",
         replacesTitle: true,
-        alt: "Mr. Robøt Logo"
+        alt: "Mr. Robøt Logo",
       },
       plugins: [
         //lunaria(),
-       /* starlightCoolerCredit({
+        /* starlightCoolerCredit({
           customImage: './public/img/premium/premium_logo.png',
           customImageAlt: 'Mr. Robøt Premium Logo',
           credit: {
@@ -51,133 +51,145 @@ export default defineConfig({
       },
       head: [
         {
-          tag: 'meta',
+          tag: "meta",
           attrs: {
-            name: 'theme-color',
-            content: '#311839',
+            name: "theme-color",
+            content: "#311839",
           },
         },
         {
-          tag: 'meta',
+          tag: "meta",
           attrs: {
-            name: 'twitter:card',
-            content: 'summary_large_image',
+            name: "twitter:card",
+            content: "summary_large_image",
           },
         },
         {
-          tag: 'meta',
+          tag: "meta",
           attrs: {
-            property: 'og:title',
-            content: 'Documentation Mr. Robøt',
+            property: "og:title",
+            content: "Documentation Mr. Robøt",
           },
         },
         {
-          tag: 'meta',
+          tag: "meta",
           attrs: {
-            property: 'og:description',
-            content: 'Documentation du robot Discord Mr. Robøt',
+            property: "og:description",
+            content: "Documentation du robot Discord Mr. Robøt",
           },
         },
         {
-          tag: 'meta',
+          tag: "meta",
           attrs: {
-            property: 'og:image',
-            content: 'https://docs.mrrobot.app/banner_seo.png',
+            property: "og:image",
+            content: "https://docs.mrrobot.app/banner_seo.png",
           },
         },
         {
-          tag: 'meta',
+          tag: "meta",
           attrs: {
-            property: 'twitter:image',
-            content: 'https://docs.mrrobot.app/banner_seo.png',
+            property: "twitter:image",
+            content: "https://docs.mrrobot.app/banner_seo.png",
           },
         },
         {
-          tag: 'meta',
+          tag: "meta",
           attrs: {
-            property: 'twitter:site',
-            content: '@MrRobotApp',
+            property: "twitter:site",
+            content: "@MrRobotApp",
           },
         },
         {
-          tag: 'meta',
+          tag: "meta",
           attrs: {
-            property: 'twitter:creator',
-            content: '@MrRobotApp',
+            property: "twitter:creator",
+            content: "@MrRobotApp",
           },
         },
         {
-          tag: 'meta',
+          tag: "meta",
           attrs: {
-            property: 'og:url',
-            content: 'https://docs.mrrobot.app',
+            property: "og:url",
+            content: "https://docs.mrrobot.app",
           },
         },
         {
-          tag: 'meta',
+          tag: "meta",
           attrs: {
-            property: 'og:type',
-            content: 'website',
+            property: "og:type",
+            content: "website",
           },
         },
         {
-          tag: 'link',
+          tag: "link",
           attrs: {
-            rel: 'monetization',
-            href: 'https://ilp.uphold.com/ZrmQjNMeaZFJ',
+            rel: "monetization",
+            href: "https://ilp.uphold.com/ZrmQjNMeaZFJ",
           },
-        }
+        },
       ],
-      customCss: ['./src/assets/css/hello.css'],
+      customCss: ["./src/assets/css/hello.css"],
       editLink: {
-        baseUrl: 'https://github.com/mrrobotdotapp/docs.mrrobot.app/edit/main/',
+        baseUrl: "https://github.com/mrrobotdotapp/docs.mrrobot.app/edit/main/",
       },
       credits: true,
       lastUpdated: true,
-      defaultLocale: 'root',
+      defaultLocale: "root",
       locales,
-      social: {
-        github: 'https://github.com/mrrobotdotapp/docs.mrrobot.app',
-        blueSky: 'https://bsky.app/profile/mrrobot.app',
-        discord: 'https://mrrobot.app/discord',
-      },
+      social: [
+        {
+          icon: "github",
+          label: "GitHub",
+          href: "https://github.com/mrrobotdotapp/docs.mrrobot.app",
+        },
+        {
+          icon: "blueSky",
+          label: "BlueSky",
+          href: "https://bsky.app/profile/mrrobot.app",
+        },
+        {
+          icon: "discord",
+          label: "Discord",
+          href: "https://mrrobot.app/discord",
+        },
+      ],
       sidebar: [
         {
-          label: 'Démarrage',
+          label: "Démarrage",
           translations: {
-            en: 'Getting started',
+            en: "Getting started",
           },
-          autogenerate: {directory: 'getting-started'},
+          items: [{ autogenerate: { directory: "getting-started" } }],
         },
         {
-          label: 'Système des logs',
+          label: "Système des logs",
           translations: {
-            en: 'Logs system',
+            en: "Logs system",
           },
-          autogenerate: {directory: 'configuration/logs'},
+          items: [{ autogenerate: { directory: "configuration/logs" } }],
         },
         {
-          label: 'Filtre contre les insultes',
+          label: "Filtre contre les insultes",
           translations: {
-            en: 'Swear filter',
+            en: "Swear filter",
           },
-          autogenerate: {directory: 'configuration/swear'},
+          items: [{ autogenerate: { directory: "configuration/swear" } }],
         },
         {
-          label: 'Commandes utilitaires',
+          label: "Commandes utilitaires",
           translations: {
-            en: 'Utility commands',
+            en: "Utility commands",
           },
-          autogenerate: {directory: 'utility'},
+          items: [{ autogenerate: { directory: "utility" } }],
         },
         {
-          label: 'Commandes de modération',
+          label: "Commandes de modération",
           translations: {
-            en: 'Moderation commands',
+            en: "Moderation commands",
           },
-          autogenerate: {directory: 'mod'},
+          items: [{ autogenerate: { directory: "mod" } }],
         },
-       /* {
+        /* {
           label: 'Premium',
           badge: { text: 'NOUVEAU', variant: 'tip' },
           translations: {
@@ -186,87 +198,87 @@ export default defineConfig({
           autogenerate: {directory: 'premium'},
         },*/
         {
-          label: 'Liens utiles',
+          label: "Liens utiles",
           collapsed: true,
           translations: {
-            en: 'Useful links',
+            en: "Useful links",
           },
           items: [
             {
-              label: 'Site web ↗',
-              link: 'https://mrrobot.app',
-              attrs: {target: '_blank', rel: "noreferrer noopener"},
+              label: "Site web ↗",
+              link: "https://mrrobot.app",
+              attrs: { target: "_blank", rel: "noreferrer noopener" },
               translations: {
-                en: 'Website ↗',
-              }
+                en: "Website ↗",
+              },
             },
             {
-              label: 'À propos ↗',
-              link: 'https://mrrobot.app/about',
-              attrs: {target: '_blank', rel: "noreferrer noopener"},
+              label: "À propos ↗",
+              link: "https://mrrobot.app/about",
+              attrs: { target: "_blank", rel: "noreferrer noopener" },
               translations: {
-                en: 'About ↗',
-              }
+                en: "About ↗",
+              },
             },
             {
-              label: 'Changelogs ↗',
-              link: 'https://mrrobot.app/changelog',
-              attrs: {target: '_blank', rel: "noreferrer noopener"},
+              label: "Changelogs ↗",
+              link: "https://mrrobot.app/changelog",
+              attrs: { target: "_blank", rel: "noreferrer noopener" },
               translations: {
-                en: 'Changelogs ↗',
-              }
+                en: "Changelogs ↗",
+              },
             },
             {
-              label: 'Serveur Discord ↗',
-              link: 'https://mrrobot.app/discord',
-              attrs: {target: '_blank', rel: "noreferrer noopener"},
+              label: "Serveur Discord ↗",
+              link: "https://mrrobot.app/discord",
+              attrs: { target: "_blank", rel: "noreferrer noopener" },
               translations: {
-                en: 'Discord server ↗',
-              }
+                en: "Discord server ↗",
+              },
             },
             {
-              label: 'Contacter par e-mail ↗',
-              link: 'https://tally.so/r/3NyOlm',
-              attrs: {target: '_blank', rel: "noreferrer noopener"},
+              label: "Contacter par e-mail ↗",
+              link: "https://tally.so/r/3NyOlm",
+              attrs: { target: "_blank", rel: "noreferrer noopener" },
               translations: {
-                en: 'Contact us by e-mail ↗',
-              }
+                en: "Contact us by e-mail ↗",
+              },
             },
-          ]
+          ],
         },
         {
-          label: 'Légal',
+          label: "Légal",
           collapsed: true,
           translations: {
-            en: 'Legal',
+            en: "Legal",
           },
           items: [
             {
-              label: 'Mentions légales ↗',
-              link: 'https://mrrobot.app/mentions',
-              attrs: {target: '_blank', rel: "noreferrer noopener"},
+              label: "Mentions légales ↗",
+              link: "https://mrrobot.app/mentions",
+              attrs: { target: "_blank", rel: "noreferrer noopener" },
               translations: {
-                en: 'Legals Mentions ↗',
-              }
+                en: "Legals Mentions ↗",
+              },
             },
             {
-              label: 'Politique de confidentialité ↗',
-              link: 'https://mrrobot.app/privacy',
-              attrs: {target: '_blank', rel: "noreferrer noopener"},
+              label: "Politique de confidentialité ↗",
+              link: "https://mrrobot.app/privacy",
+              attrs: { target: "_blank", rel: "noreferrer noopener" },
               translations: {
-                en: 'Privacy ↗',
-              }
+                en: "Privacy ↗",
+              },
             },
             {
-              label: 'Conditions d\'utilisation ↗',
-              link: 'https://mrrobot.app/terms',
-              attrs: {target: '_blank', rel: "noreferrer noopener"},
+              label: "Conditions d'utilisation ↗",
+              link: "https://mrrobot.app/terms",
+              attrs: { target: "_blank", rel: "noreferrer noopener" },
               translations: {
-                en: 'Terms of use ↗',
-              }
-            }
-          ]
-        }
+                en: "Terms of use ↗",
+              },
+            },
+          ],
+        },
       ],
     }),
     matomo({
@@ -282,8 +294,8 @@ export default defineConfig({
     }),
   ],
   redirects: {
-    '/logs': '/configuration/logs',
-    '/beta': '/getting-started/beta/',
-    '/premium': '/premium/introduction/',
-  }
+    "/logs": "/configuration/logs",
+    "/beta": "/getting-started/beta/",
+    "/premium": "/premium/introduction/",
+  },
 });

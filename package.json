@@ -10,9 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/starlight": "0.32.0",
+    "@astrojs/starlight": "0.39.2",
     "@lunariajs/starlight": "0.1.1",
-    "astro": "^5.15.9",
+    "astro": "6.4.2",
     "astro-matomo": "^1.7.0",
     "sharp": "^0.33.5",
     "starlight-cooler-credit": "^0.4.0"
