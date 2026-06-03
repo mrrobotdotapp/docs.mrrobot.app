@@ -1,0 +1,66 @@
+---
+title: Deprecation of whois.mrrobot.app
+description: The whois.mrrobot.app website is deprecated. Use the /whois command from Mr. Robøt directly in Discord instead.
+sidebar:
+  badge:
+    text: 'Deprecated'
+    variant: caution
+---
+
+import { LinkCard } from '@astrojs/starlight/components';
+
+:::danger[Service shut down]
+**[whois.mrrobot.app](https://whois.mrrobot.app) is deprecated and no longer available.** The service has been permanently shut down. Use the `/whois` command from Mr. Robøt directly in Discord instead.
+:::
+
+## What was whois.mrrobot.app?
+
+**whois.mrrobot.app** was an open source website that allowed you to retrieve information about a Discord user or bot from their ID, without needing to be connected to Discord.
+
+### Features
+
+- Full information: ID, username, discriminator, account creation date, number of days since creation.
+- If the target is a bot, you could add it directly from the page.
+- **PWA & TWA ready** — can be converted into an Android app.
+- Full Discord profile display.
+- Good performance and accessibility.
+
+### Preview
+
+![Preview of the home page](https://user-images.githubusercontent.com/14293805/162551251-c0976578-cb35-45cb-b2e3-dc667e57b003.png)
+
+![Preview of a profile](https://user-images.githubusercontent.com/14293805/162551265-2af18a7e-decf-4f96-9449-e585ba6d8535.png)
+
+## Source code
+
+The project is archived and available on GitHub for reference.
+
+:::caution[Contributions closed]
+The repository is read-only. No contributions are accepted.
+:::
+
+<LinkCard
+  title="GitHub repository"
+  description="Browse the archived source code of whois.mrrobot.app."
+  href="https://github.com/mrrobotdotapp/Whois"
+/>
+
+## Why was this service shut down?
+
+You can still look up information about a Discord user directly via the `/whois` command in Mr. Robøt, without leaving Discord.
+
+For transparency, whois.mrrobot.app was also shut down to remain compliant with the **Discord API Terms of Service**. This type of tool allowed profile lookups without a shared server, which bypasses Discord's visibility rules and can facilitate harassment, doxxing, or user targeting.
+
+## What is the alternative?
+
+Use the `/whois` command from Mr. Robøt directly in your Discord server. You can target a user by mention or by ID.
+
+```
+/whois @user
+```
+
+<LinkCard
+  title="/whois command documentation"
+  description="Read the full guide for the /whois command in Mr. Robøt."
+  href="/utility/whois"
+/>

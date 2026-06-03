@@ -1,0 +1,66 @@
+---
+title: Dépréciation de whois.mrrobot.app
+description: Le site whois.mrrobot.app est déprécié. Utilisez désormais la commande /whois de Mr. Robøt directement dans Discord.
+sidebar:
+  badge:
+    text: 'Déprécié'
+    variant: caution
+---
+
+import { LinkCard } from '@astrojs/starlight/components';
+
+:::danger[Service arrêté]
+**[whois.mrrobot.app](https://whois.mrrobot.app) est déprécié et n'est plus disponible.** Le service a été arrêté définitivement. Utilisez la commande `/whois` de Mr. Robøt directement dans Discord à la place.
+:::
+
+## Qu'était whois.mrrobot.app ?
+
+**whois.mrrobot.app** était un site web open source permettant d'obtenir des informations sur un utilisateur ou robot Discord à partir de son identifiant, sans avoir besoin d'être connecté à Discord.
+
+### Fonctionnalités
+
+- Informations complètes : identifiant, nom d'utilisateur, discriminateur, date de création du compte, nombre de jours depuis la création.
+- Si la cible est un robot, possibilité d'ajouter directement le robot depuis la page.
+- Compatible **PWA & TWA** — transformable en application Android.
+- Affichage du profil Discord complet.
+- Bonnes performances et accessibilité.
+
+### Aperçu
+
+![Aperçu de la page d'accueil](https://user-images.githubusercontent.com/14293805/162551251-c0976578-cb35-45cb-b2e3-dc667e57b003.png)
+
+![Aperçu d'un profil](https://user-images.githubusercontent.com/14293805/162551265-2af18a7e-decf-4f96-9449-e585ba6d8535.png)
+
+## Code source
+
+Le projet est archivé et disponible sur GitHub à titre de référence.
+
+:::caution[Contributions fermées]
+Le dépôt est en lecture seule. Aucune contribution n'est acceptée.
+:::
+
+<LinkCard
+  title="Dépôt GitHub"
+  description="Consulter le code source archivé de whois.mrrobot.app."
+  href="https://github.com/mrrobotdotapp/Whois"
+/>
+
+## Pourquoi ce service est-il arrêté ?
+
+Vous pouvez toujours consulter les informations d'un utilisateur Discord directement via la commande `/whois` de Mr. Robøt, sans quitter Discord.
+
+Par souci de transparence, whois.mrrobot.app a également été arrêté pour rester en conformité avec les **conditions d'utilisation de l'API Discord**. Ce type d'outil permettait de rechercher des profils sans serveur commun, ce qui contourne les règles de visibilité de Discord et peut faciliter le harcèlement, le doxxing ou le ciblage d'utilisateurs.
+
+## Quelle est l'alternative ?
+
+Utilisez la commande `/whois` de Mr. Robøt directement dans votre serveur Discord. Vous pouvez cibler un utilisateur par mention ou par identifiant.
+
+```
+/whois @utilisateur
+```
+
+<LinkCard
+  title="Documentation de la commande /whois"
+  description="Consulter le guide complet de la commande /whois de Mr. Robøt."
+  href="/utility/whois"
+/>
