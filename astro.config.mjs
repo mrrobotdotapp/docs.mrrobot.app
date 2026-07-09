@@ -156,41 +156,55 @@ export default defineConfig({
       sidebar: [
         {
           label: "Démarrage",
+          collapsed: true,
           translations: {
             en: "Getting started",
           },
           items: [{ autogenerate: { directory: "getting-started" } }],
         },
         {
-          label: "Système de logs",
+          label: "Configuration",
+          collapsed: true,
           translations: {
-            en: "Logs system",
+            en: "Configuration",
           },
-          items: [{ autogenerate: { directory: "configuration/logs" } }],
-        },
-        {
-          label: "Filtre contre les insultes",
-          translations: {
-            en: "Profanity filter",
-          },
-          items: [{ autogenerate: { directory: "configuration/swear" } }],
-        },
-        {
-          label: "Protection anti-spam",
-          translations: {
-            en: "Spam protection",
-          },
-          items: [{ autogenerate: { directory: "configuration/antispam" } }],
-        },
-        {
-          label: "Honeypot",
-          translations: {
-            en: "Honeypot",
-          },
-          items: [{ autogenerate: { directory: "configuration/honeypot" } }],
+          items: [
+            {
+              label: "Système de logs",
+              collapsed: true,
+              translations: {
+                en: "Logs system",
+              },
+              items: [{ autogenerate: { directory: "configuration/logs" } }],
+            },
+            {
+              label: "Filtre contre les insultes",
+              collapsed: true,
+              translations: {
+                en: "Profanity filter",
+              },
+              items: [{ autogenerate: { directory: "configuration/swear" } }],
+            },
+            {
+              label: "Protection anti-spam",
+              collapsed: true,
+              translations: {
+                en: "Spam protection",
+              },
+              items: [{ autogenerate: { directory: "configuration/antispam" } }],
+            },
+            {
+              label: "Honeypot",
+              link: "/configuration/honeypot/",
+              translations: {
+                en: "Honeypot",
+              },
+            },
+          ],
         },
         {
           label: "Commandes utilitaires",
+          collapsed: false,
           translations: {
             en: "Utility commands",
           },
@@ -198,6 +212,7 @@ export default defineConfig({
         },
         {
           label: "Commandes de modération",
+          collapsed: false,
           translations: {
             en: "Moderation commands",
           },
