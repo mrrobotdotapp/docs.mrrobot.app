@@ -1,0 +1,65 @@
+---
+title: Protéger votre serveur avec le honeypot
+description: "Mr. Robøt : Activer et configurer le honeypot, un piège anti-spam pour bannir automatiquement les robots"
+sidebar:
+  order: 1
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+Le **honeypot** est un piège à robots spammeurs : un salon "invisible" aux yeux des membres légitimes, mais que les robots de spam trouvent et dans lequel ils écrivent automatiquement. Dès qu'un message y est envoyé, Mr. Robøt supprime le message et **bannit immédiatement** son auteur.
+
+## Activation
+
+<Steps>
+1. Ajouter [le robot sur votre serveur Discord](https://mrrobot.app/add)
+
+2. Exécuter la commande
+    ```
+    /paramètres-honeypot
+    ```
+
+3. Choisir l'une des deux options depuis le panneau affiché :
+    - **Sélectionner un salon existant** dans le menu déroulant pour l'utiliser comme piège
+    - **Créer un salon automatiquement** via le bouton dédié (nommé `ne-pas-écrire-XXXXX`, visible par tout le monde)
+</Steps>
+
+<Aside type="note" title="Par défaut">
+  Le honeypot est **désactivé** par défaut. Sélectionner ou créer un salon l'active automatiquement ; retirer le salon le désactive.
+</Aside>
+
+## Fonctionnement
+
+Quand un message est envoyé dans le salon piège :
+
+1. Le message est supprimé
+2. L'auteur est banni du serveur (les messages des 7 derniers jours sont supprimés)
+3. Le compteur de membres piégés affiché dans le salon est mis à jour
+
+<Aside type="caution">
+  Le propriétaire du serveur ainsi que les membres possédant la permission **Gérer les messages** (staff/modération) sont automatiquement exemptés : leur message n'est pas supprimé et ils ne sont pas bannis.
+</Aside>
+
+## Activer ou désactiver sans changer de salon
+
+Depuis le panneau `/paramètres-honeypot`, un bouton permet d'activer ou de désactiver le honeypot sans retirer le salon configuré.
+
+## Logs
+
+Si vous avez [activé les logs](/configuration/logs) et l'évènement **Honeypot déclenché**, chaque bannissement déclenché par le honeypot est envoyé dans votre salon de logs, avec le membre concerné, la date de création de son compte et le salon piège concerné. Les changements de configuration du honeypot (salon choisi, création, activation/désactivation) suivent ce même évènement.
+
+## Permissions du robot
+
+Pour que le honeypot fonctionne correctement, Mr. Robøt doit disposer des permissions suivantes :
+
+- **Gérer les messages** — requis pour supprimer le message envoyé dans le salon piège
+- **Bannir des membres** — requis pour bannir l'auteur du message
+- **Gérer les salons** — requis uniquement pour la création automatique du salon piège
+
+<Aside type="note">
+  Si le robot manque d'une permission, l'action échoue silencieusement et l'erreur est visible uniquement dans le panneau `/paramètres-honeypot` (pas de log envoyé).
+</Aside>
+
+## Permission de la commande
+
+Permission par défaut : **Gérer le serveur**.
