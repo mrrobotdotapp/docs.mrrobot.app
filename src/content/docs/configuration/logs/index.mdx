@@ -22,16 +22,13 @@ Vous pouvez choisir les évènements à logger et le salon textuel où les logs 
 
 2. Exécuter la commande
     ```
-    /paramètres-logs Menu principal
+    /paramètres-logs
     ```
 
-3. Suivre les instructions du robot pour configurer les logs en choisissant les évènements à logger
+3. Un salon de logs (webhook) est créé automatiquement si aucun n'existe encore, puis choisir les évènements à logger dans le menu déroulant du panneau affiché
     ![Message de Mr. Robøt pour configurer les évènements à logger](/img/logs-add-remove-events.png)
 
-4. Tester si vous le souhaitez la connexion du robot avec la commande
-    ```
-    /paramètres-logs Tester la connexion du Webhook
-    ```
+4. Tester si vous le souhaitez la connexion en cliquant sur le bouton **Tester le webhook** du même panneau
 </Steps>
 
 ## Déplacer le salon des logs
@@ -51,14 +48,11 @@ Oh... ça peut arriver, pas de panique ! Pour régénérer le webhook, suivez le
 <Steps>
   1. Exécutez la commande
       ```
-      /paramètres-logs Menu principal
+      /paramètres-logs
       ```
   2. Vous devriez voir un message vous indiquant le nouveau salon des logs et une aide, ainsi qu'un message qui s'envoie dans le salon des logs.
      ![Message du robot Discord indiquant les étapes à suivre pour configurer salon des logs](/img/logs_generate_webhook_first_time.png)
-  3. Vous pouvez également tester la connexion du webhook avec la commande
-      ```
-      /paramètres-logs Tester la connexion du Webhook
-      ```
+  3. Vous pouvez également tester la connexion du webhook en cliquant sur le bouton **Tester le webhook** du panneau affiché
   4. Tout est bon, vous avez régénéré le webhook avec succès ! 🎉
 </Steps>
 
@@ -70,8 +64,8 @@ Veuillez vérifiez :
 - Que le robot a bien [les permissions nécessaires](#la-permission-gérer-les-webhooks)
 - Que le robot est bien connecté à votre serveur Discord
 - Que vous avez bien suivi les instructions du robot
-- Que vous avez bien choisi les évènements à logger, vous pouvez voir la liste des évènements disponibles avec la commande `/paramètres-logs Menu principal`
-- Que le salon textuel choisi pour les logs est toujours présent, si ce n'est plus le cas, régénérez le webhook avec la commande `/paramètres-logs Menu principal`
+- Que vous avez bien choisi les évènements à logger, vous pouvez voir la liste des évènements disponibles avec la commande `/paramètres-logs`
+- Que le salon textuel choisi pour les logs est toujours présent, si ce n'est plus le cas, régénérez le webhook avec la commande `/paramètres-logs`
 
 ## La permission Gérer les webhooks
 
