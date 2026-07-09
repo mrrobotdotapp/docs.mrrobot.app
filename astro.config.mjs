@@ -183,6 +183,13 @@ export default defineConfig({
           items: [{ autogenerate: { directory: "configuration/antispam" } }],
         },
         {
+          label: "Honeypot",
+          translations: {
+            en: "Honeypot",
+          },
+          items: [{ autogenerate: { directory: "configuration/honeypot" } }],
+        },
+        {
           label: "Commandes utilitaires",
           translations: {
             en: "Utility commands",
@@ -303,6 +310,7 @@ export default defineConfig({
   redirects: {
     "/logs": "/configuration/logs",
     "/antispam": "/configuration/antispam",
+    "/honeypot": "/configuration/honeypot",
     "/beta": "/getting-started/beta/",
     "/premium": "/premium/introduction/",
   },
