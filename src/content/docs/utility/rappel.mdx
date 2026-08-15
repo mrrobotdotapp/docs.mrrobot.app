@@ -1,0 +1,53 @@
+---
+title: Programmer un rappel personnel
+description: Découvrez comment utiliser la commande /rappel de Mr. Robøt pour programmer, lister et supprimer des rappels envoyés en message privé.
+sidebar:
+  order: 4
+---
+
+La commande `/rappel` permet de programmer un rappel personnel qui vous sera envoyé en message privé une fois le délai écoulé. Cette commande est utilisable partout : sur un serveur, en message privé avec le robot, ou depuis une app installée sur votre compte.
+
+## `/rappel créer`
+
+Programme un nouveau rappel.
+
+```
+/rappel créer <durée> <message>
+```
+
+- `durée` : Dans combien de temps le rappel doit être envoyé. Exemple : `1s`, `10m`, `2h`, `3j`. (*Requis*)
+- `message` : Le contenu du rappel qui vous sera envoyé. (*Requis*, 500 caractères maximum)
+
+La durée doit être comprise entre **1 minute** et **2 mois**. Une fois le délai écoulé, Mr. Robøt vous envoie le rappel directement en message privé.
+
+:::note
+Vous ne pouvez pas programmer deux rappels prévus pour la même minute. Si vous essayez, la commande refuse la création en vous indiquant qu'un rappel est déjà programmé pour cet horaire.
+:::
+
+## `/rappel liste`
+
+Affiche vos prochains rappels programmés, triés du plus proche au plus lointain (20 maximum affichés).
+
+```
+/rappel liste
+```
+
+Chaque rappel affiché est précédé de son identifiant (`#`), à utiliser avec `/rappel supprimer`.
+
+## `/rappel supprimer`
+
+Annule un rappel programmé avant son envoi.
+
+```
+/rappel supprimer <identifiant>
+```
+
+- `identifiant` : Le numéro (`#`) du rappel, visible via `/rappel liste`. (*Requis*)
+
+## Confidentialité
+
+Un rappel n'est stocké en base de données que le temps qu'il reste à programmer. Dès qu'il est envoyé en message privé, il est immédiatement supprimé.
+
+## Permission
+
+Permission par défaut : **Tout le monde peut l'exécuter**.
