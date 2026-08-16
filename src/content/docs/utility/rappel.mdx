@@ -15,7 +15,7 @@ Programme un nouveau rappel.
 /rappel créer <durée> <message>
 ```
 
-- `durée` : Dans combien de temps le rappel doit être envoyé. Exemple : `1s`, `10m`, `2h`, `3j`. (*Requis*)
+- `durée` : Dans combien de temps le rappel doit être envoyé. Exemple : `1s`, `10m`, `2h`, `3j`. Si aucune unité n'est précisée (ex. `10`), elle vaut par défaut des **heures**. (*Requis*)
 - `message` : Le contenu du rappel qui vous sera envoyé. (*Requis*, 500 caractères maximum)
 
 La durée doit être comprise entre **1 minute** et **2 mois**. Une fois le délai écoulé, Mr. Robøt vous envoie le rappel directement en message privé.
