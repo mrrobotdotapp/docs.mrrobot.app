@@ -1,0 +1,88 @@
+---
+title: Calmer un salon avec /urgence
+description: "Mr. Robøt : Activer un mode lent temporaire sur un salon en crise, analyser les derniers messages, et activer le Mode Protection sur tout le serveur"
+sidebar:
+  order: 1
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+La commande `/urgence` permet de calmer un salon qui dégénère en un instant : un **mode lent temporaire** est appliqué automatiquement, avec retour à la normale une fois le délai écoulé.
+
+## Déclencher un mode lent d'urgence
+
+<Steps>
+1. Exécuter la commande
+    ```
+    /urgence déclencher
+    ```
+
+2. Préciser si besoin (sinon les valeurs par défaut configurées sont utilisées) :
+    - **salon** : le salon à calmer (par défaut : le salon courant)
+    - **durée** : durée du mode lent en minutes (1 à 180)
+    - **intervalle** : intervalle entre les messages en secondes (0 à 3600)
+</Steps>
+
+Une fois le délai écoulé, Mr. Robøt rétablit automatiquement le mode lent d'origine du salon.
+
+## Lever le mode lent avant la fin
+
+Si la situation est réglée plus tôt que prévu, inutile d'attendre la fin du délai :
+
+```
+/urgence lever
+```
+
+Rétablit immédiatement le mode lent d'origine du salon concerné.
+
+## Analyse des derniers messages
+
+Lors d'un déclenchement, Mr. Robøt peut analyser les derniers messages du salon pour repérer plus rapidement les propos problématiques, avec des liens directs vers les messages concernés dans la réponse.
+
+Cette analyse peut être activée ou désactivée depuis `/paramètres-urgence`.
+
+## Mode Protection
+
+Quand la situation dépasse un simple salon, un bouton **Mode Protection** est proposé directement dans la réponse de `/urgence déclencher`. Il permet de suspendre, sur tout le serveur et pendant 6 heures :
+
+- Les **invitations** du serveur
+- Les **messages privés entre membres non-amis**
+
+<Aside type="caution" title="Conditions requises">
+  Le Mode Protection n'est disponible que si :
+  - Le serveur a la **Communauté** activée dans les paramètres Discord
+  - Vous avez la permission **Gérer le serveur**
+  - Mr. Robøt a la permission **Gérer le serveur**
+
+  Si l'une de ces conditions manque, un message l'indique à la place du bouton.
+</Aside>
+
+## Paramètres
+
+<Steps>
+1. Exécuter la commande
+    ```
+    /paramètres-urgence
+    ```
+
+2. Depuis le panneau affiché, configurer :
+    - **Durée par défaut** du mode lent d'urgence
+    - **Intervalle par défaut** entre les messages
+    - **Rôles autorisés** à déclencher `/urgence` en plus des modérateurs
+    - **Analyse des derniers messages** : activer ou désactiver
+</Steps>
+
+## Logs
+
+Si vous avez [activé les logs](/configuration/logs) et les évènements correspondants, chaque déclenchement de `/urgence` et chaque activation du Mode Protection sont envoyés dans votre salon de logs.
+
+## Permissions du robot
+
+Pour que `/urgence` fonctionne correctement, Mr. Robøt doit disposer des permissions suivantes :
+
+- **Gérer les salons** : requis pour appliquer le mode lent, sur le salon ciblé précisément (une permission au niveau du serveur ne suffit pas si le robot n'a pas accès au salon en question)
+- **Gérer le serveur** : requis uniquement pour le Mode Protection
+
+## Permission des commandes
+
+Permission par défaut : **Gérer les salons** pour `/urgence`, **Gérer le serveur** pour `/paramètres-urgence`. Des rôles supplémentaires peuvent être autorisés à déclencher `/urgence` depuis `/paramètres-urgence`.

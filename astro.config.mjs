@@ -200,6 +200,13 @@ export default defineConfig({
                 en: "Honeypot",
               },
             },
+            {
+              label: "Mode Urgence",
+              link: "/configuration/urgence/",
+              translations: {
+                en: "Emergency",
+              },
+            },
           ],
         },
         {
@@ -326,6 +333,7 @@ export default defineConfig({
     "/logs": "/configuration/logs",
     "/antispam": "/configuration/antispam",
     "/honeypot": "/configuration/honeypot",
+    "/urgence": "/configuration/urgence",
     "/beta": "/getting-started/beta/",
     "/premium": "/premium/introduction/",
   },
