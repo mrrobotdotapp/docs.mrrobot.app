@@ -194,6 +194,14 @@ export default defineConfig({
               items: [{ autogenerate: { directory: "configuration/antispam" } }],
             },
             {
+              label: "Templates AutoMod",
+              collapsed: true,
+              translations: {
+                en: "AutoMod templates",
+              },
+              items: [{ autogenerate: { directory: "configuration/automod" } }],
+            },
+            {
               label: "Honeypot",
               link: "/configuration/honeypot/",
               translations: {
@@ -334,6 +342,7 @@ export default defineConfig({
     "/antispam": "/configuration/antispam",
     "/honeypot": "/configuration/honeypot",
     "/urgence": "/configuration/urgence",
+    "/automod": "/configuration/automod",
     "/beta": "/getting-started/beta/",
     "/premium": "/premium/introduction/",
   },
