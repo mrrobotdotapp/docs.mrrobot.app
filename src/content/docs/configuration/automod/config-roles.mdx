@@ -1,0 +1,30 @@
+---
+title: Paramétrer les rôles exemptés de l'AutoMod
+description: "Configurer les rôles exemptés de la protection AutoMod personnalisée sur votre serveur Discord"
+sidebar:
+  order: 4
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+Vous pouvez **configurer les rôles** dont les membres ne seront jamais concernés par la protection AutoMod personnalisée, quel que soit le contenu de leurs messages.
+
+```
+/paramètres-automod
+```
+
+Depuis le panneau affiché, cliquez sur le bouton **Gérer les rôles**. La sélection se fait via un menu multi choix. Vous pouvez ajouter jusqu'à **20 rôles** exemptés, la limite imposée par l'API AutoMod de Discord. Un bouton **Retour** permet de revenir au panneau principal.
+
+<Aside type="tip" title="Préremplissage automatique">
+  La toute première fois que vous ouvrez ce panneau, la liste des rôles exemptés est automatiquement préremplie à partir des rôles déjà configurés pour le [filtre anti insultes](/configuration/swear/config-roles), s'il y en a. Il s'agit d'une copie ponctuelle réalisée une seule fois : les deux listes évoluent ensuite indépendamment, et vous pouvez modifier librement la sélection AutoMod sans affecter celle du filtre anti insultes.
+</Aside>
+
+<Aside type="note" title="Par défaut">
+  Aucun rôle n'est exempté par défaut si le filtre anti insultes n'en a lui même aucun de configuré, ce qui signifie que la protection AutoMod s'applique alors à tous les membres de votre serveur.
+</Aside>
+
+Quand la règle AutoMod est déjà active, toute modification des rôles exemptés est appliquée immédiatement sur Discord, sans avoir besoin de désactiver puis réactiver la protection.
+
+## Permission
+
+Permission par défaut : **Gérer le serveur**.

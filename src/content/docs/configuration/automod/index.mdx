@@ -1,0 +1,32 @@
+---
+title: Protéger votre serveur avec les templates AutoMod
+description: "Mr. Robøt : Activer des protections Discord AutoMod prêtes à l'emploi contre le phishing, les arnaques Nitro, les invitations non sollicitées et les traqueurs IP"
+tableOfContents: false
+sidebar:
+  order: 1
+---
+
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Les **templates AutoMod** de Mr. Robøt permettent d'activer, en quelques clics, des protections Discord AutoMod prêtes à l'emploi contre les menaces les plus courantes rencontrées par les serveurs Discord : liens de phishing, arnaques au Nitro gratuit, invitations Discord non sollicitées et outils de traque d'adresse IP (aussi appelés IP loggers ou IP grabbers).
+
+Plutôt que de composer une règle AutoMod à la main dans les paramètres Discord natifs (ce qui demande de connaître la syntaxe des mots clés et des expressions régulières), vous choisissez simplement les protections à activer dans un panneau de configuration. Mr. Robøt crée et maintient ensuite une seule règle AutoMod Discord regroupant tout ce que vous avez sélectionné.
+
+Cette fonctionnalité s'appuie directement sur le système AutoMod natif de Discord : les messages concernés sont bloqués côté Discord, avant même d'être publiés dans le salon.
+
+Une seule commande, `/paramètres-automod`, regroupe toute la configuration. Voici le détail de chaque section :
+
+<CardGrid>
+  <LinkCard title="Activer les templates AutoMod"
+            description="Activez la protection AutoMod personnalisée de Mr. Robøt sur votre serveur Discord."
+            href="/configuration/automod/enable" />
+  <LinkCard title="Choisir les protections à activer"
+            description="Découvrez en détail les quatre protections disponibles : liens raccourcis, arnaques Nitro, invitations Discord et traqueurs IP."
+            href="/configuration/automod/configure" />
+  <LinkCard title="Paramétrer les rôles exemptés"
+            description="Configurez les rôles exclus de la protection AutoMod personnalisée par le robot Discord Mr. Robøt."
+            href="/configuration/automod/config-roles" />
+  <LinkCard title="Paramétrer les salons exemptés"
+            description="Configurez les salons Discord exclus de la protection AutoMod personnalisée par le robot Mr. Robøt."
+            href="/configuration/automod/config-channels" />
+</CardGrid>

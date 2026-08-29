@@ -1,0 +1,58 @@
+---
+title: Choisir les protections AutoMod à activer
+description: "Détail des protections AutoMod disponibles sur Discord : liens raccourcis, arnaques Nitro, invitations Discord et traqueurs IP"
+sidebar:
+  order: 3
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+```
+/paramètres-automod
+```
+
+Depuis le panneau affiché, un menu déroulant multi choix permet de sélectionner une ou plusieurs protections. Vous pouvez en activer une seule, toutes, ou n'importe quelle combinaison. Toutes les protections sélectionnées sont regroupées dans une seule règle Discord AutoMod, avec la même action : le blocage du message concerné.
+
+## Ce que voit l'auteur du message bloqué
+
+Le blocage se fait entièrement côté Discord, avant même que le message n'atteigne le salon. Concrètement :
+
+- Le message concerné n'apparaît jamais dans le salon, pour personne
+- Son auteur reçoit un avertissement Discord natif, visible uniquement par lui
+- Aucun autre membre du salon ne voit passer le message ni l'avertissement
+
+Ce comportement est identique quelle que soit la protection déclenchée (liens raccourcis, arnaques Nitro, invitations Discord ou traqueurs IP) : c'est le système AutoMod natif de Discord qui gère l'affichage de l'avertissement, pas Mr. Robøt directement.
+
+## Liens raccourcis
+
+Bloque les messages contenant un lien passant par un service de raccourcissement d'URL très utilisé pour masquer une destination finale malveillante ou non désirée (`bit.ly`, `tinyurl.com`, `is.gd`, `cutt.ly`, `rebrand.ly`, `t.co`, `ow.ly`, `buff.ly`, `rb.gy`, `shorturl.at`, entre autres).
+
+Les liens raccourcis sont fréquemment utilisés dans des campagnes de phishing Discord et de spam pour dissimuler l'adresse réelle d'un site frauduleux derrière une URL courte et anodine en apparence.
+
+## Arnaques Nitro
+
+Bloque les messages correspondant aux schémas les plus répandus d'arnaque au Nitro gratuit sur Discord : faux sites d'attribution de Nitro, domaines imitant Discord à l'orthographe modifiée (typosquatting), et phrases classiques comme "free nitro" ou "nitro gratuit".
+
+Ce type d'arnaque consiste à faire croire à la victime qu'elle a gagné un abonnement Discord Nitro gratuitement, dans le but de lui voler ses identifiants de connexion ou son jeton de session Discord une fois qu'elle clique sur le lien de phishing.
+
+## Invitations Discord
+
+Bloque les liens d'invitation vers d'autres serveurs Discord (`discord.gg`, `discord.com/invite`, `discordapp.com/invite`), souvent utilisés pour de l'autopromotion non sollicitée ou du raid publicitaire dans les salons de votre serveur.
+
+## Traqueurs IP
+
+Bloque les liens de services de traque d'adresse IP, aussi appelés IP loggers ou IP grabbers (`grabify.link`, `iplogger.org`, `iplogger.com`, `iplogger.ru`, `blasze.com`, `2no.co`, `yip.su`, entre autres). Ces services permettent, une fois le lien cliqué, de récupérer l'adresse IP, la localisation approximative et des informations techniques sur l'appareil de la victime, à son insu.
+
+<Aside type="tip" title="Contenu évolutif">
+  La liste de domaines et d'expressions couverte par chaque protection est maintenue par l'équipe de Mr. Robøt et peut évoluer au fil du temps, sans action nécessaire de votre part : la règle AutoMod existante est mise à jour automatiquement à la prochaine modification de votre sélection.
+</Aside>
+
+## Mettre à jour la sélection après activation
+
+Une fois la protection AutoMod activée, vous pouvez à tout moment revenir sur `/paramètres-automod` pour ajouter ou retirer une protection. La règle Discord AutoMod déjà créée est directement mise à jour avec la nouvelle sélection, sans interruption de la protection le temps de la mise à jour.
+
+Si vous retirez toutes les protections alors que le système est actif, Mr. Robøt supprime automatiquement la règle AutoMod et désactive le système.
+
+## Permission de la commande
+
+Permission par défaut : **Gérer le serveur**.

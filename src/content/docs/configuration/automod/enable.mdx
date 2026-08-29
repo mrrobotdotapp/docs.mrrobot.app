@@ -1,0 +1,55 @@
+---
+title: Activer les templates AutoMod sur Discord
+description: 'Activer la protection AutoMod personnalisée contre le phishing, les arnaques Nitro et les traqueurs IP sur votre serveur Discord'
+sidebar:
+  order: 2
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+Mr. Robøt peut créer et gérer pour vous une règle Discord AutoMod dédiée à la modération automatique des liens malveillants et des tentatives de phishing les plus fréquentes sur les serveurs Discord.
+
+## Activation
+
+<Steps>
+1. Ajouter [le robot Discord Mr. Robøt sur votre serveur](https://mrrobot.app/add) si ce n'est pas déjà fait
+
+2. Exécuter la commande
+    ```
+    /paramètres-automod
+    ```
+
+3. Sélectionner, dans le menu déroulant du panneau affiché, une ou plusieurs protections parmi celles proposées (liens raccourcis, arnaques Nitro, invitations Discord, traqueurs IP)
+
+4. Cliquer sur le bouton **Activer la protection**
+</Steps>
+
+<Aside type="note" title="Par défaut">
+  La protection AutoMod personnalisée est **désactivée** par défaut et aucune protection n'est présélectionnée. Vous devez choisir au moins une protection avant de pouvoir activer le système.
+</Aside>
+
+## Ce qui se passe côté Discord
+
+Lors de l'activation, Mr. Robøt crée une règle AutoMod native de type **mot clé** (`KEYWORD`) directement dans votre serveur Discord, visible depuis *Paramètres du serveur*, *Sécurité*, *AutoMod*. Cette règle regroupe l'ensemble des mots clés et expressions correspondant aux protections sélectionnées, avec une seule action associée : le blocage du message concerné.
+
+Modifier la sélection des protections depuis `/paramètres-automod` après activation met immédiatement à jour cette règle AutoMod. Il n'est pas nécessaire de désactiver puis réactiver le système pour changer les protections actives.
+
+## Désactivation
+
+Le même bouton, devenu **Désactiver la protection**, supprime la règle AutoMod créée par Mr. Robøt sur Discord et désactive le système. Vos protections précédemment sélectionnées, ainsi que vos rôles et salons exemptés, restent mémorisés pour une prochaine activation.
+
+## Limite de règles AutoMod imposée par Discord
+
+Discord limite chaque serveur à **6 règles AutoMod de type mot clé**, tous créateurs confondus : règles créées manuellement dans les paramètres Discord natifs, règles créées par un autre robot de modération, ou règle de Mr. Robøt. Si cette limite est déjà atteinte au moment de l'activation, Mr. Robøt l'indique directement dans le panneau `/paramètres-automod` et empêche l'activation tant qu'une règle existante n'a pas été supprimée.
+
+<Aside type="caution" title="Comment libérer une règle">
+  Rendez vous dans *Paramètres du serveur*, *Sécurité*, *AutoMod*, puis supprimez une règle existante de type "Bloquer des mots personnalisés" pour libérer de la place.
+</Aside>
+
+## Permissions du robot
+
+Pour créer, modifier ou supprimer la règle AutoMod, Mr. Robøt doit disposer de la permission **Gérer le serveur** : il s'agit de la seule permission exigée par Discord pour administrer des règles AutoMod via une application.
+
+## Permission de la commande
+
+Permission par défaut : **Gérer le serveur**.
