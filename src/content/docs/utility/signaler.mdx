@@ -1,0 +1,64 @@
+---
+title: Signaler un message
+description: "Mr. Robøt : Découvrez comment signaler discrètement un message problématique à l'équipe de modération de votre serveur Discord"
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+Le signalement de message permet à n'importe quel membre de signaler discrètement un message problématique à l'équipe de modération de son serveur.
+
+<Aside type="note">
+  Ceci n'est pas un signalement à Discord : votre signalement reste interne au serveur, seuls les modérateurs de ce serveur en sont informés. L'auteur du message signalé n'est jamais notifié.
+</Aside>
+
+## Depuis un clic droit
+
+<Steps>
+1. Faites un clic droit (ou appui long sur mobile) sur le message à signaler
+
+2. Sélectionnez `Apps`, puis `Signaler le message`
+
+3. Choisissez une catégorie, décrivez le problème, et ajoutez éventuellement une preuve (image ou vidéo)
+
+4. Envoyez le formulaire
+</Steps>
+
+## Avec la commande `/signaler`
+
+Utile si le clic droit n'est pas pratique, par exemple sur mobile ou pour signaler un message dont vous avez déjà le lien.
+
+```
+/signaler lien:<lien du message>
+```
+
+Pour obtenir le lien d'un message : clic droit sur le message > `Copier le lien du message`.
+
+<Aside type="caution">
+  Le lien doit correspondre à un message de **ce serveur**. Un lien invalide, ou provenant d'un autre serveur, affiche un message d'erreur expliquant comment procéder.
+</Aside>
+
+## Catégories disponibles
+
+- Harcèlement
+- Intimidation
+- Chantage
+- Spam ou publicité en message privé
+- Autre
+
+## Signaler à nouveau le même message
+
+Si vous aviez déjà signalé ce message, un second signalement ouvre un formulaire différent, `Ajouter plus d'informations`, pour compléter votre signalement précédent plutôt que d'en créer un nouveau.
+
+## Limites
+
+- Impossible de signaler son propre message
+- Impossible de signaler le message d'un robot
+- Le signalement est soumis à un délai entre deux utilisations (anti spam)
+
+## Si la commande ne fait rien
+
+Le signalement doit être activé par un administrateur via `/paramètres-signalement`. Si ce n'est pas le cas, le clic droit et `/signaler` restent sans effet.
+
+## Permission
+
+Permission par défaut : **Tout le monde peut l'exécuter**.
