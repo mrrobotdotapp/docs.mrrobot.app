@@ -49,6 +49,16 @@ Pour obtenir le lien d'un message : clic droit sur le message > `Copier le lien 
 
 Si vous aviez déjà signalé ce message, un second signalement ouvre un formulaire différent, `Ajouter plus d'informations`, pour compléter votre signalement précédent plutôt que d'en créer un nouveau.
 
+## Côté modération
+
+Chaque signalement reçu affiche directement le contenu du message signalé, sans avoir besoin d'aller le consulter sur le serveur.
+
+Un bouton **Prendre en charge** permet à un modérateur d'indiquer qu'il s'occupe du signalement. Le signalement affiche alors son nom, pour éviter que plusieurs modérateurs travaillent dessus en même temps sans le savoir.
+
+<Aside type="tip">
+  Pour que les rôles configurés dans `/paramètres-signalement` soient réellement notifiés (pas juste affichés) à chaque signalement, le rôle doit avoir **"Autoriser tout le monde à @mentionner ce rôle"** activé (*Paramètres du rôle > Doit être mentionnable*), ou le robot doit avoir la permission **Mentionner @everyone, @here et tous les rôles** sur le salon de logs.
+</Aside>
+
 ## Limites
 
 - Impossible de signaler son propre message
@@ -61,4 +71,4 @@ Le signalement doit être activé par un administrateur via `/paramètres-signal
 
 ## Permission
 
-Permission par défaut : **Tout le monde peut l'exécuter**.
+Permission par défaut : **Tout le monde peut l'exécuter**, aussi bien le clic droit `Signaler le message` que la commande `/signaler`.
