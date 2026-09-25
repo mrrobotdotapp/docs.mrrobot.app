@@ -1,0 +1,41 @@
+---
+title: Gérer les rôles d'un membre
+description: Découvrez comment utiliser la commande /roles de Mr. Robøt pour ajouter ou retirer des rôles à un membre de votre serveur Discord.
+---
+
+La commande `/roles` permet d'ajouter ou de retirer des rôles à un membre directement, sans passer par les paramètres du serveur Discord.
+Cette commande est réservée aux modérateurs du serveur.
+
+## Utilisation
+
+```
+/roles <membre>
+```
+
+- `membre` : Le membre dont vous voulez gérer les rôles.
+
+Un menu s'ouvre avec les rôles déjà présents pré-cochés. Cochez un rôle pour l'ajouter, décochez-en un pour le retirer, puis validez.
+
+## Rôles qui n'apparaissent pas dans la liste
+
+Certains rôles n'apparaissent jamais dans ce menu, car ils sont automatiquement créés et gérés par Discord ou une intégration (application, bot, boost du serveur). Il n'est pas possible de les ajouter ou de les retirer manuellement, même via les paramètres natifs du serveur.
+
+## "Aucun changement" après une sélection
+
+Si vous cochez ou décochez un rôle et que Mr. Robøt répond **"Aucun changement"**, c'est que ce rôle n'a pas pu être touché. Deux raisons possibles :
+
+:::note[Rôle géré par une intégration]
+Le rôle sélectionné appartient à une application, un bot, ou correspond au rôle de boost du serveur. Discord ne permet à personne, y compris aux administrateurs, de l'assigner ou de le retirer manuellement.
+:::
+
+:::caution[Hiérarchie des rôles]
+Le rôle sélectionné est positionné au-dessus (ou au même niveau) du rôle le plus haut de Mr. Robøt, ou au-dessus du vôtre, dans *Paramètres du serveur → Rôles*.
+
+Discord impose cette règle strictement, **y compris pour les administrateurs** : la permission Administrateur ne permet pas de contourner la hiérarchie des rôles, ni pour un membre, ni pour un robot. Seul le propriétaire du serveur y échappe.
+
+**Pour corriger :** allez dans *Paramètres du serveur → Rôles*, puis faites glisser le rôle **Mr. Robøt** au-dessus du rôle que vous souhaitez qu'il puisse gérer.
+:::
+
+## Permission
+
+Permission par défaut : **Gérer les rôles**.
