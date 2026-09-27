@@ -1,0 +1,53 @@
+---
+title: Détecter le ciblage répété d'un membre
+description: "Mr. Robøt : Alerter les modérateurs quand un ou plusieurs membres envoient des messages négatifs répétés visant la même personne (harcèlement, sans IA)"
+sidebar:
+  order: 1
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+Repère un pattern relationnel plutôt qu'un simple mot ou message isolé : si plusieurs messages négatifs visent la même personne en peu de temps, une alerte est envoyée à l'équipe de modération.
+
+<Aside type="note" title="Sans IA (v1)">
+  Utilise le filtre insultes existant, sans IA. Détecte uniquement dans les salons textuels visibles par le robot, pas en message privé. Aucune action automatique n'est prise sur les auteurs, seule une alerte est envoyée dans le salon de logs.
+</Aside>
+
+## Activer
+
+<Steps>
+1. Exécuter la commande
+    ```
+    /paramètres-ciblage
+    ```
+
+2. Cliquer sur **ACTIVER**.
+3. Régler, si besoin, le nombre de messages négatifs déclencheurs et la fenêtre de temps depuis les deux menus déroulants.
+</Steps>
+
+## Ce qui compte comme "cibler quelqu'un"
+
+- Une **mention directe** de la personne dans le message.
+- Une **réponse** (reply) directe à l'un de ses messages.
+
+La simple proximité d'un pseudo dans le texte n'est volontairement pas prise en compte : trop de faux positifs sans analyse plus poussée.
+
+## Fonctionnement
+
+Si le nombre de messages négatifs configuré, visant la même personne, est atteint dans la fenêtre de temps réglée, une alerte est envoyée. Le compteur repart ensuite de zéro pour cette personne.
+
+<Aside type="tip" title="Une alerte par fenêtre, pas par palier">
+  Après une alerte, la même personne ne peut pas redéclencher d'alerte pendant la durée de la fenêtre configurée, même si le seuil est de nouveau atteint plusieurs fois entre-temps. Les messages continuent d'être comptés en arrière-plan : une fois la fenêtre écoulée, la prochaine alerte reflète le total réellement accumulé, pas juste le seuil. Ça évite de saturer le salon de logs si quelqu'un enchaîne les messages négatifs en continu.
+</Aside>
+
+## Logs
+
+Si vous avez [activé les logs](/configuration/logs) et l'évènement **Ciblage répété détecté**, l'alerte est envoyée dans votre salon de logs avec la personne visée et le nombre de messages/auteurs concernés.
+
+## Et après ?
+
+Cette fonctionnalité est la première brique d'un chantier plus large : détection de pile-on (plusieurs comptes ciblant la même personne), commande de signalement dédiée aux victimes, mode protection temporaire, et ressources d'aide envoyées automatiquement. Ces suites ne sont pas encore disponibles.
+
+## Permission
+
+Permission par défaut : **Gérer le serveur**.

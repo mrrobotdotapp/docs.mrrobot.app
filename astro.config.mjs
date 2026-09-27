@@ -215,6 +215,20 @@ export default defineConfig({
                 en: "Emergency",
               },
             },
+            {
+              label: "Restauration des rôles",
+              link: "/configuration/roles/",
+              translations: {
+                en: "Restoring Roles",
+              },
+            },
+            {
+              label: "Ciblage répété",
+              link: "/configuration/ciblage/",
+              translations: {
+                en: "Repeated targeting",
+              },
+            },
           ],
         },
         {

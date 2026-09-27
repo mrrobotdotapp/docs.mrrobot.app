@@ -1,0 +1,51 @@
+---
+title: Consulter l'historique de modération d'un membre
+description: Découvrez comment utiliser la commande /modération de Mr. Robøt pour consulter la fiche de modération d'un membre ou les statistiques du serveur.
+---
+
+La commande `/modération` regroupe l'historique de modération d'un membre et les statistiques globales de votre serveur Discord. Elle passe toujours par une sous-commande, `/modération` seul n'existe pas.
+
+## `/modération profil`
+
+Affiche la fiche de modération d'un membre sur **ce serveur** : bannissements, sourdines, insultes détectées, spam, ciblage répété.
+
+```
+/modération profil <membre>
+```
+
+- `membre` : Le membre dont vous voulez voir l'historique de modération.
+
+La fiche affiche un verdict (**SAIN**, **À SURVEILLER** ou **À RISQUE**), calculé à partir d'un score de gravité qui pondère chaque type d'évènement et son ancienneté : un bannissement récent pèse bien plus qu'une insulte isolée d'il y a plusieurs mois.
+
+Un résumé automatique en une phrase et un décompte par type sont affichés en premier. Le détail complet, avec la date, le modérateur responsable (ou "Automatique" pour une détection) et la raison de chaque évènement, est disponible derrière le bouton **Voir l'historique complet**, paginé si l'historique est long.
+
+Si le membre est toujours présent sur le serveur, un bouton **Mettre en sourdine** permet d'enchaîner directement sur une sanction sans retaper de commande.
+
+:::note
+Aucun contenu de message n'est conservé dans cet historique, uniquement des informations contextuelles (type, salon, durée). L'historique est conservé 180 jours, puis purgé automatiquement.
+:::
+
+## `/modération statistiques`
+
+Affiche des statistiques globales de modération pour **l'ensemble du serveur**, sans ciblage individuel.
+
+```
+/modération statistiques
+```
+
+Cette sous-commande affiche :
+
+- Le nombre de sanctions actives en ce moment (bannissements et sourdines toujours en cours).
+- Le nombre de sanctions posées sur les 7 et 30 derniers jours.
+- Le membre le plus sanctionné sur les 30 derniers jours.
+- La répartition des sanctions par type sur les 30 derniers jours.
+- Le classement des modérateurs les plus actifs sur les 30 derniers jours.
+- Le temps de réponse moyen entre un signalement et sa prise en charge.
+- Un graphique du nombre de messages, d'insultes détectées et de signalements, généré localement (aucune donnée envoyée à un service externe).
+
+Trois boutons (**3j**, **7j**, **14j**) permettent de changer la période affichée par le graphique.
+
+## Permission
+
+- `/modération profil` : Permission par défaut : **Gérer les messages**.
+- `/modération statistiques` : Permission par défaut : **Gérer le serveur**.

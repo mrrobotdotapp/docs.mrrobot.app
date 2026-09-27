@@ -1,0 +1,91 @@
+---
+title: Restaurer les rôles au retour d'un membre
+description: "Mr. Robøt : Activer ou désactiver la restauration automatique des rôles d'un membre qui revient sur votre serveur après l'avoir quitté"
+sidebar:
+  order: 1
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+Quand un membre **quitte volontairement** votre serveur puis y revient plus tard, Mr. Robøt peut lui redonner automatiquement les rôles qu'il avait avant son départ.
+
+<Aside type="note" title="Par défaut">
+  Cette fonctionnalité est **activée** par défaut sur tous les serveurs.
+</Aside>
+
+## Activer ou désactiver
+
+<Steps>
+1. Exécuter la commande
+    ```
+    /paramètres-rôles config
+    ```
+
+2. Cliquer sur **ACTIVER** ou **DÉSACTIVER** selon l'état voulu.
+</Steps>
+
+## Fonctionnement
+
+Au départ d'un membre, Mr. Robøt garde en mémoire la liste de ses rôles au moment où il quitte. À son retour, ces rôles lui sont redonnés automatiquement.
+
+<Aside type="caution">
+  Ne s'applique **jamais** après une expulsion ou un bannissement, uniquement quand le membre part de son propre chef.
+</Aside>
+
+## Rôles jamais restaurés
+
+Certains rôles ne sont jamais redonnés, même si le membre les avait avant de partir :
+
+- Les rôles avec la permission **Administrateur**.
+- Les rôles gérés par une intégration (application, bot, boost du serveur).
+- Les rôles positionnés au-dessus du rôle de Mr. Robøt dans *Paramètres du serveur → Rôles* : l'API Discord ne permet de toute façon pas à un robot d'assigner un rôle qui lui est supérieur.
+
+## Logs
+
+Si vous avez [activé les logs](/configuration/logs) et l'évènement **Rôles restaurés au retour**, chaque restauration est envoyée dans votre salon de logs avec le membre concerné et la liste des rôles rendus. Les changements de configuration (activation/désactivation) suivent ce même évènement.
+
+## Permissions du robot
+
+Pour que la restauration fonctionne, Mr. Robøt doit disposer de la permission **Gérer les rôles**, avec son propre rôle positionné au-dessus de ceux à restaurer.
+
+## Audit des rôles
+
+La sous-commande `/paramètres-rôles audit` donne un état des lieux global des permissions sensibles sur votre serveur (Administrateur, Gérer le serveur, Gérer les rôles, Bannir des membres...), pour détecter une fuite de permission sans avoir à vérifier chaque rôle à la main.
+
+```
+/paramètres-rôles audit
+```
+
+Mr. Robøt renvoie un verdict global et un décompte par sévérité, pas une liste nominative des rôles concernés, pour rester lisible même sur un serveur avec beaucoup de rôles. Le bouton **Voir les détails** affiche ensuite, un par un, uniquement les éléments à risque (avec pagination si plus de 10).
+
+L'audit couvre aussi :
+- les permissions accordées à un rôle **sur un salon précis** (overwrite), au-delà de ce qu'il a déjà au niveau serveur : une fuite fréquente et invisible en ne regardant que les rôles ;
+- si la **double authentification (2FA)** n'est pas exigée pour la modération, alors que des rôles ont des permissions sensibles ;
+- l'**ancienneté d'une application** ayant une permission sensible : une app installée depuis moins de 75 jours voit sa sévérité augmenter d'un cran (calculée directement depuis l'identifiant Discord de l'application, sans appel réseau).
+
+<Aside type="tip" title="Performance">
+  Le résultat est mis en cache 5 minutes par serveur : naviguer entre le récap et le détail ne relance pas le calcul à chaque clic.
+</Aside>
+
+| Verdict | Signification |
+|---|---|
+| **SAIN** | Aucun élément à risque détecté. |
+| **À SURVEILLER** | Au moins un élément à risque, mais rien de critique et 2FA exigé pour la modération. |
+| **À CORRIGER** | Au moins un élément avec une permission Élevée ou Critique, ou 2FA non exigé alors que des rôles ont des permissions sensibles. |
+
+### Niveaux de sévérité
+
+| Niveau | Déclencheur |
+|---|---|
+| **CRITIQUE** | Permission **Administrateur** |
+| **ÉLEVÉE** | Gérer le serveur, Gérer les rôles, Gérer les webhooks, Bannir des membres |
+| **MOYENNE** | Expulser des membres, Gérer les salons, Mettre en sourdine, Gérer les messages |
+| **FAIBLE** | Mentionner @everyone, Gérer les émojis, Gérer les évènements, Gérer les fils |
+
+<Aside type="caution" title="Escalade automatique">
+  La sévérité d'un rôle monte d'un cran (jusqu'à Critique) si ce rôle est `@everyone`, ou s'il est tenu par **50% ou plus des membres du serveur** : une permission moyenne donnée à tout le monde est une vraie fuite, pas un détail. Ce compte dans le décompte global même si le nom du rôle n'est pas affiché.
+</Aside>
+
+## Voir aussi
+
+Pour ajouter ou retirer des rôles à un membre manuellement, utilisez [`/paramètres-rôles modifier`](/mod/roles).
