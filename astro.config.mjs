@@ -3,6 +3,7 @@ import starlight from "@astrojs/starlight";
 import lunaria from "@lunariajs/starlight";
 import matomo from "astro-matomo";
 import starlightCoolerCredit from "starlight-cooler-credit";
+import starlightLlmsTxt from "starlight-llms-txt";
 
 const locales = {
   root: {
@@ -28,6 +29,7 @@ export default defineConfig({
         alt: "Mr. Robøt Logo",
       },
       plugins: [
+        starlightLlmsTxt(),
         //lunaria(),
         /* starlightCoolerCredit({
           customImage: './public/img/premium/premium_logo.png',
