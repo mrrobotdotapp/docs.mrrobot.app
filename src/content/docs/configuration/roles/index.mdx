@@ -18,7 +18,7 @@ Quand un membre **quitte volontairement** votre serveur puis y revient plus tard
 <Steps>
 1. Exécuter la commande
     ```
-    /paramètres-rôles config
+    /paramètres rôles
     ```
 
 2. Cliquer sur **ACTIVER** ou **DÉSACTIVER** selon l'état voulu.
@@ -50,10 +50,10 @@ Pour que la restauration fonctionne, Mr. Robøt doit disposer de la permission *
 
 ## Audit des rôles
 
-La sous-commande `/paramètres-rôles audit` donne un état des lieux global des permissions sensibles sur votre serveur (Administrateur, Gérer le serveur, Gérer les rôles, Bannir des membres...), pour détecter une fuite de permission sans avoir à vérifier chaque rôle à la main.
+Le bouton **LANCER L'AUDIT** du panneau `/paramètres rôles` donne un état des lieux global des permissions sensibles sur votre serveur (Administrateur, Gérer le serveur, Gérer les rôles, Bannir des membres...), pour détecter une fuite de permission sans avoir à vérifier chaque rôle à la main.
 
 ```
-/paramètres-rôles audit
+/paramètres rôles
 ```
 
 Mr. Robøt renvoie un verdict global et un décompte par sévérité, pas une liste nominative des rôles concernés, pour rester lisible même sur un serveur avec beaucoup de rôles. Le bouton **Voir les détails** affiche ensuite, un par un, uniquement les éléments à risque (avec pagination si plus de 10).
@@ -88,4 +88,4 @@ L'audit couvre aussi :
 
 ## Voir aussi
 
-Pour ajouter ou retirer des rôles à un membre manuellement, utilisez [`/paramètres-rôles modifier`](/mod/roles).
+Pour ajouter ou retirer des rôles à un membre manuellement, utilisez [`/rôles`](/mod/roles).
