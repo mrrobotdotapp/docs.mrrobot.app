@@ -1,16 +1,16 @@
 ---
 title: Consulter l'historique de modération d'un membre
-description: Découvrez comment utiliser la commande /modération de Mr. Robøt pour consulter la fiche de modération d'un membre ou les statistiques du serveur.
+description: Découvrez comment utiliser les commandes /sanctions et /statistiques de Mr. Robøt pour consulter la fiche de modération d'un membre et les statistiques du serveur.
 ---
 
-La commande `/modération` regroupe l'historique de modération d'un membre et les statistiques globales de votre serveur Discord. Elle passe toujours par une sous-commande, `/modération` seul n'existe pas.
+La commande `/sanctions` affiche l'historique de modération d'un membre, et `/statistiques` les statistiques globales de modération du serveur. Pour gérer les rôles d'un membre, voir [`/rôles`](/mod/roles).
 
-## `/modération profil`
+## `/sanctions`
 
 Affiche la fiche de modération d'un membre sur **ce serveur** : bannissements, sourdines, insultes détectées, spam, ciblage répété.
 
 ```
-/modération profil <membre>
+/sanctions <membre>
 ```
 
 - `membre` : Le membre dont vous voulez voir l'historique de modération.
@@ -25,15 +25,15 @@ Si le membre est toujours présent sur le serveur, un bouton **Mettre en sourdin
 Aucun contenu de message n'est conservé dans cet historique, uniquement des informations contextuelles (type, salon, durée). L'historique est conservé 180 jours, puis purgé automatiquement.
 :::
 
-## `/modération statistiques`
+## `/statistiques`
 
 Affiche des statistiques globales de modération pour **l'ensemble du serveur**, sans ciblage individuel.
 
 ```
-/modération statistiques
+/statistiques
 ```
 
-Cette sous-commande affiche :
+Cette commande affiche :
 
 - Le nombre de sanctions actives en ce moment (bannissements et sourdines toujours en cours).
 - Le nombre de sanctions posées sur les 7 et 30 derniers jours.
@@ -47,5 +47,5 @@ Trois boutons (**3j**, **7j**, **14j**) permettent de changer la période affich
 
 ## Permission
 
-- `/modération profil` : Permission par défaut : **Gérer les messages**.
-- `/modération statistiques` : Permission par défaut : **Gérer le serveur**.
+- `/sanctions` : Permission par défaut : **Gérer les messages**.
+- `/statistiques` : Permission par défaut : **Gérer le serveur**.
