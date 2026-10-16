@@ -7,7 +7,7 @@ La commande `/sanctions` affiche l'historique de modération d'un membre, et `/s
 
 ## `/sanctions`
 
-Affiche la fiche de modération d'un membre sur **ce serveur** : bannissements, sourdines, insultes détectées, spam, ciblage répété.
+Affiche la fiche de modération d'un membre sur **ce serveur** : bannissements, sourdines, messages insultants, spam, ciblage répété.
 
 ```
 /sanctions <membre>
@@ -17,7 +17,7 @@ Affiche la fiche de modération d'un membre sur **ce serveur** : bannissements, 
 
 La fiche affiche un verdict (**SAIN**, **À SURVEILLER** ou **À RISQUE**), calculé à partir d'un score de gravité qui pondère chaque type d'évènement et son ancienneté : un bannissement récent pèse bien plus qu'une insulte isolée d'il y a plusieurs mois.
 
-Un résumé automatique en une phrase et un décompte par type sont affichés en premier, suivis du nombre d'insultes envoyées par le membre sur les 15 et 30 derniers jours. Le détail complet, avec la date, le modérateur responsable (ou "Automatique" pour une détection) et la raison de chaque évènement, est disponible derrière le bouton **Voir l'historique complet**, paginé si l'historique est long.
+Un résumé automatique en une phrase et un décompte par type sont affichés en premier, suivis du nombre de messages insultants envoyés par le membre sur les 15 et 30 derniers jours. Un message compte **une seule fois**, même s'il contient plusieurs insultes, et même s'il est détecté à la fois par le filtre classique et par l'IA (dans ce cas, il est compté comme détecté par l'IA). Le détail complet, avec la date, le modérateur responsable (ou "Automatique" pour une détection) et la raison de chaque évènement, est disponible derrière le bouton **Voir l'historique complet**, paginé si l'historique est long.
 
 Les membres et modérateurs sont affichés avec leur nom sur le serveur, en lien vers leur profil Discord. Une personne qui a quitté le serveur apparaît avec la mention « (a quitté le serveur) ».
 
@@ -43,7 +43,7 @@ Trois boutons (**3j**, **7j**, **14j**) permettent de choisir la période. Toute
 - La répartition des sanctions par type sur la période.
 - Le classement des modérateurs les plus actifs sur la période.
 - Le temps de réponse moyen entre un signalement et sa prise en charge sur la période.
-- Un graphique généré localement (aucune donnée envoyée à un service externe) avec, jour par jour, les messages, les insultes détectées (filtre classique et IA), les signalements, les sanctions (bannissements, expulsions et sourdines) et le spam bloqué (anti-spam, AutoMod et honeypot). Les messages ont leur propre échelle, à gauche, pour que les autres courbes restent lisibles.
+- Un graphique généré localement (aucune donnée envoyée à un service externe) avec, jour par jour, les messages, les messages insultants détectés (filtre classique et IA, chaque message n'étant compté qu'une fois), les signalements, les sanctions (bannissements, expulsions et sourdines) et le spam bloqué (anti-spam, AutoMod et honeypot). Les messages ont leur propre échelle, à gauche, pour que les autres courbes restent lisibles.
 
 Le bouton **Masquer les messages** retire la courbe des messages du graphique. Il devient **Afficher les messages** pour la remettre, et le choix est conservé quand vous changez de période.
 
