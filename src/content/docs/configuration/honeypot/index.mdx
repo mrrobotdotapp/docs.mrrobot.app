@@ -21,11 +21,11 @@ Le **honeypot** est un piège à robots spammeurs : un salon "invisible" aux yeu
 
 3. Choisir l'une des deux options depuis le panneau affiché :
     - **Sélectionner un salon existant** dans le menu déroulant pour l'utiliser comme piège
-    - **Créer un salon automatiquement** via le bouton dédié (nommé `ne-pas-écrire-XXXXX`, visible par tout le monde)
+    - **Créer un salon automatiquement** via le bouton dédié (visible par tout le monde)
 </Steps>
 
-<Aside type="tip" title="Pourquoi ce nom ?">
-  Le nom `ne-pas-écrire-XXXXX` a deux rôles : le texte prévient un membre humain qui tomberait dessus par erreur, et le numéro aléatoire évite qu'un robot spammeur reconnaisse et évite un nom de salon toujours identique d'un serveur à l'autre.
+<Aside type="tip" title="Le nom du salon créé">
+  Le salon créé reçoit un nom tiré au hasard parmi `ne-pas-écrire`, `ne-rien-écrire-ici` et `ne-pas-poster-ici`. Chaque nom prévient un membre humain qui tomberait dessus par erreur, et le nom varie d'un serveur à l'autre pour qu'un robot spammeur ne puisse pas apprendre un nom unique et l'éviter. Vous pouvez le renommer librement.
 </Aside>
 
 <Aside type="note" title="Par défaut">
@@ -51,6 +51,10 @@ Depuis le panneau `/paramètres honeypot`, un bouton permet d'activer ou de dés
 ## Logs
 
 Si vous avez [activé les logs](/configuration/logs) et l'évènement **Honeypot déclenché**, chaque bannissement déclenché par le honeypot est envoyé dans votre salon de logs, avec le membre concerné, la date de création de son compte et le salon piège concerné. Les changements de configuration du honeypot (salon choisi, création, activation/désactivation) suivent ce même évènement.
+
+Quand le honeypot est actif mais que ses bannissements ne sont pas enregistrés, le panneau `/paramètres honeypot` le signale :
+- si un salon des logs existe déjà, le bouton **Activer les logs du honeypot** active les logs et l'évènement **Honeypot déclenché** en un clic ;
+- si aucun salon des logs n'est configuré, un menu permet d'en choisir un, ce qui active aussi les logs et l'évènement. Sans salon des logs, rien n'est envoyé.
 
 ## Permissions du robot
 

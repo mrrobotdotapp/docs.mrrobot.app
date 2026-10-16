@@ -25,36 +25,31 @@ Vous pouvez choisir les évènements à logger et le salon textuel où les logs 
     /paramètres logs
     ```
 
-3. Un salon de logs (webhook) est créé automatiquement si aucun n'existe encore, puis choisir les évènements à logger dans le menu déroulant du panneau affiché
+3. Choisir le salon des logs dans le menu **Choisir le salon des logs** du panneau affiché, de préférence un salon réservé à la modération
+
+4. Choisir les évènements à logger dans le menu déroulant du même panneau
     ![Message de Mr. Robøt pour configurer les évènements à logger](/img/logs-add-remove-events.png)
 
-4. Tester si vous le souhaitez la connexion en cliquant sur le bouton **Tester le webhook** du même panneau
+5. Tester si vous le souhaitez la connexion en cliquant sur le bouton **Tester le webhook** du même panneau
 </Steps>
+
+<Aside type="note" title="Aucun salon choisi">
+  Le robot ne choisit jamais le salon des logs à votre place. Tant qu'aucun salon n'est choisi, le panneau affiche **Salon des logs : aucun** et aucun log n'est envoyé.
+</Aside>
 
 ## Déplacer le salon des logs
 
-<Steps>
-  1. Pour pouvoir déplacer le salon des logs, vous devez simplement modifier le salon textuel choisi en allant dans **Paramètre du serveur > Intégrations > Mr. Robøt > Webhooks**.
-  2. Sélectionnez le salon où vous souhaitez que les logs soient envoyés.
-     ![Déplacer le salon des logs](/img/logs_edit_webhook.png)
-  3. Cliquez sur **Enregistrer les modifications**.
-</Steps>
+Choisissez un autre salon dans le menu **Choisir le salon des logs** du panneau `/paramètres logs`. Vous pouvez aussi indiquer le salon directement dans la commande :
 
+```
+/paramètres logs salon:#mod-logs
+```
+
+Le robot crée son webhook sur le nouveau salon et supprime l'ancien.
 
 ## J'ai supprimé le salon des logs
 
-Oh... ça peut arriver, pas de panique ! Pour régénérer le webhook, suivez les étapes suivantes :
-
-<Steps>
-  1. Exécutez la commande
-      ```
-      /paramètres logs
-      ```
-  2. Vous devriez voir un message vous indiquant le nouveau salon des logs et une aide, ainsi qu'un message qui s'envoie dans le salon des logs.
-     ![Message du robot Discord indiquant les étapes à suivre pour configurer salon des logs](/img/logs_generate_webhook_first_time.png)
-  3. Vous pouvez également tester la connexion du webhook en cliquant sur le bouton **Tester le webhook** du panneau affiché
-  4. Tout est bon, vous avez régénéré le webhook avec succès ! 🎉
-</Steps>
+Oh... ça peut arriver, pas de panique ! Le panneau `/paramètres logs` affiche alors **Salon des logs : aucun**. Choisissez un nouveau salon dans le menu **Choisir le salon des logs**, puis testez si vous le souhaitez la connexion avec le bouton **Tester le webhook**.
 
 ## Résolution des problèmes
 
@@ -65,7 +60,7 @@ Veuillez vérifiez :
 - Que le robot est bien connecté à votre serveur Discord
 - Que vous avez bien suivi les instructions du robot
 - Que vous avez bien choisi les évènements à logger, vous pouvez voir la liste des évènements disponibles avec la commande `/paramètres logs`
-- Que le salon textuel choisi pour les logs est toujours présent, si ce n'est plus le cas, régénérez le webhook avec la commande `/paramètres logs`
+- Qu'un salon des logs est bien choisi dans le panneau `/paramètres logs`, et qu'il existe toujours. Si ce n'est plus le cas, choisissez-en un nouveau dans le même panneau
 
 ## La permission Gérer les webhooks
 
