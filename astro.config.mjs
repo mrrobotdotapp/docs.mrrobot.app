@@ -361,5 +361,6 @@ export default defineConfig({
     "/automod": "/configuration/automod",
     "/beta": "/getting-started/beta/",
     "/premium": "/premium/introduction/",
+    "/mod/moderation": "/mod/sanctions/",
   },
 });
