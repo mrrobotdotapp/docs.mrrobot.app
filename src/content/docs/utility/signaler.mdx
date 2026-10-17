@@ -43,6 +43,7 @@ Pour obtenir le lien d'un message : clic droit sur le message > `Copier le lien 
 - Intimidation
 - Chantage
 - Spam ou publicité en message privé
+- Contenu inapproprié
 - Autre
 
 ## Signaler à nouveau le même message
@@ -55,7 +56,9 @@ Chaque signalement reçu affiche directement le contenu du message signalé, san
 
 Un bouton **Prendre en charge** permet à un modérateur d'indiquer qu'il s'occupe du signalement. Le signalement affiche alors son nom, pour éviter que plusieurs modérateurs travaillent dessus en même temps sans le savoir.
 
-Si plusieurs personnes signalent le même message, les signalements suivants sont regroupés dans un thread de suivi ouvert sous le premier log, au lieu de créer un nouveau log à chaque fois.
+Si plusieurs personnes signalent le même message, les signalements suivants sont regroupés dans un thread de suivi ouvert sous le premier log, au lieu de créer un nouveau log à chaque fois. Ce thread est nommé `SGN#xxxxx` (SGN pour signalement) et le robot y mentionne le modérateur qui prend le signalement en charge.
+
+Les boutons **Valider** et **Rejeter** permettent de trancher. Un signalement validé rapporte des [points de bienveillance](/utility/bienveillance/) à la personne qui l'a fait. La validation peut être annulée pendant 12 heures.
 
 <Aside type="note">
   Le regroupement en thread nécessite que le robot ait la permission **Créer des fils publics** sur le salon de logs. Sans elle, chaque signalement reste un log séparé (aucune erreur, juste pas de regroupement).

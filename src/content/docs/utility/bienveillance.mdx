@@ -1,0 +1,102 @@
+---
+title: Points de bienveillance
+description: Découvrez comment fonctionnent les points de bienveillance de Mr. Robøt, qui récompensent les membres qui accueillent et signalent, et comment les modérateurs valident les signalements.
+sidebar:
+  order: 3
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+Les points de bienveillance récompensent les personnes qui accueillent les nouveaux membres et qui signalent les comportements toxiques. Ils s'affichent dans [`/profil`](/utility/profil/), dans un bloc séparé sous la fiche Discord.
+
+<Aside type="note">
+  Ce n'est **pas une monnaie** : on ne peut ni les échanger, ni les acheter, ni les jouer au hasard. Ils servent uniquement à valoriser les membres bienveillants.
+</Aside>
+
+## Comment ça marche
+
+- Chaque personne a **un seul total**, cumulé sur **tous les serveurs** où Mr. Robøt est présent.
+- Le total peut devenir négatif.
+- Le profil affiche le total et des compteurs (bienvenues souhaitées, signalements validés). Des badges arriveront plus tard.
+
+## Gagner des points
+
+| Action | Points |
+|---|---|
+| Souhaiter la bienvenue à un nouvel arrivant | +2 |
+| Faire un signalement validé par un modérateur | +5 |
+
+### La bienvenue
+
+Il y a deux façons de souhaiter la bienvenue :
+
+- avec la commande [`/bienvenue`](/utility/welcome/), en indiquant éventuellement la personne accueillie ;
+- en écrivant « bienvenue » dans un message adressé à un membre arrivé il y a moins de deux heures (en le mentionnant ou en lui répondant), sans propos négatif.
+
+Limites : **2 bienvenues par jour** au plus, une seule par personne accueillie, avec un court délai entre deux. Les messages ne sont jamais enregistrés.
+
+### Le signalement
+
+Un [signalement](/utility/signaler/) ne rapporte des points que s'il est **validé par un modérateur** du serveur. Un signalement rejeté ne change rien, ni en bien ni en mal : signaler de bonne foi n'est jamais pénalisé.
+
+Les points arrivent **24 heures** après la validation.
+
+## Perdre des points
+
+| Action | Points |
+|---|---|
+| Envoyer un message insultant (une seule fois par message, même avec plusieurs insultes) | -3 |
+| Cibler plusieurs fois la même personne (ciblage répété) | -20 |
+| Déclencher l'anti-spam | -5 |
+
+Les pertes sont **plafonnées à 50 points par jour**.
+
+## Contre les abus
+
+Pour que les points restent justes, des conditions s'appliquent : ancienneté minimale du compte Discord et de la présence sur le serveur, limites quotidiennes, et vérifications sur les serveurs trop récents ou trop petits. Un modérateur ne peut pas valider son propre signalement.
+
+Une action qui ne remplit pas ces conditions ne rapporte simplement pas de points.
+
+## Confidentialité
+
+- Le total et les compteurs sont visibles par tous sur le profil.
+- L'**historique détaillé** (bouton `Historique de bienveillance`) ne nomme que le serveur où il est consulté. Les autres serveurs apparaissent comme « Autre serveur ».
+- Aucun contenu de message n'est enregistré, uniquement le type d'action, le nombre de points et la date.
+- Le journal des mouvements est conservé sans limite de durée.
+
+## Pour les modérateurs
+
+Il faut la permission **Modérer les membres**.
+
+Chaque signalement reçu dans les logs a trois boutons : **Prendre en charge**, **Valider** et **Rejeter**.
+
+<Steps>
+1. Cliquez sur **Prendre en charge** pour indiquer que vous vous en occupez. Le robot vous mentionne dans le thread de suivi (`SGN#xxxxx`) pour que vous le suiviez.
+
+2. Cliquez sur **Valider** si le signalement est justifié, ou sur **Rejeter** sinon.
+
+3. Si vous vous êtes trompé, cliquez sur **Annuler la validation** : le signalement repasse en attente.
+</Steps>
+
+<Aside type="caution">
+  L'annulation d'une validation n'est possible que pendant **12 heures**. Les points prévus pour la personne qui a signalé sont alors annulés : elle ne les a pas encore reçus, ils n'arrivent qu'après 24 heures.
+</Aside>
+
+<Aside type="tip">
+  Validez uniquement les signalements justifiés : ils comptent pour la personne qui les a faits.
+</Aside>
+
+## Questions fréquentes
+
+**Pourquoi mon signalement n'a-t-il pas rapporté de points ?**
+Il n'a pas été validé, ou l'une des conditions contre les abus n'était pas remplie.
+
+**Mes points sont-ils différents d'un serveur à l'autre ?**
+Non, le total est le même partout.
+
+**Peut-on gagner des badges ?**
+Ils arrivent bientôt, avec un nouveau design. Les compteurs sont déjà comptés pour les obtenir.
+
+## Permission
+
+Permission par défaut pour consulter les points : **Tout le monde**. Valider ou rejeter un signalement demande la permission **Modérer les membres**.

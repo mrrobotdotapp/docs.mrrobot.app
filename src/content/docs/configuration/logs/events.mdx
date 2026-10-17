@@ -17,7 +17,7 @@ Mr. Robøt vous permet de configurer les évènements à logger sur votre serveu
     /paramètres logs
     ```
 
-3. Choisir les évènements à logger dans le menu déroulant du panneau affiché
+3. Choisir le salon des logs dans le menu **Choisir le salon des logs**, puis les évènements à logger dans le menu déroulant du panneau affiché
     ![Message de Mr. Robøt pour configurer les évènements à logger](/img/logs-add-remove-events.png)
 
 4. Tester si vous le souhaitez la connexion en cliquant sur le bouton **Tester le webhook** du même panneau
@@ -41,6 +41,25 @@ Vous avez une multitude d'évènements à votre disposition pour lesquels vous p
 - **Annonce créée** : Une annonce est créée via une commande de modération.
 - **Urgence déclenchée** : Un mode lent d'urgence est appliqué sur un salon via la commande [`/urgence`](/configuration/urgence).
 - **Mode Protection activé** : Le [Mode Protection](/configuration/urgence/#mode-protection) est activé sur le serveur.
+- **Bilan du serveur** : Un bilan de la veille ou de la semaine passée (voir ci-dessous).
+
+## Bilan du serveur
+
+Une fois le bilan activé, Mr. Robøt envoie dans le salon des logs, sans notifier personne, un bilan de la journée précédente (chaque jour) ou de la semaine précédente, du lundi au dimanche (chaque lundi) :
+
+- le nombre de messages envoyés ;
+- le nombre d'insultes détectées et la part des messages qui en contenaient ;
+- les bannissements, expulsions et sourdines, s'il y en a eu ;
+- le nombre de signalements, s'il y en a eu ;
+- les trois membres ayant le plus insulté.
+
+Pour les messages, les insultes et les sanctions, l'évolution par rapport à la veille (ou à la semaine précédente) est indiquée, par exemple « +120 par rapport à la veille (+10,3 %) ».
+
+Pour l'activer, choisissez la fréquence dans le menu **Fréquence du bilan** du panneau `/paramètres logs` : **Bilan : chaque jour** ou **Bilan : chaque lundi**. Choisissez ensuite l'heure d'envoi dans le menu suivant : 6h, 9h, 12h, 17h, 20h ou 23h (heure de Paris), 9h par défaut. Choisissez **Bilan : désactivé** pour l'arrêter. Cocher l'évènement **Bilan du serveur** dans la liste des évènements l'active aussi, chaque jour à 9h par défaut.
+
+Le bouton **Prévisualiser le bilan** du même panneau affiche, à vous seul, le bilan tel qu'il serait envoyé.
+
+Aucun bilan n'est envoyé pour une journée sans activité, ni tant que les logs sont désactivés.
 
 ## Activer ou désactiver un évènement
 

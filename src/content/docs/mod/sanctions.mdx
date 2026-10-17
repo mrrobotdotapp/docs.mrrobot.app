@@ -1,0 +1,34 @@
+---
+title: Consulter les sanctions d'un membre
+description: Découvrez comment utiliser la commande /sanctions de Mr. Robøt pour consulter la fiche de modération d'un membre de votre serveur Discord.
+---
+
+La commande `/sanctions` affiche la fiche de modération d'un membre sur **ce serveur** : bannissements, sourdines, messages insultants, spam, ciblage répété.
+
+Pour les statistiques globales du serveur, voir [`/statistiques`](/mod/statistiques). Pour gérer les rôles d'un membre, voir [`/rôles`](/mod/roles).
+
+## Utilisation
+
+```
+/sanctions <membre>
+```
+
+- `membre` : Le membre dont vous voulez voir l'historique de modération.
+
+## Contenu de la fiche
+
+La fiche affiche un verdict (**SAIN**, **À SURVEILLER** ou **À RISQUE**), calculé à partir d'un score de gravité qui pondère chaque type d'évènement et son ancienneté : un bannissement récent pèse bien plus qu'une insulte isolée d'il y a plusieurs mois.
+
+Un résumé automatique en une phrase et un décompte par type sont affichés en premier, suivis du nombre de messages insultants envoyés par le membre sur les 15 et 30 derniers jours. Un message compte **une seule fois**, même s'il contient plusieurs insultes, et même s'il est détecté à la fois par le filtre classique et par l'IA (dans ce cas, il est compté comme détecté par l'IA). Le détail complet, avec la date, le modérateur responsable (ou "Automatique" pour une détection) et la raison de chaque évènement, est disponible derrière le bouton **Voir l'historique complet**, paginé si l'historique est long.
+
+Les membres et modérateurs sont affichés avec leur nom sur le serveur, en lien vers leur profil Discord. Une personne qui a quitté le serveur apparaît avec la mention « (a quitté le serveur) ».
+
+Si le membre est toujours présent sur le serveur, un bouton **Expulser temporairement** (mise en sourdine) permet d'enchaîner directement sur une sanction sans retaper de commande.
+
+:::note
+Aucun contenu de message n'est conservé dans cet historique, uniquement des informations contextuelles (type, salon, durée). L'historique est conservé 90 jours, puis purgé automatiquement.
+:::
+
+## Permission
+
+Permission par défaut : **Gérer les messages**.
