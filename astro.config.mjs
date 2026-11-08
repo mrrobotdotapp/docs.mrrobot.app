@@ -231,6 +231,13 @@ export default defineConfig({
                 en: "Repeated targeting",
               },
             },
+            {
+              label: "Avertissements",
+              link: "/configuration/avertissements/",
+              translations: {
+                en: "Warnings",
+              },
+            },
           ],
         },
         {

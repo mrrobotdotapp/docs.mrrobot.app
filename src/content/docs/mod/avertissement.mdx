@@ -1,0 +1,53 @@
+---
+title: Avertir un membre
+description: Découvrez comment utiliser la commande /avertissement de Mr. Robøt pour avertir un membre de votre serveur Discord et suivre ses avertissements.
+---
+
+La commande `/avertissement` pose un avertissement à un membre, avec un motif. L'avertissement est enregistré dans l'historique du serveur, le membre est prévenu en message privé et l'action est envoyée dans vos [logs](/configuration/logs).
+
+:::tip[Avertissement ou signalement ?]
+Un **avertissement** est une sanction posée par un modérateur sur un membre : elle expire, compte pour le seuil d'action automatique et le membre en est prévenu. Un [**signalement**](/utility/signaler) est une demande faite par un membre aux modérateurs pour examiner un message : ce n'est pas une sanction, et la personne signalée n'est jamais prévenue. Un signalement validé peut déboucher sur un avertissement.
+:::
+
+## Utilisation
+
+```
+/avertissement membre:@pseudo motif:Spam dans le général
+```
+
+- `membre` : le membre à avertir.
+- `motif` : facultatif. Sans motif, une fenêtre s'ouvre pour le choisir.
+
+### Sans motif
+
+Une fenêtre s'ouvre avec les mêmes catégories que le signalement d'un membre : harcèlement, intimidation, chantage, spam ou publicité en message privé, contenu inapproprié, autre. Un champ de précisions permet d'ajouter du contexte, il est obligatoire pour la catégorie **Autre**. Un champ d'expiration, facultatif, indique la durée de validité en jours : il affiche la valeur par défaut du serveur et la commande pour la régler. Laissé vide, la valeur par défaut s'applique, et `0` signifie que l'avertissement n'expire jamais.
+
+Le motif enregistré prend la forme « Catégorie : précisions ».
+
+## Ce que reçoit le membre
+
+Un message privé l'informe qu'il a été averti sur votre serveur, avec le motif et un rappel de relire les règles. Si le serveur a un salon des règles, le lien y est ajouté. Si le membre a fermé ses messages privés, l'avertissement est quand même posé et vous en êtes informé.
+
+## Expiration
+
+Un avertissement expire automatiquement après une durée réglable (6 mois par défaut), modifiable avec la fenêtre d'ajout. Voir [Configurer les avertissements](/configuration/avertissements).
+
+## Voir et gérer les avertissements d'un membre
+
+Depuis le profil d'un membre (`/profil @pseudo`) ou depuis [`/sanctions`](/mod/sanctions), la section **Modération** liste déjà les trois derniers avertissements actifs et contient un bouton **Voir les avertissements**. Il remplace la section, sur place, par une page où vous pouvez :
+
+- voir les avertissements actifs, avec leur date, leur auteur, leur motif et leur expiration ;
+- **retirer** un avertissement ;
+- **ajouter** un avertissement ;
+- **nettoyer tous les avertissements**, avec une confirmation obligatoire.
+
+Un retrait est compté dans l'historique du membre, avec son auteur. Le bouton **Retour** ramène à la section Modération.
+
+## Limites
+
+- Les robots ne peuvent pas être avertis, ni vous-même, ni le propriétaire du serveur.
+- Vous ne pouvez pas avertir un membre dont le rôle est supérieur ou égal au vôtre.
+
+## Permission
+
+Permission par défaut : **Mettre en sourdine les membres**.

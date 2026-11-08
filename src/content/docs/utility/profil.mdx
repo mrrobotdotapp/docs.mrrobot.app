@@ -39,7 +39,44 @@ Vous pouvez également obtenir ces informations en faisant un clic droit sur un 
 
 ## Points de bienveillance
 
-Sous la fiche, un bloc séparé affiche les **points de bienveillance** de la personne et ses compteurs. Le bouton `Historique de bienveillance` liste ses derniers mouvements. Voir [Points de bienveillance](/utility/bienveillance/).
+Sous la fiche, un bloc séparé affiche les **points de bienveillance** de la personne et ses compteurs. Le bouton `Historique de bienveillance` remplace ce bloc, sur place, par la liste de ses derniers mouvements, avec un bouton pour revenir au récap. Voir [Points de bienveillance](/utility/bienveillance/).
+
+## Section Modération
+
+Sur un serveur, les modérateurs (permission **Gérer les messages**) voient une section **Modération** sous le profil, visible par eux seuls :
+
+- un verdict (**SAIN**, **À SURVEILLER** ou **À RISQUE**) avec une explication, et le score de gravité ;
+- le nombre d'évènements par type sur la période choisie (7, 14, 30 ou 90 jours, 30 par défaut). Les boutons de période n'apparaissent pas si le membre n'a aucun historique ;
+- la date du dernier évènement et le nombre d'avertissements actifs, avec les trois derniers listés (date, modérateur, expiration, motif) ;
+- les **signalements reçus** visant le membre, avec un lien vers leur fil de suivi. Ils sont faits par des membres et à examiner : ce ne sont pas des sanctions, contrairement aux avertissements ;
+- des boutons **Voir les avertissements**, **Expulser temporairement** et **Bannir**.
+
+La même section est affichée seule par [`/sanctions`](/mod/sanctions).
+
+### Voir les avertissements
+
+Le bouton remplace la section Modération, sur place, par la liste des avertissements actifs du membre. Vous pouvez en **retirer** un, en **ajouter** un, ou **nettoyer tous les avertissements** après une confirmation, puis revenir à la section avec le bouton **Retour**. Voir [`/avertissement`](/mod/avertissement).
+
+### Expulser temporairement
+
+Le bouton ouvre une fenêtre pour choisir une raison (insultes, harcèlement, comportement toxique, spam, désinformation ou autre) et une durée de sourdine. Pour la raison **Autre**, remplissez le champ de raison personnalisée de la même fenêtre.
+
+### Bannir
+
+Le bouton **Bannir** ouvre une fenêtre avec :
+
+- une **raison** à choisir dans la même liste que la sourdine, et des **précisions** facultatives (obligatoires pour **Autre**) ;
+- le choix de **supprimer les messages** du membre sur les **7, 14 ou 30** derniers jours, avec la date limite de chaque durée. Par défaut, rien n'est supprimé.
+
+Valider la fenêtre bannit le membre. La raison enregistrée dans le journal d'audit Discord est « Banni par *pseudo* le *date* pour *raison* ». La suppression couvre tous les salons textuels où le robot peut lire l'historique et gérer les messages. Les messages de plus de 14 jours sont supprimés un par un, ce qui peut prendre du temps.
+
+La permission **Bannir des membres** est nécessaire pour bannir, et **Gérer les messages** pour supprimer les messages.
+
+### Sur son propre profil
+
+Un modérateur voit la section en lecture seule, sans boutons d'action. Un membre ordinaire voit un récap simple, visible par lui seul : si tout va bien ou s'il doit se calmer, le nombre de ses avertissements actifs et, si le serveur a réglé un seuil, l'action automatique prévue (par exemple « au 3e avertissement, vous serez automatiquement banni »). Il ne voit ni historique détaillé, ni signalements, ni boutons.
+
+Les avertissements se posent avec [`/avertissement`](/mod/avertissement).
 
 ## Permission
 
