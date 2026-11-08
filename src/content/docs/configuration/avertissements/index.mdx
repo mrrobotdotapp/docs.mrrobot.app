@@ -1,0 +1,52 @@
+---
+title: Configurer les avertissements
+description: "Mr. Robøt : définir le seuil d'avertissements qui déclenche une sourdine ou un bannissement automatique, et la durée avant expiration."
+sidebar:
+  order: 1
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+Les avertissements se posent avec [`/avertissement`](/mod/avertissement). Cette page explique comment faire agir le robot automatiquement quand un membre en accumule trop.
+
+## Régler
+
+<Steps>
+1. Exécuter la commande
+    ```
+    /paramètres avertissements
+    ```
+
+2. Choisir le **seuil** d'avertissements actifs.
+3. Choisir l'**action** au seuil : sourdine ou bannissement.
+4. Pour une sourdine, choisir sa **durée**.
+5. Choisir l'**expiration par défaut** des avertissements.
+6. Activer ou non l'**alerte avant le seuil**.
+</Steps>
+
+## Seuil et action automatique
+
+| Réglage | Valeurs |
+| --- | --- |
+| Seuil | Aucune action automatique, ou 2, 3, 4, 5, 7, 10 avertissements actifs |
+| Action au seuil | Sourdine ou bannissement |
+| Durée de la sourdine | 10 minutes, 1 heure, 1 jour, 3 jours, 7 jours |
+| Expiration par défaut | 30 jours, 90 jours, 6 mois, 1 an, jamais |
+
+Quand un membre atteint le seuil, l'action choisie est appliquée automatiquement et un log est envoyé. Seuls les avertissements **actifs** comptent : un avertissement expiré ou retiré n'est pas pris en compte.
+
+<Aside type="caution" title="Hiérarchie des rôles">
+  Pour appliquer l'action, le robot doit avoir la permission correspondante et un rôle supérieur à celui du membre. Sinon, le seuil est signalé dans les logs mais l'action n'est pas appliquée.
+</Aside>
+
+## Alerte avant le seuil
+
+Activée par défaut. Quand un membre est à un avertissement du seuil, une alerte est envoyée dans vos logs pour vous laisser intervenir à la main avant l'action automatique.
+
+## Logs
+
+Trois évènements de [logs](/configuration/logs) existent : **Avertissement posé**, **Avertissement retiré** et **Seuil d'avertissements atteint**. Ils sont activés automatiquement quand vous modifiez ces réglages, et chacun peut être désactivé séparément depuis `/paramètres logs`.
+
+## Permission
+
+Permission par défaut : **Gérer le serveur**.

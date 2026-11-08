@@ -1,45 +1,91 @@
 ---
 title: Documentation
-description: Toute la documentation nécessaire pour utiliser Mr. Robøt.
+description: Toute la documentation pour installer, configurer et utiliser Mr. Robøt sur votre serveur Discord.
 template: splash
 editUrl: false
 lastUpdated: false
 hero:
-  tagline: Vous retrouverez ici toute la documentation nécessaire pour utiliser Mr. Robøt.
+  tagline: Modérez sans effort, configurez en quelques clics, gardez votre serveur serein. Tout ce qu'il faut savoir pour tirer le meilleur de Mr. Robøt.
   actions:
-    - text: INTRODUCTION
-      link: /getting-started/introduction
-      icon: right-arrow
-      variant: primary
-    - text: En savoir plus sur Mr. Robøt
-      link: https://mrrobot.app
+    - text: Ajouter à Discord
+      link: https://mrrobot.app/add
       icon: external
+      variant: primary
+    - text: Premiers pas
+      link: /getting-started/introduction/
+      icon: right-arrow
+      variant: secondary
+    - text: Liste des commandes
+      link: /commands/
+      variant: minimal
 ---
 
 import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-<CardGrid>
-  <LinkCard title="Système de logs"
-            description="Enregistrez les événements de votre serveur Discord : messages supprimés, membres, invitations et plus encore."
-            href="/configuration/logs" />
-  <LinkCard title="Filtre contre les insultes"
-            description="Filtrez automatiquement les messages contenant des insultes sur votre serveur Discord."
-            href="/configuration/swear/config-filter" />
-  <LinkCard title="Protection anti-spam"
-            description="Protégez votre serveur Discord contre le spam de mentions et le flood de messages identiques."
-            href="/configuration/antispam" />
-  <LinkCard title="Commandes utilitaires"
-            description="Annonces, sondages, informations serveur et bien d'autres commandes pour animer votre serveur Discord."
-            href="/utility/announce" />
-</CardGrid>
+## Par où commencer ?
 
 <CardGrid>
-	<Card title="Sur Bluesky" icon="blueSky">
-		[Suivez le compte sur Bluesky](https://bsky.app/profile/mrrobot.app) pour être tenu au courant des dernières nouveautés.
-    Vous pouvez notamment retrouver des astuces et des conseils pour utiliser Mr. Robøt, et des giveaways sont organisés régulièrement.
-	</Card>
+  <Card title="Je modère un serveur" icon="approve-check">
+    Sanctionnez, suivez l'historique d'un membre et gardez une trace de chaque décision.
+
+    - [Avertir un membre](/mod/avertissement/)
+    - [Consulter les sanctions](/mod/sanctions/)
+    - [Supprimer des messages](/mod/clear/)
+    - [Traiter les signalements](/utility/signaler/)
+  </Card>
+  <Card title="Je configure le robot" icon="setting">
+    Branchez les protections et réglez-les à votre rythme, sans toucher au code.
+
+    - [Système de logs](/configuration/logs/)
+    - [Filtre contre les insultes](/configuration/swear/config-filter/)
+    - [Protection anti-spam](/configuration/antispam/)
+    - [Mode Urgence](/configuration/urgence/)
+  </Card>
+  <Card title="Je suis membre" icon="heart">
+    Profitez des commandes ouvertes à tout le monde, sans permission particulière.
+
+    - [Mon profil et ma bienveillance](/utility/profil/)
+    - [Mes rappels](/utility/rappel/)
+    - [Signaler un message](/utility/signaler/)
+    - [Panneau d'aide](/utility/help/)
+  </Card>
+  <Card title="Je veux tout voir" icon="list-format">
+    Toutes les commandes du robot, avec leurs options et la permission requise.
+
+    [Ouvrir la liste des commandes](/commands/)
+  </Card>
+</CardGrid>
+
+## Les fonctionnalités clés
+
+<CardGrid>
+  <LinkCard title="Avertissements"
+            description="Avertissez un membre avec un motif, une expiration et une action automatique au-delà d'un seuil."
+            href="/configuration/avertissements/" />
+  <LinkCard title="Système de logs"
+            description="Gardez la mémoire de votre serveur : messages supprimés, arrivées, départs, invitations et plus encore."
+            href="/configuration/logs/" />
+  <LinkCard title="Filtre contre les insultes"
+            description="Stoppez les insultes automatiquement, avec un filtre classique et une détection par IA."
+            href="/configuration/swear/config-filter/" />
+  <LinkCard title="Protection anti-spam"
+            description="Coupez court au spam de mentions et au flood de messages identiques."
+            href="/configuration/antispam/" />
+  <LinkCard title="Ciblage répété"
+            description="Repérez le harcèlement : un membre visé de façon répétée par un même autre."
+            href="/configuration/ciblage/" />
+  <LinkCard title="Mode Urgence"
+            description="Un salon s'emballe ? Activez un mode lent temporaire en une commande."
+            href="/configuration/urgence/" />
+</CardGrid>
+
+## Restez dans la boucle
+
+<CardGrid>
+  <Card title="Sur Bluesky" icon="blueSky">
+    [Suivez le compte sur Bluesky](https://bsky.app/profile/mrrobot.app) pour les nouveautés, les astuces et les giveaways réguliers.
+  </Card>
   <Card title="Serveur Discord" icon="discord">
-    [Rejoignez le serveur Discord](https://mrrobot.app/discord) pour discuter avec la communauté
-    et être tenu au courant des dernières nouveautés en étant notifié avec les rôles adéquats.
+    [Rejoignez le serveur Discord](https://mrrobot.app/discord) pour échanger avec la communauté et recevoir les annonces.
   </Card>
 </CardGrid>

@@ -1,6 +1,6 @@
 ---
 title: Supprimer plusieurs messages
-description: Découvrez comment utiliser la commande /clear de Mr. Robøt pour supprimer des messages dans un salon.
+description: Découvrez comment utiliser la commande /clear de Mr. Robøt pour supprimer des messages dans un salon, ou seulement ceux d'un membre.
 ---
 
 La commande `/clear` permet de supprimer un certain nombre de messages dans un salon.
@@ -9,11 +9,40 @@ Cette commande est réservée aux modérateurs du serveur.
 ## Utilisation
 
 ```
-/clear <nombre>
+/clear [nombres] [membre]
 ```
 
+| Option    | Description                                                                 |
+| --------- | --------------------------------------------------------------------------- |
+| `nombres` | Nombre de messages à supprimer, entre 2 et 100.                             |
+| `membre`  | Facultatif. Ne supprime que les derniers messages de ce membre dans le salon. |
+
+Sans option, la commande affiche un rappel de son fonctionnement.
+
+### Supprimer les derniers messages du salon
+
+```
+/clear nombres:20
+```
+
+Supprime les 20 derniers messages du salon, tous auteurs confondus.
+
+### Supprimer les messages d'un seul membre
+
+```
+/clear membre:@pseudo nombres:12
+```
+
+Supprime les 12 derniers messages de ce membre, sans toucher à ceux des autres. Sans `nombres`, Mr. Robøt supprime jusqu'à 100 de ses messages récents.
+
+Une confirmation indique le nombre de messages réellement supprimés. Il peut être inférieur à celui demandé si le membre a écrit moins de messages récemment.
+
 :::note
-Le nombre de messages à supprimer doit être compris entre 2 et 100. La limitation est imposée par Discord.
+Le nombre de messages à supprimer doit être compris entre 2 et 100 (1 à 100 avec `membre`). La limitation est imposée par Discord.
+:::
+
+:::caution
+Discord ne permet de supprimer en masse que les messages de **moins de 14 jours**. Avec `membre`, Mr. Robøt parcourt au maximum 500 messages du salon pour retrouver ceux du membre.
 :::
 
 ## Permission
