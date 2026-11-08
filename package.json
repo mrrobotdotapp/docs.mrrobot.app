@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "commands:update": "node --env-file-if-exists=.env scripts/update-commands.mjs"
   },
   "dependencies": {
     "@astrojs/starlight": "0.39.2",

@@ -165,6 +165,13 @@ export default defineConfig({
           items: [{ autogenerate: { directory: "getting-started" } }],
         },
         {
+          label: "Liste des commandes",
+          link: "/commands/",
+          translations: {
+            en: "Command list",
+          },
+        },
+        {
           label: "Configuration",
           collapsed: true,
           translations: {
