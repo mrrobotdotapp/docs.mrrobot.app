@@ -84,7 +84,7 @@
   {
     "id": "1038514522597634140",
     "application_id": "308655472452304896",
-    "version": "1326504162590195712",
+    "version": "1569110640549691546",
     "default_member_permissions": "8192",
     "type": 1,
     "name": "clear",
@@ -117,9 +117,23 @@
           "en-US": "Number of messages to delete. Between 2 and 100 messages.",
           "en-GB": "Number of messages to delete. Between 2 and 100 messages."
         },
-        "required": true,
-        "min_value": 2,
+        "min_value": 1,
         "max_value": 100
+      },
+      {
+        "type": 6,
+        "name": "membre",
+        "name_localizations": {
+          "fr": "membre",
+          "en-US": "member",
+          "en-GB": "member"
+        },
+        "description": "Ne supprimer que les derniers messages de ce membre.",
+        "description_localizations": {
+          "fr": "Ne supprimer que les derniers messages de ce membre.",
+          "en-US": "Only delete the latest messages of this member.",
+          "en-GB": "Only delete the latest messages of this member."
+        }
       }
     ],
     "nsfw": false
@@ -727,7 +741,7 @@
   {
     "id": "1560357434764169246",
     "application_id": "308655472452304896",
-    "version": "1560357434764169250",
+    "version": "1569110640549691547",
     "default_member_permissions": "8192",
     "type": 1,
     "name": "sanctions",
@@ -736,11 +750,11 @@
       "en-US": "sanctions",
       "en-GB": "sanctions"
     },
-    "description": "Afficher la fiche de modération d'un membre (sanctions, insultes, spam...)",
+    "description": "Afficher la section Modération d'un membre, la même que sur son /profil",
     "description_localizations": {
-      "fr": "Afficher la fiche de modération d'un membre (sanctions, insultes, spam...)",
-      "en-US": "Show a member's moderation profile (sanctions, insults, spam...)",
-      "en-GB": "Show a member's moderation profile (sanctions, insults, spam...)"
+      "fr": "Afficher la section Modération d'un membre, la même que sur son /profil",
+      "en-US": "Show a member's Moderation section, the same as on their /profile",
+      "en-GB": "Show a member's Moderation section, the same as on their /profile"
     },
     "dm_permission": false,
     "contexts": [
@@ -817,7 +831,7 @@
   {
     "id": "1560357434764169248",
     "application_id": "308655472452304896",
-    "version": "1560357434764169252",
+    "version": "1569110640549691548",
     "default_member_permissions": "32",
     "type": 1,
     "name": "paramètres",
@@ -883,6 +897,21 @@
           "fr": "⚙ Configurer les templates de protection AutoMod",
           "en-US": "⚙ Configure AutoMod protection templates",
           "en-GB": "⚙ Configure AutoMod protection templates"
+        }
+      },
+      {
+        "type": 1,
+        "name": "avertissements",
+        "name_localizations": {
+          "fr": "avertissements",
+          "en-US": "warnings",
+          "en-GB": "warnings"
+        },
+        "description": "⚠ Configurer le seuil et l'expiration des avertissements",
+        "description_localizations": {
+          "fr": "⚠ Configurer le seuil et l'expiration des avertissements",
+          "en-US": "⚠ Configure the warning threshold and expiration",
+          "en-GB": "⚠ Configure the warning threshold and expiration"
         }
       },
       {
@@ -1037,6 +1066,67 @@
     ],
     "integration_types": [
       0
+    ],
+    "nsfw": false
+  },
+  {
+    "id": "1569110640549691544",
+    "application_id": "308655472452304896",
+    "version": "1569110640549691545",
+    "default_member_permissions": "1099511627776",
+    "type": 1,
+    "name": "avertissement",
+    "name_localizations": {
+      "fr": "avertissement",
+      "en-US": "warning",
+      "en-GB": "warning"
+    },
+    "description": "Avertir un membre (une modale s'ouvre si vous n'indiquez pas de motif)",
+    "description_localizations": {
+      "fr": "Avertir un membre (une modale s'ouvre si vous n'indiquez pas de motif)",
+      "en-US": "Warn a member (a modal opens if you give no reason)",
+      "en-GB": "Warn a member (a modal opens if you give no reason)"
+    },
+    "dm_permission": false,
+    "contexts": [
+      0
+    ],
+    "integration_types": [
+      0
+    ],
+    "options": [
+      {
+        "type": 6,
+        "name": "membre",
+        "name_localizations": {
+          "fr": "membre",
+          "en-US": "member",
+          "en-GB": "member"
+        },
+        "description": "Le membre à avertir",
+        "description_localizations": {
+          "fr": "Le membre à avertir",
+          "en-US": "The member to warn",
+          "en-GB": "The member to warn"
+        },
+        "required": true
+      },
+      {
+        "type": 3,
+        "name": "motif",
+        "name_localizations": {
+          "fr": "motif",
+          "en-US": "reason",
+          "en-GB": "reason"
+        },
+        "description": "La raison de l'avertissement",
+        "description_localizations": {
+          "fr": "La raison de l'avertissement",
+          "en-US": "The reason for the warning",
+          "en-GB": "The reason for the warning"
+        },
+        "max_length": 500
+      }
     ],
     "nsfw": false
   }
