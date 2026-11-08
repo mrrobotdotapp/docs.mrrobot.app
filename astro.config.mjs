@@ -47,6 +47,7 @@ export default defineConfig({
           },
         }),*/
       ],
+      routeMiddleware: "./src/starlightRouteData.ts",
       components: {
         Header: "./src/components/Header.astro",
         PageSidebar: "./src/components/PageSidebar.astro",
