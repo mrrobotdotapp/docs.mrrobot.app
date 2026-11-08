@@ -50,6 +50,7 @@ export default defineConfig({
       components: {
         Header: "./src/components/Header.astro",
         PageSidebar: "./src/components/PageSidebar.astro",
+        PageTitle: "./src/components/PageTitle.astro",
       },
       head: [
         {
