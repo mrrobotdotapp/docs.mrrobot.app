@@ -47,9 +47,11 @@ export default defineConfig({
           },
         }),*/
       ],
+      routeMiddleware: "./src/starlightRouteData.ts",
       components: {
         Header: "./src/components/Header.astro",
         PageSidebar: "./src/components/PageSidebar.astro",
+        PageTitle: "./src/components/PageTitle.astro",
       },
       head: [
         {
@@ -165,8 +167,42 @@ export default defineConfig({
           items: [{ autogenerate: { directory: "getting-started" } }],
         },
         {
-          label: "Configuration",
+          label: "Liste des commandes",
+          link: "/commands/",
+          translations: {
+            en: "Command list",
+          },
+        },
+        {
+          label: "Commandes pour les membres",
           collapsed: true,
+          translations: {
+            en: "Member commands",
+          },
+          items: [
+            { slug: "utility/help", label: "Panneau d'aide" },
+            { slug: "utility/profil", label: "Profil d'un membre" },
+            { slug: "utility/bienveillance", label: "Points de bienveillance" },
+            { slug: "utility/rappel", label: "Rappels personnels" },
+            { slug: "utility/welcome", label: "Souhaiter la bienvenue" },
+            { slug: "utility/server", label: "Infos du serveur" },
+            { slug: "utility/signaler", label: "Signaler un message" },
+          ],
+        },
+        {
+          label: "Commandes pour les modérateurs",
+          collapsed: true,
+          translations: {
+            en: "Moderator commands",
+          },
+          items: [
+            { autogenerate: { directory: "mod" } },
+            { slug: "utility/announce", label: "Créer une annonce" },
+          ],
+        },
+        {
+          label: "Configuration",
+          collapsed: false,
           translations: {
             en: "Configuration",
           },
@@ -231,23 +267,21 @@ export default defineConfig({
                 en: "Repeated targeting",
               },
             },
+            {
+              label: "Avertissements",
+              link: "/configuration/avertissements/",
+              translations: {
+                en: "Warnings",
+              },
+            },
+            {
+              label: "Apparence du robot",
+              link: "/utility/appearance/",
+              translations: {
+                en: "Robot appearance",
+              },
+            },
           ],
-        },
-        {
-          label: "Commandes utilitaires",
-          collapsed: false,
-          translations: {
-            en: "Utility commands",
-          },
-          items: [{ autogenerate: { directory: "utility" } }],
-        },
-        {
-          label: "Commandes de modération",
-          collapsed: false,
-          translations: {
-            en: "Moderation commands",
-          },
-          items: [{ autogenerate: { directory: "mod" } }],
         },
         /* {
           label: 'Premium',

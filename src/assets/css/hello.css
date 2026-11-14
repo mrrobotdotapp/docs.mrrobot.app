@@ -126,3 +126,69 @@ nav[aria-labelledby="starlight__on-this-page"] ul li a {
 nav[aria-labelledby="starlight__on-this-page"] a[aria-current="true"] {
 	font-weight: 600;
 }
+
+/* Animation d'ouverture/fermeture des groupes de la barre latérale.
+   Amélioration progressive : les navigateurs sans ::details-content
+   ou sans interpolate-size (Firefox, Safari) ouvrent sans animation. */
+@media (prefers-reduced-motion: no-preference) {
+	.sidebar-content details {
+		interpolate-size: allow-keywords;
+	}
+
+	.sidebar-content details::details-content {
+		block-size: 0;
+		overflow: hidden;
+		transition:
+			block-size 0.25s ease,
+			content-visibility 0.25s allow-discrete;
+	}
+
+	.sidebar-content details[open]::details-content {
+		block-size: auto;
+	}
+}
+
+/* Page « Liste des commandes » : contenu élargi (sans table des matières)
+   mais plafonné, avec des marges de chaque côté.
+   `.commands-list` est un marqueur émis par le composant CommandList. */
+.main-pane:has(.commands-list) .content-panel .sl-container {
+	max-width: 64rem;
+}
+
+/* Starlight met les tableaux en `display: block`, ce qui les fait rétrécir
+   à la taille de leur contenu. Sur grand écran, on les étire sur toute la
+   largeur du contenu ; en dessous, on garde le défilement horizontal. */
+@media (min-width: 50rem) {
+	.main-pane:has(.commands-list) .sl-markdown-content table {
+		display: table;
+		width: 100%;
+	}
+}
+
+/* Recherche dans la liste des commandes. */
+.commands-search {
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	margin-block: 1rem 0.5rem;
+	padding: 0.65rem 0.9rem;
+	font: inherit;
+	color: var(--sl-color-white);
+	background: var(--sl-color-gray-6);
+	border: 1px solid var(--sl-color-gray-5);
+	border-radius: 0.5rem;
+}
+
+.commands-search:focus {
+	outline: 2px solid var(--sl-color-accent-high);
+	outline-offset: 1px;
+}
+
+.commands-empty {
+	color: var(--sl-color-gray-3);
+}
+
+/* Panneau du titre (avec les boutons « Ouvrir dans ») : moins d'espace dessous. */
+.content-panel:has(.ai-actions) {
+	padding-bottom: 0.75rem;
+}

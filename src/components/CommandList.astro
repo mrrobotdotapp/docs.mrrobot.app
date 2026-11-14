@@ -1,0 +1,201 @@
+---
+/**
+ * Liste des commandes du robot, générée depuis l'export de l'API Discord
+ * (`src/data/discord-commands.json`, voir `yarn commands:update`).
+ * Libellés et descriptions en français ; liens et catégories dans
+ * `src/data/commands-meta.ts`.
+ */
+import rawCommands from "../data/discord-commands.json";
+import { categories, commandMeta, type CategoryId } from "../data/commands-meta";
+
+interface ApiOption {
+  type: number;
+  name: string;
+  name_localizations?: Record<string, string> | null;
+  description?: string;
+  description_localizations?: Record<string, string> | null;
+  required?: boolean;
+  options?: ApiOption[];
+}
+interface ApiCommand extends ApiOption {
+  default_member_permissions: string | null;
+}
+
+const SUB_COMMAND = 1;
+const SLASH = 1;
+const USER_MENU = 2;
+const MESSAGE_MENU = 3;
+
+// Bits de permissions Discord → libellé affiché dans l'interface Discord (FR).
+const permissionNames: Record<string, string> = {
+  "2": "Expulser des membres",
+  "4": "Bannir des membres",
+  "8": "Administrateur",
+  "16": "Gérer les salons",
+  "32": "Gérer le serveur",
+  "128": "Voir les logs du serveur",
+  "8192": "Gérer les messages",
+  "268435456": "Gérer les rôles",
+  "1099511627776": "Mettre des membres en sourdine",
+};
+
+function permissionLabel(bits: string | null): string {
+  if (bits === null) return "Tout le monde";
+  const value = BigInt(bits);
+  const names = Object.entries(permissionNames)
+    .filter(([bit]) => (value & BigInt(bit)) !== 0n)
+    .map(([, name]) => name);
+  return names.length ? names.join(", ") : `Permissions ${bits}`;
+}
+
+const fr = (o: ApiOption) => o.name_localizations?.fr ?? o.name;
+const en = (o: ApiOption) => o.name_localizations?.["en-US"] ?? o.name;
+const enDescription = (o: ApiOption) => o.description_localizations?.["en-US"] ?? "";
+const frDescription = (o: ApiOption) => o.description_localizations?.fr ?? o.description ?? "";
+
+function usage(o: ApiOption): string {
+  return (o.options ?? [])
+    .filter((opt) => opt.type !== SUB_COMMAND)
+    .map((opt) => (opt.required ? `<${fr(opt)}>` : `[${fr(opt)}]`))
+    .join(" ");
+}
+
+// Texte indexé par la recherche : noms et descriptions FR + EN, options, permission.
+const searchText = (parts: string[]) => parts.join(" ").toLowerCase();
+
+interface Row {
+  label: string;
+  usage: string;
+  description: string;
+  permission: string;
+  href?: string;
+  search: string;
+}
+
+const groups = new Map<CategoryId, Row[]>(categories.map((c) => [c.id, []]));
+
+for (const command of rawCommands as ApiCommand[]) {
+  const permission = permissionLabel(command.default_member_permissions);
+  const meta = commandMeta[command.name];
+  const category = meta?.category ?? "other";
+
+  if (command.type === USER_MENU || command.type === MESSAGE_MENU) {
+    const target = command.type === MESSAGE_MENU ? "sur un message" : "sur un membre";
+    groups.get(meta?.category ?? "context")!.push({
+      label: command.name_localizations?.fr ?? command.name,
+      usage: "",
+      description: `Clic droit ${target} › Applications.`,
+      permission,
+      href: meta?.href,
+      search: searchText([fr(command), en(command), target, permission]),
+    });
+    continue;
+  }
+  if (command.type !== SLASH) continue;
+
+  const subCommands = (command.options ?? []).filter((o) => o.type === SUB_COMMAND);
+  if (subCommands.length === 0) {
+    groups.get(category)!.push({
+      label: `/${fr(command)}`,
+      usage: usage(command),
+      description: frDescription(command),
+      permission,
+      href: meta?.href,
+      search: searchText([
+        fr(command), en(command), frDescription(command), enDescription(command), usage(command), permission,
+      ]),
+    });
+    continue;
+  }
+
+  // Une ligne par sous-commande (`/rappel créer`, `/paramètres logs`…).
+  for (const sub of subCommands) {
+    const subMeta = commandMeta[`${command.name} ${sub.name}`];
+    groups.get(subMeta?.category ?? category)!.push({
+      label: `/${fr(command)} ${fr(sub)}`,
+      usage: usage(sub),
+      description: frDescription(sub),
+      permission,
+      href: subMeta?.href ?? meta?.href,
+      search: searchText([
+        fr(command), en(command), fr(sub), en(sub), frDescription(sub), enDescription(sub), usage(sub), permission,
+      ]),
+    });
+  }
+}
+
+const sections = categories.filter((c) => groups.get(c.id)!.length > 0);
+---
+
+<div class="commands-list" hidden></div>
+<input
+  type="search"
+  class="commands-search"
+  placeholder="Rechercher une commande : nom, description, permission…"
+  aria-label="Rechercher une commande"
+  autocomplete="off"
+/>
+<p class="commands-empty" hidden>Aucune commande ne correspond à cette recherche.</p>
+{
+  sections.map((section) => (
+    <>
+      <section class="commands-section">
+      <h2 id={section.id}>{section.label}</h2>
+      {section.description && <p set:html={section.description.replace(/`([^`]+)`/g, "<code>$1</code>")} />}
+      <table>
+        <thead>
+          <tr>
+            <th>Commande</th>
+            <th>Description</th>
+            <th>Permission</th>
+          </tr>
+        </thead>
+        <tbody>
+          {groups.get(section.id)!.map((row) => (
+            <tr data-search={row.search}>
+              <td>
+                {row.href ? <a href={row.href}><code>{row.label}</code></a> : <code>{row.label}</code>}
+                {row.usage && <><br /><small><code>{row.usage}</code></small></>}
+              </td>
+              <td>{row.description}</td>
+              <td>{row.permission}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      </section>
+    </>
+  ))
+}
+
+<script>
+  // Filtre côté client : insensible à la casse et aux accents, tous les mots doivent correspondre.
+  const normalize = (text: string) =>
+    text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+
+  const input = document.querySelector<HTMLInputElement>(".commands-search");
+  const empty = document.querySelector<HTMLElement>(".commands-empty");
+  const sections = [...document.querySelectorAll<HTMLElement>(".commands-section")];
+  const rows = sections.flatMap((section) =>
+    [...section.querySelectorAll<HTMLElement>("tbody tr")].map((row) => ({
+      row,
+      text: normalize(row.dataset.search ?? ""),
+    })),
+  );
+
+  function filter() {
+    const words = normalize(input?.value ?? "").split(/\s+/).filter(Boolean);
+    for (const { row, text } of rows) {
+      row.hidden = !words.every((word) => text.includes(word));
+    }
+    let visible = 0;
+    for (const section of sections) {
+      const any = [...section.querySelectorAll("tbody tr")].some((r) => !(r as HTMLElement).hidden);
+      section.hidden = !any;
+      if (any) visible++;
+    }
+    if (empty) empty.hidden = visible > 0;
+  }
+
+  input?.addEventListener("input", filter);
+</script>

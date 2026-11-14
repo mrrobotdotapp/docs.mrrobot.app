@@ -11,6 +11,10 @@ Le signalement de message permet à n'importe quel membre de signaler discrètem
   Ceci n'est pas un signalement à Discord : votre signalement reste interne au serveur, seuls les modérateurs de ce serveur en sont informés. L'auteur du message signalé n'est jamais notifié.
 </Aside>
 
+:::tip[Signalement ou avertissement ?]
+Un **signalement** est une demande faite par un membre aux modérateurs pour examiner un message : ce n'est pas une sanction, et la personne signalée n'est jamais prévenue. Un [**avertissement**](/mod/avertissement) est une sanction posée par un modérateur sur un membre : elle expire, compte pour le seuil d'action automatique et le membre en est prévenu.
+:::
+
 ## Depuis un clic droit
 
 <Steps>
@@ -46,6 +50,8 @@ Pour obtenir le lien d'un message : clic droit sur le message > `Copier le lien 
 - Contenu inapproprié
 - Autre
 
+Ce sont les mêmes catégories que pour poser un [avertissement](/mod/avertissement).
+
 ## Signaler à nouveau le même message
 
 Si vous aviez déjà signalé ce message, un second signalement ouvre un formulaire différent, `Ajouter plus d'informations`, pour compléter votre signalement précédent plutôt que d'en créer un nouveau.
@@ -57,6 +63,8 @@ Chaque signalement reçu affiche directement le contenu du message signalé, san
 Un bouton **Prendre en charge** permet à un modérateur d'indiquer qu'il s'occupe du signalement. Le signalement affiche alors son nom, pour éviter que plusieurs modérateurs travaillent dessus en même temps sans le savoir.
 
 Si plusieurs personnes signalent le même message, les signalements suivants sont regroupés dans un thread de suivi ouvert sous le premier log, au lieu de créer un nouveau log à chaque fois. Ce thread est nommé `SGN#xxxxx` (SGN pour signalement) et le robot y mentionne le modérateur qui prend le signalement en charge.
+
+Les décisions sont aussi tracées dans ce thread : une ligne indique qui a **validé**, **rejeté** ou **annulé la validation** du signalement, en nommant la personne qui l'avait fait (plusieurs signalants peuvent partager un thread). Ces lignes ne notifient personne.
 
 Les boutons **Valider** et **Rejeter** permettent de trancher. Un signalement validé rapporte des [points de bienveillance](/utility/bienveillance/) à la personne qui l'a fait. La validation peut être annulée pendant 12 heures.
 

@@ -1,0 +1,1133 @@
+[
+  {
+    "id": "965998396181712896",
+    "application_id": "308655472452304896",
+    "version": "1286660905563590692",
+    "default_member_permissions": "8",
+    "type": 1,
+    "name": "ping",
+    "name_localizations": null,
+    "description": "Obtenir le ping du robot",
+    "description_localizations": {
+      "fr": "Obtenir le ping du robot",
+      "en-US": "Get the robot's ping",
+      "en-GB": "Get the robot's ping"
+    },
+    "dm_permission": false,
+    "contexts": [
+      0
+    ],
+    "integration_types": [
+      0
+    ],
+    "nsfw": false
+  },
+  {
+    "id": "1038514522597634139",
+    "application_id": "308655472452304896",
+    "version": "1286660905563590688",
+    "default_member_permissions": "4",
+    "type": 1,
+    "name": "banid",
+    "name_localizations": null,
+    "description": "Bannir un utilisateur depuis son identifiant",
+    "description_localizations": {
+      "fr": "Bannir un utilisateur depuis son identifiant",
+      "en-US": "Ban a user from their ID",
+      "en-GB": "Ban a user from their ID"
+    },
+    "dm_permission": false,
+    "contexts": [
+      0
+    ],
+    "integration_types": [
+      0
+    ],
+    "options": [
+      {
+        "type": 3,
+        "name": "id",
+        "name_localizations": {
+          "fr": "identifiant",
+          "en-US": "id",
+          "en-GB": "id"
+        },
+        "description": "Exemple d'un identifiant : 708358472331304801",
+        "description_localizations": null,
+        "required": true
+      },
+      {
+        "type": 3,
+        "name": "reason",
+        "name_localizations": {
+          "fr": "raison",
+          "en-US": "reason",
+          "en-GB": "reason"
+        },
+        "description": "Raison du bannissement",
+        "description_localizations": null
+      },
+      {
+        "type": 10,
+        "name": "days",
+        "name_localizations": {
+          "fr": "jours",
+          "en-US": "days",
+          "en-GB": "days"
+        },
+        "description": "Nombre de jours à supprimer des messages",
+        "description_localizations": null
+      }
+    ],
+    "nsfw": false
+  },
+  {
+    "id": "1038514522597634140",
+    "application_id": "308655472452304896",
+    "version": "1569110640549691546",
+    "default_member_permissions": "8192",
+    "type": 1,
+    "name": "clear",
+    "name_localizations": null,
+    "description": "Nettoyer un salon textuel en un claquement de doigt",
+    "description_localizations": {
+      "fr": "Nettoyer un salon textuel en un claquement de doigt",
+      "en-US": "Clean up a text room in seconds",
+      "en-GB": "Clean up a text room in seconds"
+    },
+    "dm_permission": false,
+    "contexts": [
+      0
+    ],
+    "integration_types": [
+      0
+    ],
+    "options": [
+      {
+        "type": 10,
+        "name": "nombres",
+        "name_localizations": {
+          "fr": "nombres",
+          "en-US": "numbers",
+          "en-GB": "numbers"
+        },
+        "description": "Nombres de messages à supprimer. Entre 2 et 100 messages.",
+        "description_localizations": {
+          "fr": "Nombres de messages à supprimer. Entre 2 et 100 messages.",
+          "en-US": "Number of messages to delete. Between 2 and 100 messages.",
+          "en-GB": "Number of messages to delete. Between 2 and 100 messages."
+        },
+        "min_value": 1,
+        "max_value": 100
+      },
+      {
+        "type": 6,
+        "name": "membre",
+        "name_localizations": {
+          "fr": "membre",
+          "en-US": "member",
+          "en-GB": "member"
+        },
+        "description": "Ne supprimer que les derniers messages de ce membre.",
+        "description_localizations": {
+          "fr": "Ne supprimer que les derniers messages de ce membre.",
+          "en-US": "Only delete the latest messages of this member.",
+          "en-GB": "Only delete the latest messages of this member."
+        }
+      }
+    ],
+    "nsfw": false
+  },
+  {
+    "id": "1066592616570953738",
+    "application_id": "308655472452304896",
+    "version": "1525169975784902787",
+    "default_member_permissions": null,
+    "type": 1,
+    "name": "aide",
+    "name_localizations": {
+      "fr": "aide",
+      "en-US": "help",
+      "en-GB": "help"
+    },
+    "description": "Obtenir le panel d'aide",
+    "description_localizations": {
+      "fr": "Obtenir le panel d'aide",
+      "en-US": "Get the help panel",
+      "en-GB": "Get the help panel"
+    },
+    "dm_permission": false,
+    "contexts": [
+      0,
+      2
+    ],
+    "integration_types": [
+      0
+    ],
+    "nsfw": false
+  },
+  {
+    "id": "1066592616570953739",
+    "application_id": "308655472452304896",
+    "version": "1286660905563590693",
+    "default_member_permissions": null,
+    "type": 1,
+    "name": "serveur",
+    "name_localizations": {
+      "fr": "serveur",
+      "en-US": "server",
+      "en-GB": "server"
+    },
+    "description": "Obtenir les informations concernant ce serveur Discord",
+    "description_localizations": {
+      "fr": "Obtenir les informations concernant ce serveur Discord",
+      "en-US": "Get information about this Discord server",
+      "en-GB": "Get information about this Discord server"
+    },
+    "dm_permission": false,
+    "contexts": [
+      0
+    ],
+    "integration_types": [
+      0
+    ],
+    "nsfw": false
+  },
+  {
+    "id": "1283153416293580851",
+    "application_id": "308655472452304896",
+    "version": "1560980892824899744",
+    "default_member_permissions": null,
+    "type": 1,
+    "name": "bienvenue",
+    "name_localizations": {
+      "fr": "bienvenue",
+      "en-US": "welcome",
+      "en-GB": "welcome"
+    },
+    "description": "Souhaitez la bienvenue à un utilisateur",
+    "description_localizations": {
+      "fr": "Souhaitez la bienvenue à un utilisateur",
+      "en-US": "Welcome a user",
+      "en-GB": "Welcome a user"
+    },
+    "dm_permission": true,
+    "contexts": null,
+    "integration_types": [
+      0,
+      1
+    ],
+    "options": [
+      {
+        "type": 6,
+        "name": "utilisateur",
+        "name_localizations": {
+          "fr": "utilisateur",
+          "en-US": "user",
+          "en-GB": "user"
+        },
+        "description": "La personne à qui vous souhaitez la bienvenue",
+        "description_localizations": {
+          "fr": "La personne à qui vous souhaitez la bienvenue",
+          "en-US": "The person you want to welcome",
+          "en-GB": "The person you want to welcome"
+        }
+      }
+    ],
+    "nsfw": false
+  },
+  {
+    "id": "1300887666648158238",
+    "application_id": "308655472452304896",
+    "version": "1300887666648158239",
+    "default_member_permissions": "32",
+    "type": 1,
+    "name": "annonce",
+    "name_localizations": null,
+    "description": "Annoncer un message dans un salon",
+    "description_localizations": {
+      "fr": "Annoncer un message dans un salon",
+      "en-US": "Announce a message in a channel",
+      "en-GB": "Announce a message in a channel"
+    },
+    "dm_permission": false,
+    "contexts": [
+      0
+    ],
+    "integration_types": [
+      0
+    ],
+    "options": [
+      {
+        "type": 7,
+        "name": "channel",
+        "name_localizations": {
+          "fr": "salon",
+          "en-US": "channel",
+          "en-GB": "channel"
+        },
+        "description": "Le salon où envoyer l'annonce",
+        "description_localizations": {
+          "fr": "Le salon où envoyer l'annonce",
+          "en-US": "The channel where to send the announcement",
+          "en-GB": "The channel where to send the announcement"
+        },
+        "channel_types": [
+          0,
+          5
+        ]
+      }
+    ],
+    "nsfw": false
+  },
+  {
+    "id": "1538992045656514615",
+    "application_id": "308655472452304896",
+    "version": "1553828441223204971",
+    "default_member_permissions": "16",
+    "type": 1,
+    "name": "urgence",
+    "name_localizations": {
+      "fr": "urgence",
+      "en-US": "emergency",
+      "en-GB": "emergency"
+    },
+    "description": "Gérer le mode lent d'urgence temporaire d'un salon",
+    "description_localizations": {
+      "fr": "Gérer le mode lent d'urgence temporaire d'un salon",
+      "en-US": "Manage a channel's temporary emergency slowmode",
+      "en-GB": "Manage a channel's temporary emergency slowmode"
+    },
+    "dm_permission": false,
+    "contexts": [
+      0
+    ],
+    "integration_types": [
+      0
+    ],
+    "options": [
+      {
+        "type": 1,
+        "name": "déclencher",
+        "name_localizations": {
+          "fr": "déclencher",
+          "en-US": "trigger",
+          "en-GB": "trigger"
+        },
+        "description": "Mettre un salon en mode lent d'urgence temporaire",
+        "description_localizations": {
+          "fr": "Mettre un salon en mode lent d'urgence temporaire",
+          "en-US": "Put a channel in temporary emergency slowmode",
+          "en-GB": "Put a channel in temporary emergency slowmode"
+        },
+        "options": [
+          {
+            "type": 7,
+            "name": "salon",
+            "name_localizations": {
+              "fr": "salon",
+              "en-US": "channel",
+              "en-GB": "channel"
+            },
+            "description": "Le salon à apaiser (par défaut : le salon courant)",
+            "description_localizations": {
+              "fr": "Le salon à apaiser (par défaut : le salon courant)",
+              "en-US": "The channel to calm down (default: the current channel)",
+              "en-GB": "The channel to calm down (default: the current channel)"
+            },
+            "channel_types": [
+              0,
+              11,
+              12,
+              5
+            ]
+          },
+          {
+            "type": 4,
+            "name": "durée",
+            "name_localizations": {
+              "fr": "durée",
+              "en-US": "duration",
+              "en-GB": "duration"
+            },
+            "description": "Durée du mode lent d'urgence en minutes (par défaut : valeur configurée)",
+            "description_localizations": {
+              "fr": "Durée du mode lent d'urgence en minutes (par défaut : valeur configurée)",
+              "en-US": "Emergency slowmode duration in minutes (default: configured value)",
+              "en-GB": "Emergency slowmode duration in minutes (default: configured value)"
+            },
+            "min_value": 1,
+            "max_value": 180
+          },
+          {
+            "type": 4,
+            "name": "intervalle",
+            "name_localizations": {
+              "fr": "intervalle",
+              "en-US": "interval",
+              "en-GB": "interval"
+            },
+            "description": "Intervalle entre les messages en secondes (par défaut : valeur configurée)",
+            "description_localizations": {
+              "fr": "Intervalle entre les messages en secondes (par défaut : valeur configurée)",
+              "en-US": "Interval between messages in seconds (default: configured value)",
+              "en-GB": "Interval between messages in seconds (default: configured value)"
+            },
+            "min_value": 0,
+            "max_value": 3600
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "name": "lever",
+        "name_localizations": {
+          "fr": "lever",
+          "en-US": "lift",
+          "en-GB": "lift"
+        },
+        "description": "Lever le mode lent d'urgence d'un salon avant la fin du délai",
+        "description_localizations": {
+          "fr": "Lever le mode lent d'urgence d'un salon avant la fin du délai",
+          "en-US": "Lift a channel's emergency slowmode before it expires",
+          "en-GB": "Lift a channel's emergency slowmode before it expires"
+        },
+        "options": [
+          {
+            "type": 7,
+            "name": "salon",
+            "name_localizations": {
+              "fr": "salon",
+              "en-US": "channel",
+              "en-GB": "channel"
+            },
+            "description": "Le salon à rétablir (par défaut : le salon courant)",
+            "description_localizations": {
+              "fr": "Le salon à rétablir (par défaut : le salon courant)",
+              "en-US": "The channel to restore (default: the current channel)",
+              "en-GB": "The channel to restore (default: the current channel)"
+            },
+            "channel_types": [
+              0,
+              11,
+              12,
+              5
+            ]
+          }
+        ]
+      }
+    ],
+    "nsfw": false
+  },
+  {
+    "id": "1543708670750236822",
+    "application_id": "308655472452304896",
+    "version": "1543708670750236826",
+    "default_member_permissions": null,
+    "type": 3,
+    "name": "Signaler le message",
+    "name_localizations": {
+      "fr": "Signaler le message",
+      "en-US": "Report message",
+      "en-GB": "Report message"
+    },
+    "description": "",
+    "description_localizations": null,
+    "dm_permission": false,
+    "contexts": [
+      0
+    ],
+    "integration_types": [
+      0
+    ],
+    "nsfw": false
+  },
+  {
+    "id": "1543708670750236825",
+    "application_id": "308655472452304896",
+    "version": "1543708670750236829",
+    "default_member_permissions": null,
+    "type": 1,
+    "name": "signaler",
+    "name_localizations": {
+      "fr": "signaler",
+      "en-US": "report",
+      "en-GB": "report"
+    },
+    "description": "Signaler un message à l'équipe de modération",
+    "description_localizations": {
+      "fr": "Signaler un message à l'équipe de modération",
+      "en-US": "Report a message to the moderation team",
+      "en-GB": "Report a message to the moderation team"
+    },
+    "dm_permission": false,
+    "contexts": [
+      0
+    ],
+    "integration_types": [
+      0
+    ],
+    "options": [
+      {
+        "type": 3,
+        "name": "lien",
+        "name_localizations": {
+          "fr": "lien",
+          "en-US": "link",
+          "en-GB": "link"
+        },
+        "description": "Le lien du message à signaler (clic droit sur le message > Copier le lien)",
+        "description_localizations": {
+          "fr": "Le lien du message à signaler (clic droit sur le message > Copier le lien)",
+          "en-US": "The link of the message to report (right click the message > Copy Message Link)",
+          "en-GB": "The link of the message to report (right click the message > Copy Message Link)"
+        },
+        "required": true
+      }
+    ],
+    "nsfw": false
+  },
+  {
+    "id": "1553829269547909211",
+    "application_id": "308655472452304896",
+    "version": "1553829269547909215",
+    "default_member_permissions": null,
+    "type": 1,
+    "name": "profil",
+    "name_localizations": {
+      "fr": "profil",
+      "en-US": "profile",
+      "en-GB": "profile"
+    },
+    "description": "Obtenir les informations concernant un compte",
+    "description_localizations": {
+      "fr": "Obtenir les informations concernant un compte",
+      "en-US": "Get information account",
+      "en-GB": "Get information account"
+    },
+    "dm_permission": true,
+    "contexts": [
+      0,
+      1,
+      2
+    ],
+    "integration_types": [
+      0,
+      1
+    ],
+    "options": [
+      {
+        "type": 9,
+        "name": "utilisateur",
+        "name_localizations": {
+          "fr": "utilisateur",
+          "en-US": "user",
+          "en-GB": "user"
+        },
+        "description": "L'utilisateur ciblé que vous voulez obtenir les informations de son compte",
+        "description_localizations": {
+          "fr": "L'utilisateur ciblé que vous voulez obtenir les informations de son compte",
+          "en-US": "The targeted user you want to get the account information",
+          "en-GB": "The targeted user you want to get the account information"
+        }
+      }
+    ],
+    "nsfw": false
+  },
+  {
+    "id": "1553829269547909212",
+    "application_id": "308655472452304896",
+    "version": "1553829269547909216",
+    "default_member_permissions": null,
+    "type": 1,
+    "name": "rappel",
+    "name_localizations": {
+      "fr": "rappel",
+      "en-US": "reminder",
+      "en-GB": "reminder"
+    },
+    "description": "Gérer tes rappels personnels envoyés en message privé",
+    "description_localizations": {
+      "fr": "Gérer tes rappels personnels envoyés en message privé",
+      "en-US": "Manage your personal reminders sent via DM",
+      "en-GB": "Manage your personal reminders sent via DM"
+    },
+    "dm_permission": true,
+    "contexts": [
+      0,
+      1,
+      2
+    ],
+    "integration_types": [
+      0,
+      1
+    ],
+    "options": [
+      {
+        "type": 1,
+        "name": "créer",
+        "name_localizations": {
+          "fr": "créer",
+          "en-US": "create",
+          "en-GB": "create"
+        },
+        "description": "Programmer un nouveau rappel",
+        "description_localizations": {
+          "fr": "Programmer un nouveau rappel",
+          "en-US": "Schedule a new reminder",
+          "en-GB": "Schedule a new reminder"
+        },
+        "options": [
+          {
+            "type": 3,
+            "name": "durée",
+            "name_localizations": {
+              "fr": "durée",
+              "en-US": "duration",
+              "en-GB": "duration"
+            },
+            "description": "Dans combien de temps ? Exemple : 1s, 10m, 2h, 3j (sans unité = heures)",
+            "description_localizations": {
+              "fr": "Dans combien de temps ? Exemple : 1s, 10m, 2h, 3j (sans unité = heures)",
+              "en-US": "How long from now? Example: 1s, 10m, 2h, 3j (no unit = hours)",
+              "en-GB": "How long from now? Example: 1s, 10m, 2h, 3j (no unit = hours)"
+            },
+            "required": true,
+            "max_length": 10
+          },
+          {
+            "type": 3,
+            "name": "message",
+            "name_localizations": {
+              "fr": "message",
+              "en-US": "message",
+              "en-GB": "message"
+            },
+            "description": "Le message du rappel",
+            "description_localizations": {
+              "fr": "Le message du rappel",
+              "en-US": "The reminder's message",
+              "en-GB": "The reminder's message"
+            },
+            "required": true,
+            "max_length": 500
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "name": "liste",
+        "name_localizations": {
+          "fr": "liste",
+          "en-US": "list",
+          "en-GB": "list"
+        },
+        "description": "Voir tes prochains rappels",
+        "description_localizations": {
+          "fr": "Voir tes prochains rappels",
+          "en-US": "See your upcoming reminders",
+          "en-GB": "See your upcoming reminders"
+        }
+      },
+      {
+        "type": 1,
+        "name": "supprimer",
+        "name_localizations": {
+          "fr": "supprimer",
+          "en-US": "delete",
+          "en-GB": "delete"
+        },
+        "description": "Annuler un rappel programmé",
+        "description_localizations": {
+          "fr": "Annuler un rappel programmé",
+          "en-US": "Cancel a scheduled reminder",
+          "en-GB": "Cancel a scheduled reminder"
+        },
+        "options": [
+          {
+            "type": 4,
+            "name": "identifiant",
+            "name_localizations": {
+              "fr": "identifiant",
+              "en-US": "id",
+              "en-GB": "id"
+            },
+            "description": "Le numéro (#) affiché par /rappel liste",
+            "description_localizations": {
+              "fr": "Le numéro (#) affiché par /rappel liste",
+              "en-US": "The number (#) shown by /rappel liste",
+              "en-GB": "The number (#) shown by /rappel liste"
+            },
+            "required": true
+          }
+        ]
+      }
+    ],
+    "nsfw": false
+  },
+  {
+    "id": "1553829269547909213",
+    "application_id": "308655472452304896",
+    "version": "1553829269547909217",
+    "default_member_permissions": null,
+    "type": 1,
+    "name": "whois",
+    "name_localizations": {
+      "fr": "whois",
+      "en-US": "whois",
+      "en-GB": "whois"
+    },
+    "description": "Obtenir les informations concernant un compte",
+    "description_localizations": {
+      "fr": "Obtenir les informations concernant un compte",
+      "en-US": "Get information account",
+      "en-GB": "Get information account"
+    },
+    "dm_permission": true,
+    "contexts": [
+      0,
+      1,
+      2
+    ],
+    "integration_types": [
+      0,
+      1
+    ],
+    "options": [
+      {
+        "type": 9,
+        "name": "utilisateur",
+        "name_localizations": {
+          "fr": "utilisateur",
+          "en-US": "user",
+          "en-GB": "user"
+        },
+        "description": "L'utilisateur ciblé que vous voulez obtenir les informations de son compte",
+        "description_localizations": {
+          "fr": "L'utilisateur ciblé que vous voulez obtenir les informations de son compte",
+          "en-US": "The targeted user you want to get the account information",
+          "en-GB": "The targeted user you want to get the account information"
+        }
+      }
+    ],
+    "nsfw": false
+  },
+  {
+    "id": "1553829269547909214",
+    "application_id": "308655472452304896",
+    "version": "1553829269547909218",
+    "default_member_permissions": null,
+    "type": 2,
+    "name": "Plus sur son profil",
+    "name_localizations": {
+      "fr": "Plus sur son profil",
+      "en-US": "More about his profile",
+      "en-GB": "More about his profile"
+    },
+    "description": "",
+    "description_localizations": null,
+    "dm_permission": true,
+    "contexts": [
+      0,
+      1,
+      2
+    ],
+    "integration_types": [
+      0,
+      1
+    ],
+    "nsfw": false
+  },
+  {
+    "id": "1560357434764169246",
+    "application_id": "308655472452304896",
+    "version": "1569110640549691547",
+    "default_member_permissions": "8192",
+    "type": 1,
+    "name": "sanctions",
+    "name_localizations": {
+      "fr": "sanctions",
+      "en-US": "sanctions",
+      "en-GB": "sanctions"
+    },
+    "description": "Afficher la section Modération d'un membre, la même que sur son /profil",
+    "description_localizations": {
+      "fr": "Afficher la section Modération d'un membre, la même que sur son /profil",
+      "en-US": "Show a member's Moderation section, the same as on their /profile",
+      "en-GB": "Show a member's Moderation section, the same as on their /profile"
+    },
+    "dm_permission": false,
+    "contexts": [
+      0
+    ],
+    "integration_types": [
+      0
+    ],
+    "options": [
+      {
+        "type": 6,
+        "name": "membre",
+        "name_localizations": {
+          "fr": "membre",
+          "en-US": "member",
+          "en-GB": "member"
+        },
+        "description": "Le membre dont vous voulez voir l'historique de modération",
+        "description_localizations": {
+          "fr": "Le membre dont vous voulez voir l'historique de modération",
+          "en-US": "The member whose moderation history you want to see",
+          "en-GB": "The member whose moderation history you want to see"
+        },
+        "required": true
+      }
+    ],
+    "nsfw": false
+  },
+  {
+    "id": "1560357434764169247",
+    "application_id": "308655472452304896",
+    "version": "1560357434764169251",
+    "default_member_permissions": "268435456",
+    "type": 1,
+    "name": "roles",
+    "name_localizations": {
+      "fr": "rôles",
+      "en-US": "roles",
+      "en-GB": "roles"
+    },
+    "description": "Ajouter ou retirer des rôles à un membre directement",
+    "description_localizations": {
+      "fr": "Ajouter ou retirer des rôles à un membre directement",
+      "en-US": "Add or remove roles from a member directly",
+      "en-GB": "Add or remove roles from a member directly"
+    },
+    "dm_permission": false,
+    "contexts": [
+      0
+    ],
+    "integration_types": [
+      0
+    ],
+    "options": [
+      {
+        "type": 6,
+        "name": "membre",
+        "name_localizations": {
+          "fr": "membre",
+          "en-US": "member",
+          "en-GB": "member"
+        },
+        "description": "Le membre dont vous voulez gérer les rôles",
+        "description_localizations": {
+          "fr": "Le membre dont vous voulez gérer les rôles",
+          "en-US": "The member whose roles you want to manage",
+          "en-GB": "The member whose roles you want to manage"
+        },
+        "required": true
+      }
+    ],
+    "nsfw": false
+  },
+  {
+    "id": "1560357434764169248",
+    "application_id": "308655472452304896",
+    "version": "1569110640549691548",
+    "default_member_permissions": "32",
+    "type": 1,
+    "name": "paramètres",
+    "name_localizations": {
+      "fr": "paramètres",
+      "en-US": "settings",
+      "en-GB": "settings"
+    },
+    "description": "Configurer le robot sur ce serveur",
+    "description_localizations": {
+      "fr": "Configurer le robot sur ce serveur",
+      "en-US": "Configure the bot on this server",
+      "en-GB": "Configure the bot on this server"
+    },
+    "dm_permission": false,
+    "contexts": [
+      0
+    ],
+    "integration_types": [
+      0
+    ],
+    "options": [
+      {
+        "type": 1,
+        "name": "antispam",
+        "name_localizations": {
+          "fr": "antispam",
+          "en-US": "antispam",
+          "en-GB": "antispam"
+        },
+        "description": "🛡 Configurer le système anti-spam",
+        "description_localizations": {
+          "fr": "🛡 Configurer le système anti-spam",
+          "en-US": "🛡 Configure the anti-spam system",
+          "en-GB": "🛡 Configure the anti-spam system"
+        }
+      },
+      {
+        "type": 1,
+        "name": "apparence",
+        "name_localizations": {
+          "fr": "apparence",
+          "en-US": "appearance",
+          "en-GB": "appearance"
+        },
+        "description": "🤩 Configurer l'apparence du robot sur votre serveur Discord",
+        "description_localizations": {
+          "fr": "🤩 Configurer l'apparence du robot sur votre serveur Discord",
+          "en-US": "🤩 Configure the appearance of the bot on your Discord server",
+          "en-GB": "🤩 Configure the appearance of the bot on your Discord server"
+        }
+      },
+      {
+        "type": 1,
+        "name": "automod",
+        "name_localizations": {
+          "fr": "automod",
+          "en-US": "automod",
+          "en-GB": "automod"
+        },
+        "description": "⚙ Configurer les templates de protection AutoMod",
+        "description_localizations": {
+          "fr": "⚙ Configurer les templates de protection AutoMod",
+          "en-US": "⚙ Configure AutoMod protection templates",
+          "en-GB": "⚙ Configure AutoMod protection templates"
+        }
+      },
+      {
+        "type": 1,
+        "name": "avertissements",
+        "name_localizations": {
+          "fr": "avertissements",
+          "en-US": "warnings",
+          "en-GB": "warnings"
+        },
+        "description": "⚠ Configurer le seuil et l'expiration des avertissements",
+        "description_localizations": {
+          "fr": "⚠ Configurer le seuil et l'expiration des avertissements",
+          "en-US": "⚠ Configure the warning threshold and expiration",
+          "en-GB": "⚠ Configure the warning threshold and expiration"
+        }
+      },
+      {
+        "type": 1,
+        "name": "ciblage",
+        "name_localizations": {
+          "fr": "ciblage",
+          "en-US": "targeting",
+          "en-GB": "targeting"
+        },
+        "description": "🎯 Configurer la détection de ciblage répété (harcèlement, sans IA)",
+        "description_localizations": {
+          "fr": "🎯 Configurer la détection de ciblage répété (harcèlement, sans IA)",
+          "en-US": "🎯 Configure repeated targeting detection (harassment, no AI)",
+          "en-GB": "🎯 Configure repeated targeting detection (harassment, no AI)"
+        }
+      },
+      {
+        "type": 1,
+        "name": "honeypot",
+        "name_localizations": {
+          "fr": "honeypot",
+          "en-US": "honeypot",
+          "en-GB": "honeypot"
+        },
+        "description": "🍯 Configurer le honeypot (piège à robots spammeurs)",
+        "description_localizations": {
+          "fr": "🍯 Configurer le honeypot (piège à robots spammeurs)",
+          "en-US": "🍯 Configure the honeypot (spam bot trap)",
+          "en-GB": "🍯 Configure the honeypot (spam bot trap)"
+        }
+      },
+      {
+        "type": 1,
+        "name": "insultes",
+        "name_localizations": {
+          "fr": "insultes",
+          "en-US": "swears",
+          "en-GB": "swears"
+        },
+        "description": "💥 Configurer les paramètres du système contre les insultes",
+        "description_localizations": {
+          "fr": "💥 Configurer les paramètres du système contre les insultes",
+          "en-US": "💥 Configure the settings of the swear system",
+          "en-GB": "💥 Configure the settings of the swear system"
+        }
+      },
+      {
+        "type": 1,
+        "name": "logs",
+        "name_localizations": {
+          "fr": "logs",
+          "en-US": "logs",
+          "en-GB": "logs"
+        },
+        "description": "📁 Configurer les paramètres du système des logs",
+        "description_localizations": {
+          "fr": "📁 Configurer les paramètres du système des logs",
+          "en-US": "📁 Configure the settings of logs",
+          "en-GB": "📁 Configure the settings of logs"
+        },
+        "options": [
+          {
+            "type": 7,
+            "name": "salon",
+            "name_localizations": {
+              "fr": "salon",
+              "en-US": "channel",
+              "en-GB": "channel"
+            },
+            "description": "Envoyer les logs dans ce salon (crée ou déplace le webhook automatiquement)",
+            "description_localizations": {
+              "fr": "Envoyer les logs dans ce salon (crée ou déplace le webhook automatiquement)",
+              "en-US": "Send logs to this channel (creates or moves the webhook automatically)",
+              "en-GB": "Send logs to this channel (creates or moves the webhook automatically)"
+            },
+            "channel_types": [
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "name": "rôles",
+        "name_localizations": {
+          "fr": "rôles",
+          "en-US": "roles",
+          "en-GB": "roles"
+        },
+        "description": "🏷 Restauration automatique des rôles et audit des permissions sensibles",
+        "description_localizations": {
+          "fr": "🏷 Restauration automatique des rôles et audit des permissions sensibles",
+          "en-US": "🏷 Automatic role restoration and sensitive permissions audit",
+          "en-GB": "🏷 Automatic role restoration and sensitive permissions audit"
+        }
+      },
+      {
+        "type": 1,
+        "name": "signalement",
+        "name_localizations": {
+          "fr": "signalement",
+          "en-US": "report",
+          "en-GB": "report"
+        },
+        "description": "🚨 Configurer le signalement de message",
+        "description_localizations": {
+          "fr": "🚨 Configurer le signalement de message",
+          "en-US": "🚨 Configure message reporting",
+          "en-GB": "🚨 Configure message reporting"
+        }
+      },
+      {
+        "type": 1,
+        "name": "urgence",
+        "name_localizations": {
+          "fr": "urgence",
+          "en-US": "emergency",
+          "en-GB": "emergency"
+        },
+        "description": "🆘 Configurer la commande d'urgence /urgence",
+        "description_localizations": {
+          "fr": "🆘 Configurer la commande d'urgence /urgence",
+          "en-US": "🆘 Configure the /urgence emergency command",
+          "en-GB": "🆘 Configure the /urgence emergency command"
+        }
+      }
+    ],
+    "nsfw": false
+  },
+  {
+    "id": "1560357434764169249",
+    "application_id": "308655472452304896",
+    "version": "1560357434764169253",
+    "default_member_permissions": "32",
+    "type": 1,
+    "name": "statistiques",
+    "name_localizations": {
+      "fr": "statistiques",
+      "en-US": "statistics",
+      "en-GB": "statistics"
+    },
+    "description": "Statistiques de modération de ce serveur",
+    "description_localizations": {
+      "fr": "Statistiques de modération de ce serveur",
+      "en-US": "Moderation statistics for this server",
+      "en-GB": "Moderation statistics for this server"
+    },
+    "dm_permission": false,
+    "contexts": [
+      0
+    ],
+    "integration_types": [
+      0
+    ],
+    "nsfw": false
+  },
+  {
+    "id": "1569110640549691544",
+    "application_id": "308655472452304896",
+    "version": "1569110640549691545",
+    "default_member_permissions": "1099511627776",
+    "type": 1,
+    "name": "avertissement",
+    "name_localizations": {
+      "fr": "avertissement",
+      "en-US": "warning",
+      "en-GB": "warning"
+    },
+    "description": "Avertir un membre (une modale s'ouvre si vous n'indiquez pas de motif)",
+    "description_localizations": {
+      "fr": "Avertir un membre (une modale s'ouvre si vous n'indiquez pas de motif)",
+      "en-US": "Warn a member (a modal opens if you give no reason)",
+      "en-GB": "Warn a member (a modal opens if you give no reason)"
+    },
+    "dm_permission": false,
+    "contexts": [
+      0
+    ],
+    "integration_types": [
+      0
+    ],
+    "options": [
+      {
+        "type": 6,
+        "name": "membre",
+        "name_localizations": {
+          "fr": "membre",
+          "en-US": "member",
+          "en-GB": "member"
+        },
+        "description": "Le membre à avertir",
+        "description_localizations": {
+          "fr": "Le membre à avertir",
+          "en-US": "The member to warn",
+          "en-GB": "The member to warn"
+        },
+        "required": true
+      },
+      {
+        "type": 3,
+        "name": "motif",
+        "name_localizations": {
+          "fr": "motif",
+          "en-US": "reason",
+          "en-GB": "reason"
+        },
+        "description": "La raison de l'avertissement",
+        "description_localizations": {
+          "fr": "La raison de l'avertissement",
+          "en-US": "The reason for the warning",
+          "en-GB": "The reason for the warning"
+        },
+        "max_length": 500
+      }
+    ],
+    "nsfw": false
+  }
+]

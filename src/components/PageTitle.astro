@@ -1,0 +1,104 @@
+---
+/**
+ * Titre de page Starlight + boutons « Ouvrir dans » (ChatGPT, Claude…).
+ * Chaque bouton ouvre l'assistant avec un prompt qui pointe vers l'URL
+ * publique de la page : l'assistant va lire la page en ligne.
+ */
+import Default from "@astrojs/starlight/components/PageTitle.astro";
+import type { Props } from "@astrojs/starlight/props";
+// Logos (MIT, @lobehub/icons-static-svg) importés en texte, colorés via `currentColor`.
+import openaiIcon from "../assets/ai-icons/openai.svg?raw";
+import claudeIcon from "../assets/ai-icons/claude.svg?raw";
+import perplexityIcon from "../assets/ai-icons/perplexity.svg?raw";
+import mistralIcon from "../assets/ai-icons/mistral.svg?raw";
+
+const { entry, lang } = Astro.locals.starlightRoute;
+const showButtons = entry.data.template !== "splash" && entry.id !== "404";
+
+// URL publique (pas localhost) : c'est elle que l'assistant doit pouvoir lire.
+const pageUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url).href;
+const isFrench = lang === "fr";
+
+const prompt = isFrench
+  ? `Lis la page ${pageUrl} de la documentation de Mr. Robøt (robot Discord), puis réponds à mes questions à son sujet.`
+  : `Read the page ${pageUrl} from the Mr. Robøt (Discord bot) documentation, then answer my questions about it.`;
+const q = encodeURIComponent(prompt);
+
+const assistants = [
+  { name: "ChatGPT", icon: openaiIcon, href: `https://chatgpt.com/?q=${q}` },
+  { name: "Claude", icon: claudeIcon, href: `https://claude.ai/new?q=${q}` },
+  { name: "Perplexity", icon: perplexityIcon, href: `https://www.perplexity.ai/search?q=${q}` },
+  { name: "Mistral Le Chat", icon: mistralIcon, href: `https://chat.mistral.ai/chat?q=${q}` },
+];
+---
+
+<Default {...Astro.props}><slot /></Default>
+
+{
+  showButtons && (
+    <div class="ai-actions not-content" role="group" aria-label={isFrench ? "Ouvrir cette page dans un assistant IA" : "Open this page in an AI assistant"}>
+      <span class="ai-actions__label">{isFrench ? "Ouvrir dans" : "Open in"}</span>
+      {assistants.map((assistant) => (
+        <a class="ai-actions__button" href={assistant.href} target="_blank" rel="noopener noreferrer">
+          <span class="ai-actions__icon" aria-hidden="true" set:html={assistant.icon} />
+          <span class="ai-actions__text">{assistant.name}</span>
+          <span class="ai-actions__arrow" aria-hidden="true">↗</span>
+        </a>
+      ))}
+    </div>
+  )
+}
+
+<style>
+  .ai-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .ai-actions__label {
+    line-height: 1.5;
+    color: var(--sl-color-gray-3);
+    font-size: var(--sl-text-sm);
+  }
+
+  .ai-actions__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    line-height: 1.5;
+    padding: 0.2rem 0.65rem;
+    font-size: var(--sl-text-xs);
+    color: var(--sl-color-gray-2);
+    text-decoration: none;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 999px;
+    transition:
+      color 0.15s ease,
+      border-color 0.15s ease,
+      background-color 0.15s ease;
+  }
+
+  .ai-actions__icon {
+    display: inline-flex;
+    flex-shrink: 0;
+  }
+
+  .ai-actions__arrow {
+    line-height: 1;
+  }
+
+  .ai-actions__icon :global(svg) {
+    width: 1.1em;
+    height: 1.1em;
+  }
+
+  .ai-actions__button:hover,
+  .ai-actions__button:focus-visible {
+    color: var(--sl-color-white);
+    border-color: var(--sl-color-accent-high);
+    background-color: var(--sl-color-gray-6);
+  }
+</style>

@@ -1,9 +1,9 @@
 ---
 title: Consulter les sanctions d'un membre
-description: Découvrez comment utiliser la commande /sanctions de Mr. Robøt pour consulter la fiche de modération d'un membre de votre serveur Discord.
+description: Découvrez comment utiliser la commande /sanctions de Mr. Robøt pour consulter la section Modération d'un membre de votre serveur Discord.
 ---
 
-La commande `/sanctions` affiche la fiche de modération d'un membre sur **ce serveur** : bannissements, sourdines, messages insultants, spam, ciblage répété.
+La commande `/sanctions` affiche la **section Modération** d'un membre sur **ce serveur**, exactement la même que celle de [`/profil`](/utility/profil), seule dans le message. Elle sert de raccourci quand vous ne voulez que la modération, sans le profil Discord ni la bienveillance.
 
 Pour les statistiques globales du serveur, voir [`/statistiques`](/mod/statistiques). Pour gérer les rôles d'un membre, voir [`/rôles`](/mod/roles).
 
@@ -13,20 +13,26 @@ Pour les statistiques globales du serveur, voir [`/statistiques`](/mod/statistiq
 /sanctions <membre>
 ```
 
-- `membre` : Le membre dont vous voulez voir l'historique de modération.
+- `membre` : Le membre dont vous voulez voir la modération.
 
-## Contenu de la fiche
+## Contenu
 
-La fiche affiche un verdict (**SAIN**, **À SURVEILLER** ou **À RISQUE**), calculé à partir d'un score de gravité qui pondère chaque type d'évènement et son ancienneté : un bannissement récent pèse bien plus qu'une insulte isolée d'il y a plusieurs mois.
+- un **verdict** (**SAIN**, **À SURVEILLER** ou **À RISQUE**) avec une explication, calculé à partir d'un score de gravité qui pondère chaque type d'évènement et son ancienneté : un bannissement récent pèse bien plus qu'une insulte isolée d'il y a plusieurs mois ;
+- le nombre d'évènements par type (bannissements, sourdines, avertissements, messages insultants, spam, ciblage répété) et la date du dernier évènement, sur la période choisie : 7, 14, 30 ou 90 jours, 30 par défaut. Les boutons de période n'apparaissent pas si le membre n'a aucun historique ;
+- les **avertissements actifs**, avec les trois derniers listés (date, modérateur, expiration, motif) ;
+- les **signalements reçus** visant le membre, avec un lien vers leur fil de suivi ;
+- des boutons **Voir les avertissements**, **Expulser temporairement** et **Bannir**.
 
-Un résumé automatique en une phrase et un décompte par type sont affichés en premier, suivis du nombre de messages insultants envoyés par le membre sur les 15 et 30 derniers jours. Un message compte **une seule fois**, même s'il contient plusieurs insultes, et même s'il est détecté à la fois par le filtre classique et par l'IA (dans ce cas, il est compté comme détecté par l'IA). Le détail complet, avec la date, le modérateur responsable (ou "Automatique" pour une détection) et la raison de chaque évènement, est disponible derrière le bouton **Voir l'historique complet**, paginé si l'historique est long.
+Les détails de chaque bouton, dont le bannissement et la suppression des messages, sont décrits dans la page [`/profil`](/utility/profil).
 
-Les membres et modérateurs sont affichés avec leur nom sur le serveur, en lien vers leur profil Discord. Une personne qui a quitté le serveur apparaît avec la mention « (a quitté le serveur) ».
+:::note[Avertissement ou signalement ?]
+Un **avertissement** est une sanction posée par un modérateur. Un **signalement** est une demande faite par un membre aux modérateurs : ce n'est pas une sanction. Voir [`/avertissement`](/mod/avertissement) et [`/signaler`](/utility/signaler).
+:::
 
-Si le membre est toujours présent sur le serveur, un bouton **Expulser temporairement** (mise en sourdine) permet d'enchaîner directement sur une sanction sans retaper de commande.
+Un message compte **une seule fois** dans les messages insultants, même s'il contient plusieurs insultes, et même s'il est détecté à la fois par le filtre classique et par l'IA (dans ce cas, il est compté comme détecté par l'IA).
 
 :::note
-Aucun contenu de message n'est conservé dans cet historique, uniquement des informations contextuelles (type, salon, durée). L'historique est conservé 90 jours, puis purgé automatiquement.
+Aucun contenu de message n'est conservé dans l'historique, uniquement des informations contextuelles (type, salon, durée). L'historique est conservé 90 jours, puis purgé automatiquement.
 :::
 
 ## Permission
