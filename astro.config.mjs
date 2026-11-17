@@ -4,6 +4,7 @@ import lunaria from "@lunariajs/starlight";
 import matomo from "astro-matomo";
 import starlightCoolerCredit from "starlight-cooler-credit";
 import starlightLlmsTxt from "starlight-llms-txt";
+import sitemap from "@astrojs/sitemap";
 
 const locales = {
   root: {
@@ -15,13 +16,24 @@ const locales = {
     lang: "en",
   },
 };
+// Pages réellement traduites en anglais : toutes les autres URL `/en/*` sont des
+// copies de repli du contenu français (même titre, même description) et ne
+// doivent ni être indexées ni figurer dans le sitemap.
+const translatedEnglishPages = ["/en/", "/en/introduction/", "/en/whoismrrobotapp/"];
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://docs.mrrobot.app",
   integrations: [
+    sitemap({
+      filter: (page) => {
+        const { pathname } = new URL(page);
+        return !pathname.startsWith("/en/") || translatedEnglishPages.includes(pathname);
+      },
+    }),
     starlight({
       title: "Documentation Mr. Robøt",
-      titleDelimiter: " — ",
+      titleDelimiter: "—",
       logo: {
         light: "./src/assets/title_logo_light.svg",
         dark: "./src/assets/title_logo_dark.svg",
@@ -71,20 +83,6 @@ export default defineConfig({
         {
           tag: "meta",
           attrs: {
-            property: "og:title",
-            content: "Documentation Mr. Robøt",
-          },
-        },
-        {
-          tag: "meta",
-          attrs: {
-            property: "og:description",
-            content: "Documentation du robot Discord Mr. Robøt",
-          },
-        },
-        {
-          tag: "meta",
-          attrs: {
             property: "og:image",
             content: "https://docs.mrrobot.app/banner_seo.png",
           },
@@ -108,13 +106,6 @@ export default defineConfig({
           attrs: {
             property: "twitter:creator",
             content: "@MrRobotApp",
-          },
-        },
-        {
-          tag: "meta",
-          attrs: {
-            property: "og:url",
-            content: "https://docs.mrrobot.app",
           },
         },
         {
@@ -396,5 +387,7 @@ export default defineConfig({
     "/beta": "/getting-started/beta/",
     "/premium": "/premium/introduction/",
     "/mod/moderation": "/mod/sanctions/",
+    "/utility/whois": "/utility/profil/",
+    "/en/utility/whois": "/en/utility/profil/",
   },
 });

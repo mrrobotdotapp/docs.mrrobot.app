@@ -57,7 +57,7 @@ export const commandMeta: Record<string, CommandMeta> = {
   signaler: { category: "utility", href: "/utility/signaler/" },
   profil: { category: "utility", href: "/utility/profil/" },
   rappel: { category: "utility", href: "/utility/rappel/" },
-  whois: { category: "utility", href: "/utility/whois/" },
+  whois: { category: "utility", href: "/utility/profil/" },
 
   // Configuration (`/paramètres …`)
   "paramètres antispam": { category: "settings", href: "/configuration/antispam/" },

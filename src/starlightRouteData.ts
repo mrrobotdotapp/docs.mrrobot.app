@@ -23,6 +23,13 @@ export const onRequest = defineRouteMiddleware((context) => {
 
   if (entry.id === "404") return;
 
+  // Page de repli : contenu français servi sous /en/ faute de traduction.
+  // Titre et description identiques à la page française : on évite le contenu
+  // dupliqué en la gardant hors de l'index (le sitemap l'exclut aussi).
+  if (starlightRoute.isFallback) {
+    head.push({ tag: "meta", attrs: { name: "robots", content: "noindex, follow" } });
+  }
+
   const isFrench = lang === "fr";
   const site = context.site ?? context.url;
   const pageUrl = new URL(context.url.pathname, site).href;
